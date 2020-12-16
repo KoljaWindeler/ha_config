@@ -1,0 +1,23 @@
+### ball living room
+# SL, DS18B20
+# -----------------------------------------------
+
+homeassistant:
+  customize:
+    sensor.dev45_hx711:
+      device_class: pressure
+      icon: "mdi:scale"
+      unit_of_measurement: bit
+    sensor.bed_occupancy:
+      device_class: pressure
+      icon: "mdi:scale"
+      unit_of_measurement: person
+# -----------------------------------------------
+
+sensor:
+  - platform: mqtt_jkw
+    name: "dev45"
+    fname: "45 Bed scale"
+
+# -----------------------------------------------
+

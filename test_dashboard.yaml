@@ -1,0 +1,181 @@
+name: Testing
+
+
+views:
+#################################################
+########## TESTING ##############################
+#################################################
+
+  - cards:
+      - type: vertical-stack
+        cards:
+        
+#         - type: custom:mini-graph-card
+#           points_per_hour: 12
+#           smoothing: false
+         - type: gauge
+           entity: sensor.dev45_hx711
+           min: 0
+           max: 2300000
+         
+         - type: history-graph
+           name: bed
+           entities:
+            - entity: sensor.dev45_hx711
+              name: Sensor
+            - entity: sensor.bed_occupancy
+              y_axis: secondary
+              name: People
+
+         - type: custom:mini-graph-card
+           points_per_hour: 60
+           hours_to_show: 1
+           smoothing: false
+           name: bed
+           entities:
+            - entity: sensor.bed_occupancy
+              y_axis: secondary
+            - sensor.dev45_hx711
+           tap_action: 
+             action: call-service
+             service: browser_mod.popup
+             service_data:
+                title: Power Month
+                large: true
+                deviceID: this
+                hide_header: true
+                card:
+                      type: history-graph
+                      #type: custom:mini-graph-card
+                      #line_width: 1
+                      #show:
+                      #  points: true
+                      #  labels: true
+                      #  extrama: true
+                      #points_per_hour: 30
+                      #smoothing: false
+                      name: bed
+                      entities:
+                       - entity: sensor.dev45_hx711
+                         name: Sensor
+                       - entity: sensor.bed_occupancy
+                         y_axis: secondary
+                         name: People
+
+
+            
+         - type: custom:long-term-card
+           data_field: 1
+           name: 'Cloud coverage (5d)'
+           display_mode: 'abs'
+           formater: "--datetime:--yyyy-mm-dd-hh-ii-ss"
+           date_out_format: 'yyyy-mm-dd HH:MM'
+           data_property: 'data'
+           lower_bound: 0
+           upper_bound: 100
+           maxDays: 5
+           data_delimiter: 'value'
+           unit: '%'
+           entities:
+            - sensor.cloud_coverage_celle
+
+         - type: custom:long-term-card
+           data_field: 1
+           name: 'Precipitation Probability Celle (today)'
+           display_mode: 'abs'
+           formater: "--datetime:--yyyy-mm-dd-hh-ii-ss"
+           date_out_format: 'yyyy-mm-dd HH:MM'
+           lower_bound: 0
+           show:
+            points: true
+            labels: true
+            extrama: true
+           upper_bound: 100
+           data_property: 'data'
+           maxDays: 1
+           data_delimiter: 'value'
+           unit: '%'
+           entities:
+            - sensor.precipitation_probability_celle
+
+         - type: custom:long-term-card
+           data_field: 1
+           name: 'Precipitation Probability Celle (5d)'
+           display_mode: 'abs'
+           formater: "--datetime:--yyyy-mm-dd-hh-ii-ss"
+           date_out_format: 'yyyy-mm-dd HH:MM'
+           lower_bound: 0
+           upper_bound: 100
+           data_property: 'data'
+           maxDays: 5
+           data_delimiter: 'value'
+           unit: '%'
+           entities:
+            - sensor.precipitation_probability_celle
+
+         - type: custom:long-term-card
+           data_field: 1
+           name: 'Temperature forcast Celle (7d)'
+           display_mode: 'abs'
+           formater: "--datetime:--yyyy-mm-dd-hh-ii-ss"
+           date_out_format: 'yyyy-mm-dd HH:MM'
+           data_property: 'data'
+           maxDays: 7
+           data_delimiter: 'value'
+           unit: '%'
+           entities:
+            - sensor.temperature_celle
+
+         - detail: 2
+           graph: line
+           name: Bed scale
+           type: sensor 
+           entity: sensor.dev45_hx711
+
+         - type: history-graph
+           entities:
+             - sensor.dev37_em_cur
+             - switch.dev40_gpio_12
+             - switch.dev30_gpio_0
+             - switch.dev38_gpio_5
+             - switch.dev41_gpio_4
+             - switch.dev41_gpio_5
+             - switch.dev41_gpio_12
+
+#         - type: custom:long-term-card
+#           name: 'Energy Year / Day'
+#           display_mode: 'diff'
+#           formater: 'yyyy-mm-dd'
+#           unit: 'kWh'
+#           line_width: 1
+#           lower_bound: 0
+#           upper_bound: 25
+#           maxDays: 365
+#           data_delimiter: ','
+#           entities:
+#            - sensor.long_term_power
+     ########## battery ########      
+      - type: custom:auto-entities
+        card:
+          type: entities
+          title: Battery
+        filter:
+          include:
+            - entity_id: sensor.*_battery
+          exclude:
+            - state: "unavailable"
+     ########## battery ########      
+     ########## battery ########      
+      - type: custom:auto-entities
+        card:
+          type: entities
+          title: Battery warning
+        show_empty: false
+        filter:
+          include:
+            - entity_id: sensor.*_battery
+              state: < 40
+          exclude:
+            - state: "unavailable"
+     ########## battery ########      
+#######################################

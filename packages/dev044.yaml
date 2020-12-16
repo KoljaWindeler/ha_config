@@ -1,0 +1,31 @@
+### ball living room
+# SL, DS18B20
+# -----------------------------------------------
+
+homeassistant:
+  customize:
+    light.dev44:
+      friendly_name: "Kitchen Table"
+      icon: "mdi:silverware"
+    light.dev44_2:
+      friendly_name: "Couch"
+      icon: "mdi:sofa"
+
+# -----------------------------------------------
+
+sensor:
+  - platform: mqtt_jkw
+    name: "dev44"
+    fname: "44 Kitchen Table"
+
+# -----------------------------------------------
+
+light:
+  - platform: mqtt ### Couch light
+    name: "dev44_2"
+    state_topic: "dev44/r/gpio_15_state"
+    command_topic: "dev44/s/gpio_15_state"
+    retain: True
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"

@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "key": "person",
+    "data": {
+        "items": [
+            {
+                "device_trackers": [
+                    "device_tracker.google_maps_kkoolljjaa_gmail_com",
+                    "device_tracker.ping_kolja"
+                ],
+                "id": "kolja",
+                "name": "kolja",
+                "user_id": "7bf3ac0bc82549ba99e0fa7737e3f715",
+                "picture": "/api/image/serve/c1c162e07abd234e1bc46d8c10b771d4/512x512"
+            },
+            {
+                "name": "caro",
+                "device_trackers": [
+                    "device_tracker.google_maps_114864588644392991844",
+                    "device_tracker.ping_caro"
+                ],
+                "user_id": "4d052cf1c12e4da5a9575117343910fc",
+                "picture": "/api/image/serve/479dfa78ee7e15e910319d0cbbcfc8c5/512x512",
+                "id": "caro"
+            }
+        ]
+    }
+}

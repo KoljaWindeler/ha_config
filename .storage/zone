@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "key": "zone",
+    "data": {
+        "items": [
+            {
+                "name": "Squash",
+                "icon": "mdi:map-marker",
+                "latitude": 52.4550295,
+                "longitude": 9.7372706,
+                "passive": false,
+                "radius": 140.05151316993778,
+                "id": "squash"
+            },
+            {
+                "name": "Fischi",
+                "icon": "mdi:map-marker",
+                "latitude": 53.1181829838171,
+                "longitude": 9.049218609832685,
+                "passive": false,
+                "radius": 2000.0,
+                "id": "fischi"
+            }
+        ]
+    }
+}

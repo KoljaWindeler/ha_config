@@ -1,0 +1,16 @@
+### touch bedroom
+# SL
+# -----------------------------------------------
+
+sensor:
+  - platform: mqtt_jkw
+    name: "dev24"
+    fname: "24 Louisa Main"
+
+# -----------------------------------------------
+
+homeassistant:
+  customize:
+    light.dev24:
+      friendly_name: "Louisa main"
+

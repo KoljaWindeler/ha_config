@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "key": "camera",
+    "data": {
+        "camera.cam_dome1": {
+            "preload_stream": true
+        },
+        "camera.cam_dome2": {
+            "preload_stream": true
+        },
+        "camera.cam_dome3": {
+            "preload_stream": true
+        },
+        "camera.cam_xia1": {
+            "preload_stream": false
+        },
+        "camera.cam_xia3": {
+            "preload_stream": false
+        },
+        "camera.cam_xia4": {
+            "preload_stream": false
+        },
+        "camera.cam_dome1_profile_000": {
+            "preload_stream": true
+        },
+        "camera.cam_dome2_profile_000": {
+            "preload_stream": true
+        },
+        "camera.cam_dome3_profile_000": {
+            "preload_stream": true
+        }
+    }
+}

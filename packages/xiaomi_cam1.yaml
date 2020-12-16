@@ -1,0 +1,6 @@
+# printer/generic
+camera:
+  - platform: generic
+    still_image_url: http://192.168.2.167/snapshot.jpg
+    name: cam_xia_printer
+

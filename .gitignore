@@ -1,3 +1,17 @@
+# hidden files
+secrets.yaml
+..gitignore.swp
+headers_auth.json
+ui-lovelace.yaml.bak
+ui-lovelace.yaml.save
+.google_maps_location_sharing.cookies.kkoolljjaa_gmail_com
+custom_components/hacs/
+*.save
+auth
+auth_provider.homeassistant
+.storage/hacs
+androidtv_adbkey
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,0 +1,794 @@
+{
+    "version": 1,
+    "key": "core.device_registry",
+    "data": {
+        "devices": [
+            {
+                "config_entries": [
+                    "108f59241d3a4e758bc7da4a8e6b2a5b"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "owntracks",
+                        "illuminum_kolja"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "illuminum",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "f95059caf8df4920837ca98457cb1131",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "108f59241d3a4e758bc7da4a8e6b2a5b"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "owntracks",
+                        "illuminum_caro"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "illuminum",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "23aa7f64ae9d45539ef374d49eef395c",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d0004461c84"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Outside",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "6d52a7a76fcf43ca90c5cf6c4982818f",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d000410e664"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Bathroom U.",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "49297baa478642ed8d1995381de9db97",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d000445c970"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Carlo",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "a87b92aa2e8b4ce08c61132cf9d436cb",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d00044494bf"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Beamer",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "b7fb35014e62407c8f034bb047017adc",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d0003ce3269"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Livingroom",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "1e4efe6b951f4ecb98d88a9ba7bf8d9c",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d000359104f"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Foyer",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "03b6c6ee48a54fc8872931e9f7b475c1",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d0002f0bc08"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia human body movement sensor (RTCGQ01LM)",
+                "name": "Hallway U motion",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "a0ed667abd17486a9abefb7c698c89bc",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d00041dfcce"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Supplyroom",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "de264f7fdd9f40b88a014295ce19bb13",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d00042505f7"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Bedroom Z",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "43f9b2a73d4845859c7c3105d000a544",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d00041024ef"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Lara Z",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "647a1ebba9234ffd852547439dc86033",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d00041d6d95"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Bathroom B.",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "9e4a9a65918847c5b8b4f3af2e9946e6",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d00044af1b0"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Caro",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "25bd56751a0145dab73575dafda72e0f",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d00044b00e0"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
+                "name": "Workshop",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "56d4cc7c8fa24e9191b2ae7de3d31cdf",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d0002a7051f"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "Mi/Aqara smart home cube (MFKZQ01LM)",
+                "name": "0x00158d0002a7051f",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "0ec8561fc1624576a5127a2272931b69",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "50b9f55a97aa48e48650a01e9e68a5a9"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "hacs",
+                        "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
+                    ]
+                ],
+                "manufacturer": "hacs.xyz",
+                "model": "",
+                "name": "HACS",
+                "sw_version": "1.8.0",
+                "entry_type": "service",
+                "id": "f90291220ad44e1e8b2d32cb910ebf48",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "d6061b7e7de74070a4d34faae490079f"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "76b7ae1f9de3a3e4"
+                    ]
+                ],
+                "manufacturer": "HUAWEI",
+                "model": "EML-L29",
+                "name": "Handy Kolja",
+                "sw_version": "28",
+                "entry_type": null,
+                "id": "427e3842e10a4bedb4f2f4a57d902cf7",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d0003f85cf0"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MiJia human body movement sensor (RTCGQ01LM)",
+                "name": "Heater",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "ed47d19337b149f79e5689bfb92e14c6",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "2b4890a4778a4514bc27fd601987b374"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "harmony",
+                        "11192165"
+                    ]
+                ],
+                "manufacturer": "Logitech",
+                "model": "Harmony Hub",
+                "name": "TVHub",
+                "sw_version": "4.15.264",
+                "entry_type": null,
+                "id": "8d1b5f7e3511402bbd5812fe5f8bc73e",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "4dcaf2967d264babbfd5ea6b0b3585bd"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "harmony",
+                        "15133743"
+                    ]
+                ],
+                "manufacturer": "Logitech",
+                "model": "Harmony Hub",
+                "name": "beamer_harmony",
+                "sw_version": "4.15.280",
+                "entry_type": null,
+                "id": "cd0a0de214374f89ae0dea9b7688cf46",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "108f59241d3a4e758bc7da4a8e6b2a5b"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "owntracks",
+                        "illuminum_carlo"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": null,
+                "sw_version": null,
+                "entry_type": null,
+                "id": "751585d087d1435dad529d57c3492b8c",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "108f59241d3a4e758bc7da4a8e6b2a5b"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "owntracks",
+                        "illuminum_863576047847152"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": null,
+                "sw_version": null,
+                "entry_type": null,
+                "id": "4d7afdbfc27b45e793c4368016813d72",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "108f59241d3a4e758bc7da4a8e6b2a5b"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "owntracks",
+                        "carlo"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": null,
+                "sw_version": null,
+                "entry_type": null,
+                "id": "bc010d8059dd4c1a8128cafaaee147d3",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "ca28a760904144919be3c1bfb385c500"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "cast",
+                        "5f20cb214f22855f22da92916a340666"
+                    ]
+                ],
+                "manufacturer": "Google Inc.",
+                "model": "Google Home Mini",
+                "name": "Badezimmer",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "d217e0ada10d4070b94d359a7ea2b97b",
+                "via_device_id": null,
+                "area_id": "d1199bb0bae447abbb33ae272ce30204",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "ca28a760904144919be3c1bfb385c500"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "cast",
+                        "cda393f405b19d21a65a5d497081ffd8"
+                    ]
+                ],
+                "manufacturer": "Google Inc.",
+                "model": "Google Home Mini",
+                "name": "K\u00fcche",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "8dcdb5e31c4443ea89208a4c4b215330",
+                "via_device_id": null,
+                "area_id": "1c92186059254e96b7f4794bf809e353",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "ca28a760904144919be3c1bfb385c500"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "cast",
+                        "eda3717be24f06997df4c6343fe7ce25"
+                    ]
+                ],
+                "manufacturer": "Google Inc.",
+                "model": "Chromecast",
+                "name": "jkw cast2",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "7457954f92b64873a209b6ce2c745d60",
+                "via_device_id": null,
+                "area_id": "1c92186059254e96b7f4794bf809e353",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "ca28a760904144919be3c1bfb385c500"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "cast",
+                        "2348a3e7566018009bb674c2b0826fcc"
+                    ]
+                ],
+                "manufacturer": "Google Inc.",
+                "model": "Google Home Mini",
+                "name": "Keller 2",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "bfd84137a241482588f9efbad75c99c1",
+                "via_device_id": null,
+                "area_id": "cd1892dd48184cef8e4a9c03c100182e",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "ca28a760904144919be3c1bfb385c500"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "cast",
+                        "096855930a103a8e8bb83142e5bf6ca4"
+                    ]
+                ],
+                "manufacturer": "Google Inc.",
+                "model": "Chromecast",
+                "name": "Keller",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "9741bccabc7b4164b0676d28d5a7e068",
+                "via_device_id": null,
+                "area_id": "cd1892dd48184cef8e4a9c03c100182e",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "d670cc61f98c11eab7a7b50016a36398"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "8d286006dd54decc"
+                    ]
+                ],
+                "manufacturer": "Google",
+                "model": "Pixel 4a (5G)",
+                "name": "EML-L29",
+                "sw_version": "30",
+                "entry_type": null,
+                "id": "d670d3d9f98c11ea8db7e50172942f73",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5346274afc0911ea80b4d361e29a2ddd"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "00:12:31:37:c8:84"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "onvif_hd",
+                        "00:12:31:37:c8:84"
+                    ]
+                ],
+                "manufacturer": "H264",
+                "model": "HI3516D_83H50N",
+                "name": "cam_dome1",
+                "sw_version": "V4.03.R12.00014927.12012.148900..ONVIF 2.41",
+                "entry_type": null,
+                "id": "5b63a2cdfc0911eaa84427ffc8dd9983",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "534bf206fc0911ea8080654e3e65dc5b"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "00:12:31:5c:17:dc"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "onvif_hd",
+                        "00:12:31:5c:17:dc"
+                    ]
+                ],
+                "manufacturer": "H264",
+                "model": "HI3516EV300_85H50AI",
+                "name": "cam_dome3",
+                "sw_version": "V5.00.R02.000529B2.10010.040600..ONVIF 2.41",
+                "entry_type": null,
+                "id": "5b64b004fc0911ea87ddd5f2a6d97b3a",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "543e98fffc0911eab16d897eaac663d2"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "00:12:31:2c:e7:bb"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "onvif_hd",
+                        "00:12:31:2c:e7:bb"
+                    ]
+                ],
+                "manufacturer": "H264",
+                "model": "LITEOS_HI3516EV100_50H20L_S38",
+                "name": "cam_dome2",
+                "sw_version": "V5.00.R02.00041863.10010.047501..ONVIF 2.41",
+                "entry_type": null,
+                "id": "5b65c96cfc0911eaa2b203b0777dc48a",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d0005a9e90e"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "Aqara human body movement and illuminance sensor (RTCGQ11LM)",
+                "name": "Cellar_foyer",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "b0b5acdbbb77f4e4cede473afc2ec6a7",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d00056d51ca"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "Aqara human body movement and illuminance sensor (RTCGQ11LM)",
+                "name": "wardrobe",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "5f75a94b28200abe5e7816a6131dca12",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            }
+        ],
+        "deleted_devices": []
+    }
+}
