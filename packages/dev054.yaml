@@ -1,5 +1,5 @@
 ### ball living room
-# R,GOP16,GON5,GON4,GIN0,GON2,GIN12,GIN14,GIP13,GIP1
+# R,GON16,GON5,GON4,GIN0,GON2,GIN12,GIN14,GIP13,GIP1
 # 00: klingel
 # 01: motion cellar
 # 02: haustuer licht
@@ -15,15 +15,12 @@ light:
   - platform: mqtt ### LED dimmer
     name: "dev54"
     state_topic: "dev54/r/gpio_16_state"
-    command_topic: "dev54/s/gpio_16_dimm"
-    brightness_state_topic: 'dev54/r/gpio_16_brightness'
-    brightness_command_topic: 'dev54/s/gpio_16_brightness'
+    command_topic: "dev54/s/gpio_16_state"
     retain: True
     qos: 0
     payload_on: "ON"
     payload_off: "OFF"
     optimistic: false
-    brightness_scale: 99
 
   - platform: mqtt ### kronleuchter
     name: "dev54_2"

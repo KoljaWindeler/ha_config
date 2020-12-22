@@ -366,6 +366,17 @@ views:
                      volume: true
                      source: true
                      power_state: false
+                     shuffle: false
+                     icon_state: false
+                   shortcuts:
+                     columns: 4
+                     buttons:
+                       - name: My Likes
+                         type: channel
+                         id: Your Likes
+                       - name: Caro
+                         type: channel
+                         id: Lala
 #                 - type: picture-entity
 #                   entity: camera.cam_xia4
 #                   name: Carlo
@@ -555,6 +566,8 @@ views:
                  card:
                     type: glance
                     entities:
+                      - entity: binary_sensor.0x00158d00045d7a47_occupancy
+                        name: Motion stairs
                       - entity: binary_sensor.dev57_motion
                         name: Motion
                       - entity: binary_sensor.0x00158d0002f0bc08_occupancy
@@ -2184,6 +2197,8 @@ views:
             name: Cellar cam
           - type: divider
           - binary_sensor.dev57_motion
+          - entity: binary_sensor.0x00158d00045d7a47_occupancy
+            name: "Stairs U"
           - entity: binary_sensor.0x00158d0002f0bc08_occupancy
             name: "Hallway U"
           - type: divider
@@ -2219,460 +2234,439 @@ views:
 #################################################
 
   - cards:
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
+        - type: horizontal-stack
+          cards:
 ### livingroom tv upstairs
-          - entity: binary_sensor.harmony
-            type: entity-button
-            name: TV
-            icon: "mdi:television-play"
-            tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
-                 title: Livingroom TV
-                 deviceID: this
-                 card:
-                    type: vertical-stack
-                    cards:
-                      - type: horizontal-stack
-                        cards:
-                          - icon: 'mdi:fire'
-                            name: FireTV
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.start_fire
-                              action: call-service
-                            entity: binary_sensor.always_on
-                            state_color: true
-                          - icon: 'mdi:power'
-                            name: All
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.tvoff
-                              action: call-service
-                            entity: binary_sensor.always_on
-                            state_color: true
-                      - type: horizontal-stack
-                        cards:
-                          - icon: 'mdi:cast-connected'
-                            name: Ch TV
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.start_chrom
-                              action: call-service
-                            entity: binary_sensor.always_on
-                            state_color: true
-                          - icon: 'mdi:cast-connected'
-                            name: Ch Audio
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.start_chromaudio
-                              action: call-service
-                            entity: binary_sensor.always_on
-                            state_color: true
-                      - type: horizontal-stack
-                        cards:
-                          - icon: 'mdi:volume-minus'
-                            name: Amp -5
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.yamaha_vol_down
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                          - icon: 'mdi:volume-minus'
-                            name: Amp -2
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.yamaha_vol_down_2
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                          - icon: 'mdi:volume-plus'
-                            name: Amp +2
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.yamaha_vol_up_2
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                          - icon: 'mdi:volume-plus'
-                            name: Amp +5
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.yamaha_vol_up
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                      - type: horizontal-stack
-                        cards:
-                          - icon: 'mdi:menu'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.firehome
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                          - icon: 'mdi:arrow-up-bold'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.fireup
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                          - icon: 'mdi:arrow-left-circle'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.fireback
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                      - type: horizontal-stack
-                        cards:
-                          - icon: 'mdi:arrow-left-bold'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.fireleft
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                          - icon: 'mdi:check-circle'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.fireok
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                          - icon: 'mdi:arrow-right-bold'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.fireright
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                      - type: horizontal-stack
-                        cards:
-                          - icon: 'mdi:volume-mute'
-                            name: AMP
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.tvmute
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                          - icon: 'mdi:arrow-down-bold'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.firedown
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
-                          - icon: 'mdi:volume-mute'
-                            name: AMP
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.tvmute
-                              action: call-service
-                            entity: binary_sensor.harmony
-                            state_color: true
+            - entity: binary_sensor.harmony
+              type: entity-button
+              name: TV
+              icon: "mdi:television-play"
+              tap_action:
+                action: call-service
+                service: browser_mod.popup
+                service_data:
+                   title: Livingroom TV
+                   deviceID: this
+                   card:
+                      type: vertical-stack
+                      cards:
+                        - type: horizontal-stack
+                          cards:
+                            - icon: 'mdi:fire'
+                              name: FireTV
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.start_fire
+                                action: call-service
+                              entity: binary_sensor.always_on
+                              state_color: true
+                            - icon: 'mdi:power'
+                              name: All
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.tvoff
+                                action: call-service
+                              entity: binary_sensor.always_on
+                              state_color: true
+                        - type: horizontal-stack
+                          cards:
+                            - icon: 'mdi:cast-connected'
+                              name: Ch TV
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.start_chrom
+                                action: call-service
+                              entity: binary_sensor.always_on
+                              state_color: true
+                            - icon: 'mdi:cast-connected'
+                              name: Ch Audio
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.start_chromaudio
+                                action: call-service
+                              entity: binary_sensor.always_on
+                              state_color: true
+                        - type: horizontal-stack
+                          cards:
+                            - icon: 'mdi:volume-minus'
+                              name: Amp -5
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.yamaha_vol_down
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                            - icon: 'mdi:volume-minus'
+                              name: Amp -2
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.yamaha_vol_down_2
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                            - icon: 'mdi:volume-plus'
+                              name: Amp +2
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.yamaha_vol_up_2
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                            - icon: 'mdi:volume-plus'
+                              name: Amp +5
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.yamaha_vol_up
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                        - type: horizontal-stack
+                          cards:
+                            - icon: 'mdi:menu'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.firehome
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                            - icon: 'mdi:arrow-up-bold'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.fireup
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                            - icon: 'mdi:arrow-left-circle'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.fireback
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                        - type: horizontal-stack
+                          cards:
+                            - icon: 'mdi:arrow-left-bold'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.fireleft
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                            - icon: 'mdi:check-circle'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.fireok
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                            - icon: 'mdi:arrow-right-bold'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.fireright
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                        - type: horizontal-stack
+                          cards:
+                            - icon: 'mdi:volume-mute'
+                              name: AMP
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.tvmute
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                            - icon: 'mdi:arrow-down-bold'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.firedown
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+                            - icon: 'mdi:volume-mute'
+                              name: AMP
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.tvmute
+                                action: call-service
+                              entity: binary_sensor.harmony
+                              state_color: true
+  
+##  # beamer cellar
+            - entity: binary_sensor.harmony_beamer
+              type: entity-button
+              name: Movieroom
+              icon: "mdi:movie-open-outline"
+              tap_action:
+                action: call-service
+                service: browser_mod.popup
+                service_data:
+                   title: Movieroom
+                   deviceID: this
+                   card:
+                      type: vertical-stack
+                      cards:
+                        - type: horizontal-stack
+                          cards:
+                            - icon: 'mdi:power'
+                              name: All
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_off
+                                action: call-service
+                              entity: binary_sensor.always_on
+                              state_color: true
+                            - icon: 'mdi:fire'
+                              name: FireTV
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_start_fire
+                                action: call-service
+                              entity: binary_sensor.always_on
+                              state_color: true
+                            - icon: 'mdi:cast-connected'
+                              name: Laptop
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_start_pc
+                                action: call-service
+                              entity: binary_sensor.always_on
+                              state_color: true
+                            - icon: 'mdi:cast-connected'
+                              name: Chromecast
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_start_chrome
+                                action: call-service
+                              entity: binary_sensor.always_on
+                              state_color: true
+                        - type: horizontal-stack
+                          cards:
+                            - icon: 'mdi:menu'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_firehome
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                            - icon: 'mdi:arrow-up-bold'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_fireup
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                            - icon: 'mdi:volume-plus'
+                              name: Amp +2
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_tvvolumeup_4
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                            - icon: 'mdi:volume-plus'
+                              name: Amp +5
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_tvvolumeup_10
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                        - type: horizontal-stack
+                          cards:
+                            - icon: 'mdi:arrow-left-bold'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_fireleft
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                            - icon: 'mdi:check-circle'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_fireok
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                            - icon: 'mdi:arrow-right-bold'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_fireright
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                            - icon: 'mdi:arrow-left-circle'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_fireback
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                        - type: horizontal-stack
+                          cards:
+                            - icon: 'mdi:volume-mute'
+                              name: AMP
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_tvmute
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                            - icon: 'mdi:arrow-down-bold'
+                              name: Fire
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_firedown
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                            - icon: 'mdi:volume-minus'
+                              name: Amp -2
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_tvvolumedown_4
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                            - icon: 'mdi:volume-minus'
+                              name: Amp -5
+                              service: script.turn_on
+                              type: entity-button
+                              tap_action:
+                                service: script.beamer_tvvolumedown_10
+                                action: call-service
+                              entity: binary_sensor.harmony_beamer
+                              state_color: true
+                  
+                        - type: horizontal-stack
+                          cards:
+                           - type: entity-button
+                             tap_action:
+                               action: toggle
+                             entity: switch.dev58_gpio_12
+                             icon: 'mdi:download-network'
+                             name: MediaPC
+                             state_color: true
+                           - type: entity-button
+                             tap_action:
+                               action: toggle
+                             state_color: true
+                             entity: light.dev10
+                        - type: horizontal-stack
+                          cards:
+                           - icon: 'mdi:power'
+                             name: Beamer
+                             service: script.turn_on
+                             type: entity-button
+                             tap_action:
+                               service: script.beamer_beamer_power
+                               action: call-service
+                             entity: binary_sensor.always_on
+                             state_color: true
+                           - type: entity-button
+                             entity: switch.dev60_gpio_12
+                             state_color: true
+                             icon: "mdi:air-filter"
+                             tap_action:
+                               action: toggle
+                             name: Vent
+                        - type: horizontal-stack
+                          cards:
+                           - type: entity-button
+                             entity: switch.dev60_gpio_13
+                             state_color: true
+                             icon: "mdi:door-open"
+                             tap_action:
+                               action: toggle
+                             name: Window
+                           - type: entity-button
+                             entity: switch.dev60_countdown
+                             state_color: true
+                             tap_action:
+                               action: toggle
+                             name: Auto 10min Vent
+                             icon: "mdi:timer-sand-empty"
+        - type: entities
+          show_header_toggle: false
+          entities:
+            - input_select.ytube_music_player_source
+            - input_select.ytube_music_player_speakers
+            - input_select.ytube_music_player_playlist
+      - type: vertical-stack
+        cards:
+        - type: media-control
+          entity: media_player.ytube_music_player
+        - type: media-control
+          entity: media_player.jkw_cast2
+        - type: media-control
+          entity: media_player.keller
 
-### beamer cellar
-          - entity: binary_sensor.harmony_beamer
-            type: entity-button
-            name: Movieroom
-            icon: "mdi:movie-open-outline"
-            tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
-                 title: Movieroom
-                 deviceID: this
-                 card:
-                    type: vertical-stack
-                    cards:
-                      - type: horizontal-stack
-                        cards:
-                          - icon: 'mdi:power'
-                            name: All
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_off
-                              action: call-service
-                            entity: binary_sensor.always_on
-                            state_color: true
-                          - icon: 'mdi:fire'
-                            name: FireTV
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_start_fire
-                              action: call-service
-                            entity: binary_sensor.always_on
-                            state_color: true
-                          - icon: 'mdi:cast-connected'
-                            name: Laptop
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_start_pc
-                              action: call-service
-                            entity: binary_sensor.always_on
-                            state_color: true
-                          - icon: 'mdi:cast-connected'
-                            name: Chromecast
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_start_chrome
-                              action: call-service
-                            entity: binary_sensor.always_on
-                            state_color: true
-                      - type: horizontal-stack
-                        cards:
-                          - icon: 'mdi:menu'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_firehome
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                          - icon: 'mdi:arrow-up-bold'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_fireup
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                          - icon: 'mdi:volume-plus'
-                            name: Amp +2
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_tvvolumeup_4
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                          - icon: 'mdi:volume-plus'
-                            name: Amp +5
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_tvvolumeup_10
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                      - type: horizontal-stack
-                        cards:
-                          - icon: 'mdi:arrow-left-bold'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_fireleft
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                          - icon: 'mdi:check-circle'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_fireok
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                          - icon: 'mdi:arrow-right-bold'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_fireright
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                          - icon: 'mdi:arrow-left-circle'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_fireback
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                      - type: horizontal-stack
-                        cards:
-                          - icon: 'mdi:volume-mute'
-                            name: AMP
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_tvmute
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                          - icon: 'mdi:arrow-down-bold'
-                            name: Fire
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_firedown
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                          - icon: 'mdi:volume-minus'
-                            name: Amp -2
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_tvvolumedown_4
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                          - icon: 'mdi:volume-minus'
-                            name: Amp -5
-                            service: script.turn_on
-                            type: entity-button
-                            tap_action:
-                              service: script.beamer_tvvolumedown_10
-                              action: call-service
-                            entity: binary_sensor.harmony_beamer
-                            state_color: true
-                
-                      - type: horizontal-stack
-                        cards:
-                         - type: entity-button
-                           tap_action:
-                             action: toggle
-                           entity: switch.dev58_gpio_12
-                           icon: 'mdi:download-network'
-                           name: MediaPC
-                           state_color: true
-                         - type: entity-button
-                           tap_action:
-                             action: toggle
-                           state_color: true
-                           entity: light.dev10
-                      - type: horizontal-stack
-                        cards:
-                         - icon: 'mdi:power'
-                           name: Beamer
-                           service: script.turn_on
-                           type: entity-button
-                           tap_action:
-                             service: script.beamer_beamer_power
-                             action: call-service
-                           entity: binary_sensor.always_on
-                           state_color: true
-                         - type: entity-button
-                           entity: switch.dev60_gpio_12
-                           state_color: true
-                           icon: "mdi:air-filter"
-                           tap_action:
-                             action: toggle
-                           name: Vent
-                      - type: horizontal-stack
-                        cards:
-                         - type: entity-button
-                           entity: switch.dev60_gpio_13
-                           state_color: true
-                           icon: "mdi:door-open"
-                           tap_action:
-                             action: toggle
-                           name: Window
-                         - type: entity-button
-                           entity: switch.dev60_countdown
-                           state_color: true
-                           tap_action:
-                             action: toggle
-                           name: Auto 10min Vent
-                           icon: "mdi:timer-sand-empty"
-
-
-
-      - type: media-control
-        entity: media_player.ytube_music_player
-      - type: entities
-        show_header_toggle: false
-        entities:
-          - input_select.ytube_music_player_source
-          - input_select.ytube_music_player_speakers
-          - input_select.ytube_music_player_playlist
-
-
-
+      - type: markdown
+        card_size: 100
+        content: >-
+              {% if is_state('media_player.ytube_music_player','playing') %}{% for i
+              in range(0,state_attr("media_player.ytube_music_player",
+              "total_tracks")) %}
+               {% if i == state_attr("media_player.ytube_music_player",
+               "current_track") %}**{% endif %}\[{{i+1}}] {{
+               state_attr("media_player.ytube_music_player", "tracks")[i] }}{% if i
+               == state_attr("media_player.ytube_music_player", "current_track")
+               %}**{% endif %}
+               {%- endfor %}{% else %}Player off{% endif %}
+      - type: markdown
+        card_size: 100
+        content: >-
+          {% if is_state('media_player.ytube_music_player','playing') %}{{
+          state_attr("media_player.ytube_music_player", "lyrics") }}{% else
+          %}Player off{% endif %} 
       
-      - type: media-control
-        entity: media_player.jkw_cast2
-      - type: media-control
-        entity: media_player.keller
-#      - type: custom:group-card
-#        card:
-#           type: entities 
-#           title: GMusic
-#        group: group.google_music_media_player
-#        show_header_toggle: false
-
-      - type: glance
-        title: Movieroom
-        entities:
-          - entity: switch.dev25_gpio_4
-            state_color: true
-            tap_action:
-              action: toggle
-            name: Main
-          - entity: switch.dev60_gpio_12
-            state_color: true
-            icon: "mdi:air-filter"
-            tap_action:
-              action: toggle
-            name: Vent
-          - entity: switch.dev60_gpio_13
-            state_color: true
-            icon: "mdi:door-open"
-            tap_action:
-              action: toggle
-            name: Window
-          - entity: switch.dev60_countdown
-            state_color: true
-            tap_action:
-              action: toggle
-            name: AutoV
-            icon: "mdi:timer-sand-empty"
-          - entity: sensor.dev60_countdown_state
-            name: Timer
-            icon: "mdi:timer-sand-empty"
-
-
     icon: 'mdi:cast-connected'
     title: Media
 #######################################

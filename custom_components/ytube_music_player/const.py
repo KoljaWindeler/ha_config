@@ -20,6 +20,30 @@ from homeassistant.const import (
 	STATE_IDLE,
 )
 
+from homeassistant.components.media_player.const import (
+    MEDIA_CLASS_ALBUM,
+    MEDIA_CLASS_ARTIST,
+    MEDIA_CLASS_CHANNEL,
+    MEDIA_CLASS_DIRECTORY,
+    MEDIA_CLASS_EPISODE,
+    MEDIA_CLASS_MOVIE,
+    MEDIA_CLASS_MUSIC,
+    MEDIA_CLASS_PLAYLIST,
+    MEDIA_CLASS_SEASON,
+    MEDIA_CLASS_TRACK,
+    MEDIA_CLASS_TV_SHOW,
+    MEDIA_TYPE_ALBUM,
+    MEDIA_TYPE_ARTIST,
+    MEDIA_TYPE_CHANNEL,
+    MEDIA_TYPE_EPISODE,
+    MEDIA_TYPE_MOVIE,
+    MEDIA_TYPE_PLAYLIST,
+    MEDIA_TYPE_SEASON,
+    MEDIA_TYPE_TRACK,
+    MEDIA_TYPE_TVSHOW,
+)
+
+
 from homeassistant.components.media_player import (
 	MediaPlayerEntity,
 	PLATFORM_SCHEMA,
@@ -36,8 +60,13 @@ from homeassistant.components.media_player import (
 	DOMAIN as DOMAIN_MP,
 )
 
+from homeassistant.components.input_boolean import (
+	SERVICE_TURN_OFF as IB_OFF,
+	SERVICE_TURN_ON as IB_ON,
+	DOMAIN as DOMAIN_IB,
+)
+
 from homeassistant.components.media_player.const import (
-	MEDIA_TYPE_MUSIC,
 	SUPPORT_STOP,
 	SUPPORT_PLAY,
 	SUPPORT_PAUSE,
@@ -50,6 +79,11 @@ from homeassistant.components.media_player.const import (
 	SUPPORT_TURN_ON,
 	SUPPORT_TURN_OFF,
 	SUPPORT_SHUFFLE_SET,
+	SUPPORT_BROWSE_MEDIA,
+	SUPPORT_REPEAT_SET,
+	MEDIA_TYPE_MUSIC,
+	REPEAT_MODE_ALL,
+    REPEAT_MODE_OFF,
 )
 
 # Should be equal to the name of your component.
@@ -62,6 +96,7 @@ SUPPORT_YTUBEMUSIC_PLAYER = (
 	SUPPORT_TURN_ON
 	| SUPPORT_TURN_OFF
 	| SUPPORT_PLAY
+	| SUPPORT_PLAY_MEDIA
 	| SUPPORT_PAUSE
 	| SUPPORT_STOP
 	| SUPPORT_VOLUME_SET
@@ -70,7 +105,11 @@ SUPPORT_YTUBEMUSIC_PLAYER = (
 	| SUPPORT_PREVIOUS_TRACK
 	| SUPPORT_NEXT_TRACK
 	| SUPPORT_SHUFFLE_SET
+	| SUPPORT_REPEAT_SET
+	| SUPPORT_BROWSE_MEDIA
 )
+
+
 
 CONF_RECEIVERS = 'speakers'	 # list of speakers (media_players)
 CONF_HEADER_PATH = 'header_path'
@@ -98,6 +137,19 @@ DEFAULT_SHUFFLE = True
 ERROR_COOKIE = 'error_cookie'
 ERROR_AUTH_USER = 'error_auth_user'
 ERROR_GENERIC = 'error_generic'
+
+PLAYMODE_SHUFFLE = "Shuffle"
+PLAYMODE_RANDOM = "Random"
+PLAYMODE_SHUFFLE_RANDOM = "Shuffle Random"
+PLAYMODE_DIRECT = "Direct"
+
+LIB_PLAYLIST = 'library_playlists'
+LIB_ALBUM = 'library_albums'
+LIB_TRACKS = 'library_tracks'
+USER_TRACKS = 'user_tracks'
+HISTORY = 'history'
+BROWSER_LIMIT = 25
+
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend = vol.Schema({
 	DOMAIN: vol.Schema({

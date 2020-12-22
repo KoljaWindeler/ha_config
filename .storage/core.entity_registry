@@ -2092,7 +2092,7 @@
                 "device_class": "battery",
                 "unit_of_measurement": "%",
                 "original_name": "EML-L29 Akkustand",
-                "original_icon": "mdi:battery"
+                "original_icon": "mdi:battery-20"
             },
             {
                 "entity_id": "sensor.eml_l29_akkustatus",
@@ -2109,7 +2109,7 @@
                 "device_class": "battery",
                 "unit_of_measurement": null,
                 "original_name": "EML-L29 Akkustatus",
-                "original_icon": "mdi:battery-minus"
+                "original_icon": "mdi:battery-plus"
             },
             {
                 "entity_id": "binary_sensor.eml_l29_ladt_auf",
@@ -2126,7 +2126,7 @@
                 "device_class": "plug",
                 "unit_of_measurement": null,
                 "original_name": "EML-L29 l\u00e4dt auf",
-                "original_icon": "mdi:power-plug-off"
+                "original_icon": "mdi:power-plug"
             },
             {
                 "entity_id": "sensor.eml_l29_typ_des_ladegerates",
@@ -2143,7 +2143,7 @@
                 "device_class": null,
                 "unit_of_measurement": null,
                 "original_name": "EML-L29 Typ des Ladeger\u00e4tes",
-                "original_icon": "mdi:battery"
+                "original_icon": "mdi:power-plug"
             },
             {
                 "entity_id": "sensor.eml_l29_akkuzustand",
@@ -3198,6 +3198,91 @@
                 "unit_of_measurement": null,
                 "original_name": "Haus",
                 "original_icon": null
+            },
+            {
+                "entity_id": "zone.sehnde",
+                "config_entry_id": null,
+                "device_id": null,
+                "area_id": null,
+                "unique_id": "sehnde",
+                "platform": "zone",
+                "name": null,
+                "icon": null,
+                "disabled_by": null,
+                "capabilities": {},
+                "supported_features": 0,
+                "device_class": null,
+                "unit_of_measurement": null,
+                "original_name": "Sehnde",
+                "original_icon": "mdi:map-marker"
+            },
+            {
+                "entity_id": "sensor.0x00158d00045d7a47_battery",
+                "config_entry_id": "5bef76a8a35b4af194cc2c4569bfc2a3",
+                "device_id": "1cdc697e92486d01834d81a30a57fd43",
+                "area_id": null,
+                "unique_id": "0x00158d00045d7a47_battery_zi1",
+                "platform": "mqtt",
+                "name": null,
+                "icon": null,
+                "disabled_by": null,
+                "capabilities": {},
+                "supported_features": 0,
+                "device_class": "battery",
+                "unit_of_measurement": "%",
+                "original_name": "Hallway upstairs battery",
+                "original_icon": null
+            },
+            {
+                "entity_id": "binary_sensor.0x00158d00045d7a47_occupancy",
+                "config_entry_id": "5bef76a8a35b4af194cc2c4569bfc2a3",
+                "device_id": "1cdc697e92486d01834d81a30a57fd43",
+                "area_id": null,
+                "unique_id": "0x00158d00045d7a47_occupancy_zi1",
+                "platform": "mqtt",
+                "name": null,
+                "icon": null,
+                "disabled_by": null,
+                "capabilities": {},
+                "supported_features": 0,
+                "device_class": "motion",
+                "unit_of_measurement": null,
+                "original_name": "Hallway upstairs occupancy",
+                "original_icon": null
+            },
+            {
+                "entity_id": "sensor.0x00158d00045d7a47_illuminance",
+                "config_entry_id": "5bef76a8a35b4af194cc2c4569bfc2a3",
+                "device_id": "1cdc697e92486d01834d81a30a57fd43",
+                "area_id": null,
+                "unique_id": "0x00158d00045d7a47_illuminance_zi1",
+                "platform": "mqtt",
+                "name": null,
+                "icon": null,
+                "disabled_by": null,
+                "capabilities": {},
+                "supported_features": 0,
+                "device_class": "illuminance",
+                "unit_of_measurement": "lx",
+                "original_name": "Hallway upstairs illuminance",
+                "original_icon": null
+            },
+            {
+                "entity_id": "sensor.0x00158d00045d7a47_linkquality",
+                "config_entry_id": "5bef76a8a35b4af194cc2c4569bfc2a3",
+                "device_id": "1cdc697e92486d01834d81a30a57fd43",
+                "area_id": null,
+                "unique_id": "0x00158d00045d7a47_linkquality_zi1",
+                "platform": "mqtt",
+                "name": null,
+                "icon": null,
+                "disabled_by": null,
+                "capabilities": {},
+                "supported_features": 0,
+                "device_class": null,
+                "unit_of_measurement": "lqi",
+                "original_name": "Hallway upstairs linkquality",
+                "original_icon": "mdi:signal"
             }
         ]
     }

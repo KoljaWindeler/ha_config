@@ -121,7 +121,7 @@ error:
 mL_cellar:
   module: motionLight
   class: motionLight
-  delay: 5
+  delay: 3
   sensors:
    - binary_sensor.dev59_motion_13
    - binary_sensor.dev59_motion_16

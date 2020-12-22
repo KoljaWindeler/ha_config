@@ -32,8 +32,7 @@ winter_frost:
 #  inacitive-color: '#b8c8d9'
 #  active-color: '#272221'
 #  inactive-color: '#8294a8'
-#  active-color: '#3c6292'
-  active-color: '#2662a6'
+  active-color: '#3c6292'
   inactive-color: '#666666' 
 
   # Background
@@ -71,9 +70,9 @@ winter_frost:
   paper-slider-active-color: 'var(--accent-color)'
   paper-slider-container-color: 'var(--background-color-2)'
 
-  # Toggle
   paper-toggle-button-checked-bar-color: 'var(--accent-color)'
-  mdc-theme-primary: 'var(--accent-color)'
+  # Toggle
+  mdc-theme-primary: 'var(--ha-card-background)'
 
   # Switch
   switch-unchecked-color: '#70889e'
@@ -83,6 +82,8 @@ winter_frost:
 
   # Radio Button
   paper-radio-button-checked-color: 'var(--accent-color)'
+
+  paper-button-color: "#5294E2"
 
   # Popups
   more-info-header-background: 'var(--secondary-background-color)'
@@ -103,9 +104,10 @@ winter_frost:
   paper-input-container-focus-color: 'var(--accent-color)'
 
   # Mini Mediaplayer
-  mini-media-player-base-color: 'var(--inactive-color)'
-  mini-media-player-accent-color: 'var(--active-color)'
-  mini-media-player-icon-color: 'var(--inactive-color)'
+  mini-media-player-base-color: 'var(--text-color)'
+  mini-media-player-accent-color: 'var(--accent-color)'
+  mini-media-player-icon-color: 'var(--accent-color)'  
+  
 
   # Bar Card
   custom-bar-card-color: 'var(--accent-color)'
@@ -129,3 +131,6 @@ winter_frost:
 #  codemirror-property:
   codemirror-qualifier: '#042D40'
   codemirror-type: '#A82D57'
+
+  mdc-theme-primary: 'var(--berry-color)' 
+  mdc-theme-on-primary: 'var(--app-header-background-color)' 

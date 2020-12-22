@@ -20,6 +20,15 @@
                 "passive": false,
                 "radius": 2000.0,
                 "id": "fischi"
+            },
+            {
+                "name": "Sehnde",
+                "icon": "mdi:map-marker",
+                "latitude": 52.3068847,
+                "longitude": 9.9666222,
+                "passive": false,
+                "radius": 1000.0,
+                "id": "sehnde"
             }
         ]
     }

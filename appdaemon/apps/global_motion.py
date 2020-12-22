@@ -21,12 +21,13 @@ class GmotionWorld(hass.Hass):
 		self.sensor = []
 		self.sensor.append(["Floor upstairs","dev57_motion",1]) # lichterkette
 		self.sensor.append(["Floor upstairs Zigbee","0x00158d0002f0bc08_occupancy",1]) # zigbee an der badezimmer wand
+		self.sensor.append(["Stairs upstairs Zigbee","0x00158d00045d7a47_occupancy",1]) # zigbee an der treppe oben
 
 		self.sensor.append(["World map","dev15_motion",0]) # weltkarte
 		self.sensor.append(["Entrance","dev54_motion_1",0]) # foyer decke
-		self.sensor.append(["Entrance","dev9_gpio_4",0]) # schiebeschrank richtung foyer
+#		self.sensor.append(["Entrance","dev9_gpio_4",0]) # schiebeschrank richtung foyer ...NICHT ZUVERLAESSIG
 		self.sensor.append(["Entrance","dev9_gpio_5",0]) # schiebeschrank innen
-#		self.sensor.append(["Entrance","0x00158d00056d51ca_occupancy",0]) # schiebeschrank innen
+		self.sensor.append(["Entrance","0x00158d00056d51ca_occupancy",0]) # schiebeschrank innen
 		self.sensor.append(["Entrance","dev54_motion_1",0]) # foyer decke
 
 		self.sensor.append(["Cellar 1","dev59_motion_13",255]) # kellerdurchgang 1

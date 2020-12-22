@@ -5,9 +5,9 @@
         "binary_sensor": {
             "0a91ae9c52ac274d4c5a806bcc0248be57b14287982df7f6e4f9e047916fdf6e_is_charging": {
                 "unique_id": "is_charging",
-                "state": false,
+                "state": true,
                 "type": "binary_sensor",
-                "icon": "mdi:power-plug-off",
+                "icon": "mdi:power-plug",
                 "attributes": {},
                 "name": "l\u00e4dt auf",
                 "device_class": "plug",
@@ -19,9 +19,9 @@
         "sensor": {
             "0a91ae9c52ac274d4c5a806bcc0248be57b14287982df7f6e4f9e047916fdf6e_battery_level": {
                 "unique_id": "battery_level",
-                "state": 100,
+                "state": 20,
                 "type": "sensor",
-                "icon": "mdi:battery",
+                "icon": "mdi:battery-20",
                 "attributes": {},
                 "name": "Akkustand",
                 "device_class": "battery",
@@ -31,9 +31,9 @@
             },
             "0a91ae9c52ac274d4c5a806bcc0248be57b14287982df7f6e4f9e047916fdf6e_battery_state": {
                 "unique_id": "battery_state",
-                "state": "discharging",
+                "state": "charging",
                 "type": "sensor",
-                "icon": "mdi:battery-minus",
+                "icon": "mdi:battery-plus",
                 "attributes": {},
                 "name": "Akkustatus",
                 "device_class": "battery",
@@ -42,9 +42,9 @@
             },
             "0a91ae9c52ac274d4c5a806bcc0248be57b14287982df7f6e4f9e047916fdf6e_charger_type": {
                 "unique_id": "charger_type",
-                "state": "none",
+                "state": "ac",
                 "type": "sensor",
-                "icon": "mdi:battery",
+                "icon": "mdi:power-plug",
                 "attributes": {},
                 "name": "Typ des Ladeger\u00e4tes",
                 "webhook_id": "0a91ae9c52ac274d4c5a806bcc0248be57b14287982df7f6e4f9e047916fdf6e",

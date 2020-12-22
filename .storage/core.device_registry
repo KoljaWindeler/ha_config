@@ -369,7 +369,7 @@
                 "manufacturer": "hacs.xyz",
                 "model": "",
                 "name": "HACS",
-                "sw_version": "1.8.0",
+                "sw_version": "1.9.0",
                 "entry_type": "service",
                 "id": "f90291220ad44e1e8b2d32cb910ebf48",
                 "via_device_id": null,
@@ -478,7 +478,7 @@
                 ],
                 "manufacturer": null,
                 "model": null,
-                "name": null,
+                "name": "illuminum",
                 "sw_version": null,
                 "entry_type": null,
                 "id": "751585d087d1435dad529d57c3492b8c",
@@ -783,6 +783,28 @@
                 "sw_version": "Zigbee2MQTT 1.16.2",
                 "entry_type": null,
                 "id": "5f75a94b28200abe5e7816a6131dca12",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "5bef76a8a35b4af194cc2c4569bfc2a3"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "zigbee2mqtt_0x00158d00045d7a47"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "Aqara human body movement and illuminance sensor (RTCGQ11LM)",
+                "name": "Hallway upstairs",
+                "sw_version": "Zigbee2MQTT 1.16.2",
+                "entry_type": null,
+                "id": "1cdc697e92486d01834d81a30a57fd43",
                 "via_device_id": null,
                 "area_id": null,
                 "name_by_user": null,
