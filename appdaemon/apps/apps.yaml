@@ -135,7 +135,7 @@ mL_foyer:
   class: motionLight
   delay: 5
   sensors:
-   - binary_sensor.dev9_gpio_4
+#   - binary_sensor.dev9_gpio_4
    - binary_sensor.dev54_motion_1
   lights:
    - light.dev54_2

@@ -22,8 +22,8 @@
       someone_is_home:
         device_class: occupancy
         value_template: >-
-          {%- if is_state("device_tracker.illuminum_kolja", "home")
-              or is_state("device_tracker.illuminum_caro", "home")
+          {%- if is_state("person.kolja_2", "home")
+              or is_state("person.caro_2", "home")
           -%}
           true
           {%- else -%}
@@ -33,8 +33,8 @@
       everyone_is_home:
         device_class: occupancy
         value_template: >-
-          {%- if is_state("device_tracker.illuminum_kolja", "home")
-              and is_state("device_tracker.illuminum_caro", "home")
+          {%- if is_state("person.kolja_2", "home")
+              and is_state("person.caro_2", "home")
           -%}
           true
           {%- else -%}

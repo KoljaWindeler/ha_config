@@ -81,6 +81,7 @@ from homeassistant.components.media_player.const import (
 	SUPPORT_SHUFFLE_SET,
 	SUPPORT_BROWSE_MEDIA,
 	SUPPORT_REPEAT_SET,
+	SUPPORT_SELECT_SOURCE,
 	MEDIA_TYPE_MUSIC,
 	REPEAT_MODE_ALL,
     REPEAT_MODE_OFF,
@@ -89,8 +90,6 @@ from homeassistant.components.media_player.const import (
 # Should be equal to the name of your component.
 PLATFORM = "media_player"
 DOMAIN = "ytube_music_player"
-VERSION = "0.1.5"
-ISSUE_URL = "https://github.com/koljawindeler/ytube_music_player/issues"
 
 SUPPORT_YTUBEMUSIC_PLAYER = (
 	SUPPORT_TURN_ON
@@ -107,6 +106,7 @@ SUPPORT_YTUBEMUSIC_PLAYER = (
 	| SUPPORT_SHUFFLE_SET
 	| SUPPORT_REPEAT_SET
 	| SUPPORT_BROWSE_MEDIA
+	| SUPPORT_SELECT_SOURCE
 )
 
 
@@ -147,6 +147,7 @@ LIB_PLAYLIST = 'library_playlists'
 LIB_ALBUM = 'library_albums'
 LIB_TRACKS = 'library_tracks'
 USER_TRACKS = 'user_tracks'
+CHANNEL = 'channel'
 HISTORY = 'history'
 BROWSER_LIMIT = 25
 

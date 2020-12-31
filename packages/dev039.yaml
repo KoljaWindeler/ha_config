@@ -1,0 +1,27 @@
+
+homeassistant:
+  customize:
+    switch.dev39_gpio_5:
+      friendly_name: "Tetris"
+    light.dev39:
+      friendly_name: "Tetris"
+      icon: mdi:wall
+# -----------------------------------------------
+
+sensor:
+  - platform: mqtt_jkw
+    name: "dev39"
+    fname: "39 Tetris"
+
+# -----------------------------------------------
+
+light:
+  - platform: mqtt ### LED dimmer
+    name: "dev39"
+    state_topic: "dev39/r/gpio_5_state"
+    command_topic: "dev39/s/gpio_5_dimm"
+    retain: True
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic: false

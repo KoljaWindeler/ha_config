@@ -2092,7 +2092,7 @@
                 "device_class": "battery",
                 "unit_of_measurement": "%",
                 "original_name": "EML-L29 Akkustand",
-                "original_icon": "mdi:battery-20"
+                "original_icon": "mdi:battery-80"
             },
             {
                 "entity_id": "sensor.eml_l29_akkustatus",
@@ -2109,7 +2109,7 @@
                 "device_class": "battery",
                 "unit_of_measurement": null,
                 "original_name": "EML-L29 Akkustatus",
-                "original_icon": "mdi:battery-plus"
+                "original_icon": "mdi:battery-minus"
             },
             {
                 "entity_id": "binary_sensor.eml_l29_ladt_auf",
@@ -2126,7 +2126,7 @@
                 "device_class": "plug",
                 "unit_of_measurement": null,
                 "original_name": "EML-L29 l\u00e4dt auf",
-                "original_icon": "mdi:power-plug"
+                "original_icon": "mdi:power-plug-off"
             },
             {
                 "entity_id": "sensor.eml_l29_typ_des_ladegerates",
@@ -2143,7 +2143,7 @@
                 "device_class": null,
                 "unit_of_measurement": null,
                 "original_name": "EML-L29 Typ des Ladeger\u00e4tes",
-                "original_icon": "mdi:power-plug"
+                "original_icon": "mdi:battery"
             },
             {
                 "entity_id": "sensor.eml_l29_akkuzustand",

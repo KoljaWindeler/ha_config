@@ -151,7 +151,7 @@
                 "title": "Holidays 1",
                 "data": {
                     "name": "1.",
-                    "url": "https://goodtimerecording.com/de/ical/2020/Feiertage-Niedersachsen-2020.ics",
+                    "url": "https://goodtimerecording.com/de/ical/2021/Feiertage-Niedersachsen-2021.ics",
                     "timeformat": "%d.%m.",
                     "startswith": "",
                     "contains": "",
@@ -168,7 +168,7 @@
                 },
                 "options": {
                     "name": "1.",
-                    "url": "https://goodtimerecording.com/de/ical/2020/Feiertage-Niedersachsen-2020.ics",
+                    "url": "https://goodtimerecording.com/de/ical/2021/Feiertage-Niedersachsen-2021.ics",
                     "timeformat": "%d.%m.",
                     "startswith": "",
                     "contains": "",
@@ -197,7 +197,7 @@
                 "title": "Holiday 2",
                 "data": {
                     "name": "2.",
-                    "url": "https://goodtimerecording.com/de/ical/2020/Feiertage-Niedersachsen-2020.ics",
+                    "url": "https://goodtimerecording.com/de/ical/2021/Feiertage-Niedersachsen-2021.ics",
                     "timeformat": "%d.%m.",
                     "startswith": "",
                     "contains": "",
@@ -214,7 +214,7 @@
                 },
                 "options": {
                     "name": "2.",
-                    "url": "https://goodtimerecording.com/de/ical/2020/Feiertage-Niedersachsen-2020.ics",
+                    "url": "https://goodtimerecording.com/de/ical/2021/Feiertage-Niedersachsen-2021.ics",
                     "timeformat": "%d.%m.",
                     "startswith": "",
                     "contains": "",
@@ -243,7 +243,7 @@
                 "title": "Holiday 3",
                 "data": {
                     "name": "3.",
-                    "url": "https://goodtimerecording.com/de/ical/2020/Feiertage-Niedersachsen-2020.ics",
+                    "url": "https://goodtimerecording.com/de/ical/2021/Feiertage-Niedersachsen-2021.ics",
                     "timeformat": "%d.%m.",
                     "startswith": "",
                     "contains": "",
@@ -260,7 +260,7 @@
                 },
                 "options": {
                     "name": "3.",
-                    "url": "https://goodtimerecording.com/de/ical/2020/Feiertage-Niedersachsen-2020.ics",
+                    "url": "https://goodtimerecording.com/de/ical/2021/Feiertage-Niedersachsen-2021.ics",
                     "timeformat": "%d.%m.",
                     "startswith": "",
                     "contains": "",
@@ -605,6 +605,38 @@
                 "source": "user",
                 "connection_class": "cloud_poll",
                 "unique_id": "celle"
+            },
+            {
+                "entry_id": "f00ea0f936768123a5a17eb8c37673e5",
+                "version": 1,
+                "domain": "ytube_music_player",
+                "title": "yTubeMusic",
+                "data": {
+                    "header_path": "/config/.storage/ytube_header.json",
+                    "speakers": "",
+                    "shuffle": true,
+                    "shuffle_mode": 1,
+                    "select_source": "ytube_music_player_source",
+                    "select_playlist": "ytube_music_player_playlist",
+                    "select_playmode": "ytube_music_player_playmode",
+                    "select_speakers": "ytube_music_player_speakers"
+                },
+                "options": {
+                    "header_path": "/config/.storage/ytube_header.json",
+                    "speakers": "",
+                    "shuffle": true,
+                    "shuffle_mode": 1,
+                    "select_source": "ytube_music_player_source",
+                    "select_playlist": "ytube_music_player_playlist",
+                    "select_playmode": "ytube_music_player_playmode",
+                    "select_speakers": "ytube_music_player_speakers"
+                },
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "user",
+                "connection_class": "local_poll",
+                "unique_id": null
             }
         ]
     }

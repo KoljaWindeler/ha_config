@@ -371,12 +371,18 @@ views:
                    shortcuts:
                      columns: 4
                      buttons:
-                       - name: My Likes
+                       - name: Kolja
                          type: channel
                          id: Your Likes
                        - name: Caro
                          type: channel
                          id: Lala
+                       - name: Coffee
+                         type: playlist
+                         id: PL6H6TfFpYvpersEdHECeWkocaPueTqieF
+                       - name: Easy
+                         type: channel
+                         id: Easy
 #                 - type: picture-entity
 #                   entity: camera.cam_xia4
 #                   name: Carlo
@@ -803,6 +809,9 @@ views:
                       - entity: sensor.livingroom_temperature
                         name: Temp Z
                       - entity: light.dev1
+                        tap_action:
+                          action: toggle
+                      - entity: light.dev39
                         tap_action:
                           action: toggle
                       - entity: light.dev2
@@ -1910,6 +1919,10 @@ views:
           - type: custom:decluttering-card
             template: signal_template
             variables:
+              - dev: dev39
+          - type: custom:decluttering-card
+            template: signal_template
+            variables:
               - dev: dev40
           - type: custom:decluttering-card
             template: signal_template
@@ -2138,17 +2151,11 @@ views:
           - binary_sensor.someone_is_home
           - binary_sensor.everyone_is_home
 
-          - entity: device_tracker.illuminum_kolja
+          - entity: person.kolja_2
             type: "custom:multiple-entity-row"
-            secondary_info: 
-              entity: sensor.illuminum_kolja_t
-              name: false
             icon: mdi:security
-          - entity: device_tracker.illuminum_caro
+          - entity: person.caro_2
             type: "custom:multiple-entity-row"
-            secondary_info: 
-              entity: sensor.illuminum_caro_t
-              name: false
             icon: mdi:security
         title: Alarm Status
    

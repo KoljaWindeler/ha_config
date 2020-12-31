@@ -29,6 +29,16 @@
                                     "entity": "device_tracker.ping_kolja"
                                 }
                             ]
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.dev9_gpio_4"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0
                         }
                     ]
                 }
