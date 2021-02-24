@@ -11,6 +11,7 @@ custom_components/hacs/
 auth
 auth_provider.homeassistant
 .storage/hacs
+.storage/core.config_entries
 androidtv_adbkey
 
 # Byte-compiled / optimized / DLL files
