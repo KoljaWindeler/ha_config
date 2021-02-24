@@ -17,7 +17,8 @@
                 "name": "caro",
                 "device_trackers": [
                     "device_tracker.google_maps_114864588644392991844",
-                    "device_tracker.ping_caro"
+                    "device_tracker.ping_caro",
+                    "device_tracker.pixel_3a_xl"
                 ],
                 "user_id": "4d052cf1c12e4da5a9575117343910fc",
                 "picture": "/api/image/serve/479dfa78ee7e15e910319d0cbbcfc8c5/512x512",

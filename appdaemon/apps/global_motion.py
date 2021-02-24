@@ -100,7 +100,7 @@ class GmotionWorld(hass.Hass):
 		for i in range(0,len(self.sensor)):
 			#self.log("binary_sensor."+self.sensor[i]+": "+self.get_state("binary_sensor."+self.sensor[i]))
 			if(self.get_state("binary_sensor."+self.sensor[i][1]) == "on"):
-				self.log(self.sensor[i])
+#				self.log(self.sensor[i])
 				m = "on"
 				self.sensor_trigger_count[i] = self.sensor_trigger_count[i]+1
 				if(self.sensor[i][2]==255):

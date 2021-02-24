@@ -44,7 +44,7 @@ class bedroomWorld(hass.Hass):
     def bedlight_toggle(self, entity, attribute, old, new,kwargs):
         self.log("Toggle bed lights")
         now = datetime.datetime.now().time()
-        if(now >= datetime.time(21,00,00)):
+        if(now >= datetime.time(20,00,00) or now <= datetime.time(5,00,00)):
            self.toggle("light.dev19") # crip
         else:
            self.toggle("light.joiner_bedroom")

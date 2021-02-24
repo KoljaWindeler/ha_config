@@ -33,10 +33,9 @@ decluttering_templates:
       entity: sensor.[[dev]]_update
       type: custom:multiple-entity-row
       hold_action:
-        action: call-service
-        service: browser_mod.more_info
-        service_data:
-          deviceID: this
+        action: fire-dom-event
+        browser_mod:
+          command: more_info
           entity_id: sensor.[[dev]]_capability
           large: true 
       secondary_info:
@@ -126,6 +125,59 @@ views:
              - type: entity-button
                tap_action:
                  action: toggle
+               hold_action:
+                 action: fire-dom-event
+                 browser_mod:
+                   command: popup
+                   title: Carlo Media
+                   card:
+                     type: vertical-stack
+                     cards:
+                       - type: custom:mini-media-player
+                         entity: media_player.ytube_music_player_carlo
+                         hide:
+                           shuffle: false
+                       - type: horizontal-stack
+                         cards:
+                           - type: button
+                             tap_action:
+                               action: call-service
+                               service: media_player.volume_down
+                               service_data:
+                                 entity_id: media_player.ytube_music_player_carlo
+                             entity: binary_sensor.always_on
+                             icon: 'mdi:volume-minus'
+                             show_name: false
+                           - type: button
+                             tap_action:
+                               action: call-service
+                               service: media_player.volume_up
+                               service_data:
+                                 entity_id: media_player.ytube_music_player_carlo
+                             entity: binary_sensor.always_on
+                             show_name: false
+                             icon: 'mdi:volume-plus'
+                             show_state: false
+                             show_icon: true
+                       - type: horizontal-stack
+                         cards:
+                          - type: button
+                            tap_action:
+                              action: toggle
+                            entity: script.carlo_fire
+                            name: "Leo Lausemaus"
+                          - type: button
+                            tap_action:
+                              action: toggle
+                            entity: script.carlo_fire_pp
+                            name: "Paw Patrol"
+                       - type: markdown
+                         content: >-
+                             {% if is_state('media_player.ytube_music_player_carlo','playing') %}
+                               {% for i in range(0,state_attr("media_player.ytube_music_player_carlo","total_tracks")) %}
+                                 {% if i == state_attr("media_player.ytube_music_player_carlo","current_track") %}**{% endif %}\[{{i+1}}] {{state_attr("media_player.ytube_music_player_carlo", "tracks")[i] }}{% if i == state_attr("media_player.ytube_music_player_carlo", "current_track")%}**{% endif %}
+                               {%- endfor %}
+                             {% else %}Player off{% endif %}
                entity: light.dev33
                name: Carlo Tower
                icon: mdi:lighthouse
@@ -155,9 +207,9 @@ views:
              - type: entity-button
                tap_action:
                  action: toggle
-               entity: light.joiner_outdoor
+               entity: light.dev55
                state_color: true
-               name: Outdoor
+               name: Louisa L.
              - type: entity-button
                tap_action:
                  action: toggle
@@ -256,13 +308,22 @@ views:
                         action: call-service
                       entity: binary_sensor.harmony
                       
+                    - icon: 'mdi:volume-plus'
+                      name: ' '
+                      service: script.turn_on
+                      state_color: true
+                      type: entity-button
+                      tap_action:
+                        service: script.yamaha_vol_up
+                        action: call-service
+                      entity: binary_sensor.harmony
+
                     - type: "custom:button-card"
                       tap_action:
-                         action: call-service
-                         service: browser_mod.popup
-                         service_data:
+                         action: fire-dom-event
+                         browser_mod:
                             title: Volume Control
-                            deviceID: this
+                            command: popup
                             hide_header: true
                             card:
                                type: vertical-stack
@@ -318,7 +379,6 @@ views:
                                             service_data:
                                                entity_id: media_player.yamaha_receiver
                                                volume_level: 0.7
-
                       entity: binary_sensor.harmony
                       show_name: false
                       label: >
@@ -337,16 +397,40 @@ views:
                         card:
                          - height: 48px
 
-                    - icon: 'mdi:volume-plus'
-                      name: ' '
-                      service: script.turn_on
-                      state_color: true
-                      type: entity-button
+                    - type: 'custom:button-card'
+                      state:
+                        - operator: template
+                          value: >
+                            [[[ return states['media_player.ytube_music_player'].attributes.likeStatus == "LIKE" ]]]
+                          icon: 'mdi:thumb-up'
+                        - operator: template
+                          value: >
+                            [[[ return states['media_player.ytube_music_player'].attributes.likeStatus == "DISLIKE" ]]]
+                          icon: 'mdi:thumb-down'
+                        - operator: template
+                          value: >
+                            [[[ return states['media_player.ytube_music_player'].attributes.likeStatus == "INDIFFERENT" ]]]
+                          icon: 'mdi:thumb-up-outline'
+                        - operator: default
+                          icon: 'mdi:power-off'
+                          value: false
                       tap_action:
-                        service: script.yamaha_vol_up
                         action: call-service
-                      entity: binary_sensor.harmony
-
+                        service: ytube_music_player.call_method
+                        service_data:
+                          entity_id: media_player.ytube_music_player
+                          command: rate_track
+                          parameters: thumb_toggle_up_middle
+                      hold_action:
+                        action: call-service
+                        service: ytube_music_player.call_method
+                        service_data:
+                          entity_id: media_player.ytube_music_player
+                          command: rate_track
+                          parameters: thumb_down
+                      styles:
+                        card:
+                         - height: 48px
 
                     - icon: 'mdi:cast-connected'
                       name: ' '
@@ -363,26 +447,33 @@ views:
 #                   icon: mdi:google-play
                    artwork: cover
                    hide:
+                     shuffle: false
                      volume: true
                      source: true
                      power_state: false
-                     shuffle: false
                      icon_state: false
                    shortcuts:
-                     columns: 4
+                     columns: 6
                      buttons:
                        - name: Kolja
                          type: channel
-                         id: Your Likes
+                         id: RDTMAK5uy_kset8DisdE7LSD4TNjEVvrKRTmG7a56sY
                        - name: Caro
                          type: channel
-                         id: Lala
+                         id: PLZvjm51R8SGuWhMtfSu-A17Kp3jZfg6pg
                        - name: Coffee
                          type: playlist
                          id: PL6H6TfFpYvpersEdHECeWkocaPueTqieF
                        - name: Easy
                          type: channel
-                         id: Easy
+                         id: PLZvjm51R8SGsVtB9xC7VHXJCcRO8AmcbP
+                       - icon: mdi:google-home
+                         type: source
+                         id: kuche
+                       - icon: mdi:cast
+                         type: source
+                         id: jkw_cast2
+                         
 #                 - type: picture-entity
 #                   entity: camera.cam_xia4
 #                   name: Carlo
@@ -454,16 +545,15 @@ views:
              - type: custom:mini-graph-card
                name: Livingroom
                entities:
-                - sensor.dev1_temperature
+                - sensor.dev39_temperature
              - type: custom:mini-graph-card
                name: Outside
                entities:
                 - sensor.outside_temperature
                tap_action: 
-                 action: call-service
-                 service: browser_mod.more_info
-                 service_data:
-                   deviceID: this
+                 action: fire-dom-event
+                 browser_mod:                 
+                   command: more-info
                    entity_id: sensor.outside_temperature
                    large: true 
          - type: horizontal-stack
@@ -479,12 +569,11 @@ views:
                entities:
                 - sensor.long_term_power
                tap_action: 
-                 action: call-service
-                 service: browser_mod.popup
-                 service_data:
+                 action: fire-dom-event
+                 browser_mod:
+                    command: popup
                     title: Power Month
                     large: true
-                    deviceID: this
                     hide_header: true
                     card:
                       type: custom:long-term-card
@@ -518,12 +607,11 @@ views:
                  - value: 2000
                    color: "#c0392b"
                tap_action: 
-                 action: call-service
-                 service: browser_mod.popup
-                 service_data:
+                 action: fire-dom-event
+                 browser_mod:
+                    command: popup
                     title: House power
                     large: true
-                    deviceID: this
                     hide_header: true
                     card:
                       type: history-graph
@@ -543,9 +631,14 @@ views:
                  }
               consuming_color: "#bdbdbd"
               producing_color: "#bdbdbd"
-              solar_power_entity: sensor.kaco_194
+              solar_power_entity: sensor.pv_power_int
               grid_power_entity: sensor.dev37_em_cur_fast
               production_is_positive: false
+              solar_energy_entity: sensor.total_yield
+              grid_energy_consumption_entity: sensor.dev37_em_tot_grid
+              grid_energy_production_entity: sensor.dev37_em_tot_solar
+              energy_consumption_rate: 0.2534
+              energy_production_rate: 0.0816
 
     icon: 'mdi:home-assistant'
 
@@ -564,11 +657,10 @@ views:
             name: Hallway
             icon: "mdi:arrow-decision"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event
+              browser_mod:
+                 command: popup
                  title: Hallway
-                 deviceID: this
                  card:
                     type: glance
                     entities:
@@ -591,12 +683,11 @@ views:
             name: Bathroom
             icon: "mdi:toilet"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event
+              browser_mod:
+                 command: popup
                  title: Bathroom
                  large: true
-                 deviceID: this
                  card:                       
                     type: glance
                     entities:
@@ -609,11 +700,10 @@ views:
             name: Bedroom
             icon: "mdi:bed-king-outline"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Bedroom
-                 deviceID: this
+                 command: popup
                  card:
                     type: vertical-stack
                     cards:
@@ -666,11 +756,10 @@ views:
             name: Carlo
             icon: "mdi:human-male"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event
+              browser_mod:
                  title: Carlo
-                 deviceID: this
+                 command: popup
                  card:                       
                     type: glance
                     entities:
@@ -704,11 +793,10 @@ views:
             name: Louisa
             icon: "mdi:human-female"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event
+              browser_mod:
                  title: Louisa
-                 deviceID: this
+                 command: popup
                  card:                       
                     type: glance
                     entities:
@@ -746,11 +834,10 @@ views:
             icon: "mdi:arrow-decision"
             name: Foyer
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Foyer
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities:
@@ -779,11 +866,10 @@ views:
             icon: "mdi:toilet"
             name: Bathroom
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Bathroom
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities: 
@@ -796,11 +882,10 @@ views:
             icon: "mdi:sofa"
             name: Livingroom
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Livingroom
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities: 
@@ -862,11 +947,10 @@ views:
             name: Office Caro
             icon: "mdi:lead-pencil"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Caro
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities: 
@@ -886,11 +970,11 @@ views:
             name: Hallway
             icon: "mdi:arrow-decision"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event
+              
+              browser_mod:
                  title: Hallway
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities:
@@ -913,11 +997,10 @@ views:
             name: Bathroom
             icon: "mdi:toilet"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Bath
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities:
@@ -930,11 +1013,10 @@ views:
             name: Supply
             icon: "mdi:tools"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Supply
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities:
@@ -948,11 +1030,10 @@ views:
             name: Movieroom
             icon: "mdi:movie-open-outline"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Movieroom
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities:
@@ -995,11 +1076,10 @@ views:
             name: Office Kolja
             icon: "mdi:lead-pencil"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Backdoor
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities:
@@ -1012,11 +1092,10 @@ views:
             name: Workshop
             icon: "mdi:toolbox"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Workshop
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities:
@@ -1050,12 +1129,11 @@ views:
             name: Heater
             icon: "mdi:pipe"
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Heater
                  large: true
-                 deviceID: this
+                 command: popup
                  card:          
                     type: entities 
                     show_header_toggle: false
@@ -1124,11 +1202,10 @@ views:
             icon: "mdi:home"
             name: House
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: House
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     entities:
@@ -1160,11 +1237,10 @@ views:
             icon: "mdi:garage-variant"
             name: Garage
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Garage
-                 deviceID: this
+                 command: popup
                  card:
                     type: glance
                     state_color: true
@@ -1180,11 +1256,10 @@ views:
             icon: "mdi:flower"
             name: Garden
             tap_action:
-              action: call-service
-              service: browser_mod.popup
-              service_data:
+              action: fire-dom-event              
+              browser_mod:
                  title: Garden
-                 deviceID: this
+                 command: popup
                  card:
                     type: entities
                     show_header_toggle: false
@@ -1271,7 +1346,7 @@ views:
                name: Humidity
          - type: divider
          - type: custom:multiple-entity-row
-           entity: sensor.dev1_temperature
+           entity: sensor.dev39_temperature
            name: Livingroom
            entities:
              - entity: sensor.livingroom_temperature
@@ -1297,8 +1372,12 @@ views:
              - entity: sensor.0x00158d00041d6d95_humidity
                name: Humidity
          - type: divider
-         - entity: sensor.dev59_temperature
+         - type: custom:multiple-entity-row
+           entity: sensor.dev59_temperature
            name: "Cellar"
+           entities:
+             - entity: sensor.dev4_humidity
+               name: Humidity
          - type: custom:multiple-entity-row
            entity: sensor.beamer_temperature
            name: "Beamer Z."
@@ -1434,10 +1513,10 @@ views:
            name: Warm water
            type: sensor 
 #           tap_action: 
-#             action: call-service
+#             action: fire-dom-event
 #             service: browser_mod.more_info
-#             service_data:
-#               deviceID: this
+#             browser_mod:
+#               command: popup
 #               entity_id: sensor.dev29_temperature
 #               large: true 
 
@@ -1556,7 +1635,7 @@ views:
            cards:
              - type: entity-filter 
                entities:
-                  - entity: sensor.kaco_194
+                  - entity: sensor.pv_power_int
                     name: Solar
                state_filter:
                   - operator: ">"
@@ -1651,33 +1730,58 @@ views:
            entities:
               - entity: sensor.energy_calc
               - entity: sensor.energy_calc_home_from_solar
-              - entity: sensor.dev37_em_tot
-                name: Grid kWh
-              - entity: sensor.kaco_194_kwh
+                icon: mdi:percent-outline
+              - entity: sensor.pv_daily_int
+                name: Today Solar kWh
+                icon: mdi:solar-power
          - type: entities
            entities:
               - entity: sensor.dev37_em_cur
                 name: Grid slow
-              - entity: sensor.kaco_194
+                icon: mdi:transmission-tower
+              - entity: sensor.pv_power_int
                 name: Solar
+                icon: mdi:weather-sunny
               - entity: sensor.house_power
                 name: House
+                icon: mdi:home-outline
          - type: entities
            entities:
               - entity: sensor.house_power_rem
                 name: House remaining
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch0_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch1_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch2_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch3_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch4_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch5_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch6_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch7_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch8_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch9_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch10_kw
+                icon: mdi:speedometer
               - entity: sensor.dev16_ads_ch11_kw
+                icon: mdi:speedometer
+         - type: entities
+           entities:
+              - entity: sensor.dev37_em_tot_grid
+                name: Total fed out
+                icon: mdi:transmission-tower
+              - entity: sensor.dev37_em_tot_solar
+                name: Total fed in
+                icon: mdi:solar-power
      ########## details ########  
 
      ########## graph ########  
@@ -1692,21 +1796,21 @@ views:
             - sensor.dev37_em_cur
             - sensor.zero
             - sensor.energy_calc_home
-            - sensor.kaco_194
+            - sensor.pv_power_int
            tap_action: 
-             action: call-service
-             service: browser_mod.popup
-             service_data:
+             action: fire-dom-event
+             
+             browser_mod:
                 title: House power
                 large: true
-                deviceID: this
+                command: popup
                 hide_header: true
                 card:
                   type: history-graph
                   entities:
                      - sensor.dev37_em_cur
                      - sensor.energy_calc_home
-                     - sensor.kaco_194
+                     - sensor.pv_power_int
 
          - type: custom:long-term-card
            name: 'Grid Year'
@@ -2005,11 +2109,11 @@ views:
         show_name: False
         show_state: False
         tap_action: 
-          action: call-service
-          service: browser_mod.popup
-          service_data:
+          action: fire-dom-event
+          
+          browser_mod:
             title: Door
-            deviceID: this
+            command: popup
             hide_header: true
             large: true 
             card:
@@ -2030,11 +2134,11 @@ views:
         show_name: False
         show_state: False
         tap_action: 
-          action: call-service
-          service: browser_mod.popup
-          service_data:
+          action: fire-dom-event
+          
+          browser_mod:
             title: Garden
-            deviceID: this
+            command: popup
             hide_header: true
             large: true 
             card:
@@ -2056,11 +2160,11 @@ views:
         show_name: False
         show_state: False
         tap_action: 
-          action: call-service
-          service: browser_mod.popup
-          service_data:
+          action: fire-dom-event
+          
+          browser_mod:
             title: Cellar
-            deviceID: this
+            command: popup
             hide_header: true
             large: true 
             card:
@@ -2081,11 +2185,11 @@ views:
         show_name: False
         show_state: False
         tap_action: 
-          action: call-service
-          service: browser_mod.popup
-          service_data:
+          action: fire-dom-event
+          
+          browser_mod:
             title: Garden
-            deviceID: this
+            command: popup
             hide_header: true
             large: true 
             card:
@@ -2098,6 +2202,32 @@ views:
               tap_action: 
                 action: call-service
                 service: browser_mod.close_popup
+
+      - type: picture-entity
+        entity: camera.cam_xia2
+        camera_view: live
+        name: Garden
+        show_name: False
+        show_state: False
+        tap_action: 
+          action: fire-dom-event
+          
+          browser_mod:
+            title: Louisa
+            command: popup
+            hide_header: true
+            large: true 
+            card:
+              type: picture-entity
+              camera_view: live
+              name: Louisa
+              show_name: False
+              show_state: False
+              entity: camera.cam_xia2
+              tap_action: 
+                action: call-service
+                service: browser_mod.close_popup
+
 
 
       - type: conditional
@@ -2218,18 +2348,20 @@ views:
           - binary_sensor.dev17_motion
           - entity: binary_sensor.dev54_motion_2
             name: "Cellar stair motion"
+          - entity: binary_sensor.0x00158d0005a9e90e_occupancy
+            name: Cellar foyer Z
           - binary_sensor.dev59_motion_13
           - binary_sensor.dev59_motion_16
           - binary_sensor.0x00158d0003f85cf0_occupancy
           - type: divider
           - binary_sensor.dev8_motion
 #          - binary_sensor.dev10_motion
-      - type: map
-        entities:
-          - entity: device_tracker.illuminum_kolja
-          - entity: device_tracker.illuminum_caro
-          - zone.home
-        aspect_ratio: 90%
+#      - type: map
+#        entities:
+#          - entity: device_tracker.illuminum_kolja
+#          - entity: device_tracker.illuminum_caro
+#          - zone.home
+#        aspect_ratio: 90%
 
     icon: mdi:security
     title: T
@@ -2251,11 +2383,11 @@ views:
               name: TV
               icon: "mdi:television-play"
               tap_action:
-                action: call-service
-                service: browser_mod.popup
-                service_data:
+                action: fire-dom-event
+                
+                browser_mod:
                    title: Livingroom TV
-                   deviceID: this
+                   command: popup
                    card:
                       type: vertical-stack
                       cards:
@@ -2431,11 +2563,11 @@ views:
               name: Movieroom
               icon: "mdi:movie-open-outline"
               tap_action:
-                action: call-service
-                service: browser_mod.popup
-                service_data:
+                action: fire-dom-event
+                
+                browser_mod:
                    title: Movieroom
-                   deviceID: this
+                   command: popup
                    card:
                       type: vertical-stack
                       cards:
@@ -2643,22 +2775,53 @@ views:
         - type: entities
           show_header_toggle: false
           entities:
-            - input_select.ytube_music_player_source
-            - input_select.ytube_music_player_speakers
-            - input_select.ytube_music_player_playlist
+            - input_select.ytube1_music_player_source
+            - input_select.ytube1_music_player_speakers
+            - input_select.ytube1_music_player_playlist
       - type: vertical-stack
         cards:
-        - type: media-control
-          entity: media_player.ytube_music_player
-        - type: media-control
-          entity: media_player.jkw_cast2
-        - type: media-control
-          entity: media_player.keller
+        - type: entities
+          show_header_toggle: false
+          entities:
+          - type: custom:mini-media-player
+            entity: media_player.ytube_music_player
+            artwork: cover
+            group: true
+          - type: custom:mini-media-player
+            entity: media_player.jkw_cast2
+            artwork: cover
+            group: true
+        - type: entities
+          show_header_toggle: false
+          entities:
+          - type: custom:mini-media-player
+            entity: media_player.ytube_music_player_keller
+            artwork: cover
+            hide:
+              source: true
+              power_state: false
+              shuffle: false
+            group: true
+          - type: custom:mini-media-player
+            entity: media_player.keller_2
+            artwork: cover
+            group: true
+        - type: entities
+          show_header_toggle: false
+          entities:
+          - type: custom:mini-media-player
+            entity: media_player.ytube_music_player_carlo
+            artwork: cover
+            group: true
+          - type: custom:mini-media-player
+            entity: media_player.carlo
+            artwork: cover
+            group: true
 
       - type: markdown
         card_size: 100
         content: >-
-              {% if is_state('media_player.ytube_music_player','playing') %}{% for i
+              {% if is_state('media_player.ytube_music_player','playing') %}**Main player**{% for i
               in range(0,state_attr("media_player.ytube_music_player",
               "total_tracks")) %}
                {% if i == state_attr("media_player.ytube_music_player",
@@ -2670,8 +2833,9 @@ views:
       - type: markdown
         card_size: 100
         content: >-
-          {% if is_state('media_player.ytube_music_player','playing') %}{{
-          state_attr("media_player.ytube_music_player", "lyrics") }}{% else
+          {% if is_state('media_player.ytube_music_player','playing') %}**Main player**
+
+          {{state_attr("media_player.ytube_music_player", "lyrics") }}{% else
           %}Player off{% endif %} 
       
     icon: 'mdi:cast-connected'

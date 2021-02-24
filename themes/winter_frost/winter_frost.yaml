@@ -26,6 +26,7 @@ winter_frost:
 #  accent-color: '#a4b5c7'
 #  accent-color: '#8496a9' 
   accent-color: '#374251' 
+  light-accent-color: '#c4c4c4' #'#a2bde8'
 #  accent-color: '#5f6d7d'
   accent-medium-color: '#b8c8d9'
   berry-color: '#545466'
@@ -71,8 +72,7 @@ winter_frost:
   paper-slider-container-color: 'var(--background-color-2)'
 
   paper-toggle-button-checked-bar-color: 'var(--accent-color)'
-  # Toggle
-  mdc-theme-primary: 'var(--ha-card-background)'
+  
 
   # Switch
   switch-unchecked-color: '#70889e'
@@ -105,8 +105,11 @@ winter_frost:
 
   # Mini Mediaplayer
   mini-media-player-base-color: 'var(--text-color)'
-  mini-media-player-accent-color: 'var(--accent-color)'
-  mini-media-player-icon-color: 'var(--accent-color)'  
+  mini-media-player-accent-color:  'var(--accent-color)'
+  mini-media-player-icon-color: 'white'  
+  mini-media-player-overlay-accent-color: '#fcca04' #'var(--light-accent-color)'
+  mini-media-player-overlay-icon-color: 'white'  
+  mini-media-player-overlay-base-color: 'white'  
   
 
   # Bar Card
@@ -134,3 +137,4 @@ winter_frost:
 
   mdc-theme-primary: 'var(--berry-color)' 
   mdc-theme-on-primary: 'var(--app-header-background-color)' 
+  mdc-theme-on-secondary: 'var(--app-header-background-color)' 

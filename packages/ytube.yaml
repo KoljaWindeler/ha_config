@@ -1,26 +1,35 @@
 media_player:
-  - platform: ytube_music_player
+#  - platform: ytube_music_player
     # adapt the file location if needed. this has to match the file path that was
     # speicified in the config flow
-    speakers: 
-      - jkw_cast2
+#    speakers: 
+#     - jkw_cast2
+#    select_source: ytube1_music_player_source
+#    select_playlist: ytube1_music_player_playlist
+#    select_speakers: ytube1_music_player_speakers
+     
+#  - platform: ytube_music_player
+    # adapt the file location if needed. this has to match the file path that was
+    # speicified in the config flow
+#    speakers: 
+#      - carlo
 
 
 input_select:
-  ytube_music_player_source:
+  ytube1_music_player_source:
     name: Source
     icon: mdi:music-box-multiple
     options: # don't change
     - "Playlist Radio"
     - "Playlist"
 
-  ytube_music_player_speakers:
+  ytube1_music_player_speakers:
     name: Speakers
     icon: mdi:speaker
     options: # don't change
     - "loading"
 
-  ytube_music_player_playlist:
+  ytube1_music_player_playlist:
     name: Playlist
     icon: mdi:playlist-music
     options: # don't change

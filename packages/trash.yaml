@@ -2,7 +2,7 @@
 sensor:
   - platform: ics
     name: Packaging
-    url: https://www.rmg-gmbh.de/download/Hamb%C3%BChren.ics
+    url: http://192.168.2.84:8123/local/plastics2021.ics
     show_blank: "blank"
     id: 1
     icon: "mdi:recycle"

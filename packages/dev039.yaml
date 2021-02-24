@@ -6,6 +6,11 @@ homeassistant:
     light.dev39:
       friendly_name: "Tetris"
       icon: mdi:wall
+    sensor.dev39_temperature:
+      friendly_name: "Tetris temperature"
+      unit_of_measurement: "°C"
+      icon: "mdi:thermometer"
+      device_class: "temperature"
 # -----------------------------------------------
 
 sensor:

@@ -178,4 +178,21 @@ views:
           exclude:
             - state: "unavailable"
      ########## battery ########      
+      - type: entities
+        entities:
+         - sensor.szn_uptime
+         - sensor.szn_vehicle_state
+         - sensor.szn_iec61851_state
+         - sensor.szn_contactor_state
+         - sensor.szn_allowed_charging_current
+         - sensor.szn_time_since_state_change
+      - type: entities
+        entities:
+         - sensor.szw_uptime
+         - sensor.szw_vehicle_state
+         - sensor.szw_iec61851_state
+         - sensor.szw_contactor_state
+         - sensor.szw_allowed_charging_current
+         - sensor.szw_time_since_state_change
+
 #######################################

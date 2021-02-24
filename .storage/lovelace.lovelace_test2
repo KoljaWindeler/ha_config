@@ -6,41 +6,7 @@
             "views": [
                 {
                     "badges": [],
-                    "cards": [
-                        {
-                            "type": "glance",
-                            "entities": [
-                                {
-                                    "entity": "device_tracker.google_maps_114864588644392991844"
-                                },
-                                {
-                                    "entity": "device_tracker.ping_caro"
-                                }
-                            ],
-                            "show_name": true
-                        },
-                        {
-                            "type": "glance",
-                            "entities": [
-                                {
-                                    "entity": "device_tracker.google_maps_kkoolljjaa_gmail_com"
-                                },
-                                {
-                                    "entity": "device_tracker.ping_kolja"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "history-graph",
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.dev9_gpio_4"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "refresh_interval": 0
-                        }
-                    ]
+                    "cards": []
                 }
             ]
         }

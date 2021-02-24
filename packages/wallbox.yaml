@@ -1,0 +1,62 @@
+sensor:
+  - platform: mqtt
+    name: "Szn_uptime"
+    state_topic: "warp/SzN/evse/state"
+    value_template: "{{ value_json.uptime }}"
+
+  - platform: mqtt
+    name: "Szn_vehicle_state"
+    state_topic: "warp/SzN/evse/state"
+    value_template: "{{ value_json.vehicle_state }}"
+
+  - platform: mqtt
+    name: "Szn_iec61851_state"
+    state_topic: "warp/SzN/evse/state"
+    value_template: "{{ value_json.iec61851_state }}"
+
+  - platform: mqtt
+    name: "Szn_contactor_state"
+    state_topic: "warp/SzN/evse/state"
+    value_template: "{{ value_json.contactor_state }}"
+
+  - platform: mqtt
+    name: "Szn_allowed_charging_current"
+    state_topic: "warp/SzN/evse/state"
+    value_template: "{{ value_json.allowed_charging_current }}"
+
+  - platform: mqtt
+    name: "Szn_time_since_state_change"
+    state_topic: "warp/SzN/evse/state"
+    value_template: "{{ value_json.time_since_state_change }}"
+
+
+
+  - platform: mqtt
+    name: "SzW_uptime"
+    state_topic: "warp/SzW/evse/state"
+    value_template: "{{ value_json.uptime }}"
+
+  - platform: mqtt
+    name: "SzW_vehicle_state"
+    state_topic: "warp/SzW/evse/state"
+    value_template: "{{ value_json.vehicle_state }}"
+
+  - platform: mqtt
+    name: "SzW_iec61851_state"
+    state_topic: "warp/SzW/evse/state"
+    value_template: "{{ value_json.iec61851_state }}"
+
+  - platform: mqtt
+    name: "SzW_contactor_state"
+    state_topic: "warp/SzW/evse/state"
+    value_template: "{{ value_json.contactor_state }}"
+
+  - platform: mqtt
+    name: "SzW_allowed_charging_current"
+    state_topic: "warp/SzW/evse/state"
+    value_template: "{{ value_json.allowed_charging_current }}"
+
+  - platform: mqtt
+    name: "SzW_time_since_state_change"
+    state_topic: "warp/SzW/evse/state"
+    value_template: "{{ value_json.time_since_state_change }}"

@@ -299,32 +299,6 @@
                 "unique_id": "cast"
             },
             {
-                "entry_id": "3589758dfc8c4988ab3f8776205b7211",
-                "version": 1,
-                "domain": "kaco",
-                "title": "Solar",
-                "data": {
-                    "name": "Solar",
-                    "url": "192.168.2.194",
-                    "icon": "mdi:weather-sunny",
-                    "interval": 60,
-                    "kwh_interval": 180
-                },
-                "options": {
-                    "name": "Solar",
-                    "url": "192.168.2.194",
-                    "icon": "mdi:weather-sunny",
-                    "interval": 60,
-                    "kwh_interval": 180
-                },
-                "system_options": {
-                    "disable_new_entities": false
-                },
-                "source": "user",
-                "connection_class": "local_poll",
-                "unique_id": null
-            },
-            {
                 "entry_id": "d670cc61f98c11eab7a7b50016a36398",
                 "version": 1,
                 "domain": "mobile_app",
@@ -612,30 +586,224 @@
                 "domain": "ytube_music_player",
                 "title": "yTubeMusic",
                 "data": {
-                    "header_path": "/config/.storage/ytube_header.json",
-                    "speakers": "",
+                    "name": "ytube_music_player",
+                    "speakers": "jkw_cast2",
                     "shuffle": true,
                     "shuffle_mode": 1,
-                    "select_source": "ytube_music_player_source",
-                    "select_playlist": "ytube_music_player_playlist",
+                    "select_source": "input_select.ytube1_music_player_source",
+                    "select_playlist": "input_select.ytube1_music_player_playlist",
                     "select_playmode": "ytube_music_player_playmode",
-                    "select_speakers": "ytube_music_player_speakers"
+                    "select_speakers": "input_select.ytube1_music_player_speakers",
+                    "select_playcontinuous": "input_boolean.ytube1_music_player_playcontinuous",
+                    "proxy_path": "",
+                    "proxy_url": "",
+                    "brand_id": "",
+                    "cookie": "accept: */* accept-encoding: gzip, deflate, br accept-language: en-US,en;q=0.9 authorization: SAPISIDHASH 1611308896_49b128cf3f003e7e1eeb7d475db5d701ee50b307 content-length: 908 content-type: application/json cookie: YSC=2oLZQG3e_hk; VISITOR_INFO1_LIVE=3KiSMzLJUmM; PREF=volume=100; SID=6Aeu_xK4_rLf21Zp_6wT-tXXlrI-pindqIJ7jKXfB81leuGhZwjVhFNX-k3Ki29DikQQfQ.; __Secure-3PSID=6Aeu_xK4_rLf21Zp_6wT-tXXlrI-pindqIJ7jKXfB81leuGh-fgyvD8Bn9dIZVw2bFwpuQ.; HSID=AUPWK1VOgk6MW27Cr; SSID=Awz66A23xBfNAlBtD; APISID=jIdvO3rJKvb7QWv2/A4YoqWEtmA23SQQXd; SAPISID=NPFEljyYEY5f9ek_/A9CAnlbKO8hppRVdA; __Secure-3PAPISID=NPFEljyYEY5f9ek_/A9CAnlbKO8hppRVdA; CONSENT=YES+DE.en+20160410-02-0; LOGIN_INFO=AFmmF2swRgIhALdkVbBaEYBZ6Q95E5e2REIF3aD8cV6B3jIsDIgi19cBAiEArFCUy3yG05nV_rzcj0DNgYjvaic8vcHAe3abSBGCYNI:QUQ3MjNmeEFNVHQtd0J3TDk4QlJITzE5MnJQbHFSVjJPSlh5VUZDZC1KN19za1dMdmxibTRxSG9NcFJrdWV4Q1ZfdXVPd0pyX1VqTEdHbU1qNEs5d1dRY1lQRXNRTlJhenBUa0ZPbUdZWHZmOWFlZWdicWtWbXpxZEg1NkRWOE1Ea21FX3pSVjQ3LThKQTMxRHJBNGFVb3ppem9aZWRWdjVfM3NiMjdqekNudmUxNHJTYzRFZk84; YTC=exp|1611309492; SIDCC=AJi4QfFNKvPdcP6E1GDmba-kjdG_L0nsatBcwrsTHnt_hqBKd3Q4g1pwKBa2onLB2Lth_7La; __Secure-3PSIDCC=AJi4QfEzLP3PMbXwMDrHRRQfqd-uyrEso7hJUe8cxPz4Nvr3PVDTamUegN4ZlgDdqrlU9Oud origin: https://music.youtube.com referer: https://music.youtube.com/ sec-fetch-dest: empty sec-fetch-mode: cors sec-fetch-site: same-origin user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Mobile Safari/537.36 x-goog-authuser: 0 x-goog-visitor-id: CgszS2lTTXpMSlVtTSjcvqqABg%3D%3D",
+                    "header_path": "/config/.storage/ytube_header.json"
                 },
                 "options": {
-                    "header_path": "/config/.storage/ytube_header.json",
-                    "speakers": "",
+                    "name": "ytube_music_player",
+                    "speakers": "jkw_cast2",
                     "shuffle": true,
                     "shuffle_mode": 1,
-                    "select_source": "ytube_music_player_source",
-                    "select_playlist": "ytube_music_player_playlist",
+                    "select_source": "input_select.ytube1_music_player_source",
+                    "select_playlist": "input_select.ytube1_music_player_playlist",
                     "select_playmode": "ytube_music_player_playmode",
-                    "select_speakers": "ytube_music_player_speakers"
+                    "select_speakers": "input_select.ytube1_music_player_speakers",
+                    "select_playcontinuous": "input_boolean.ytube1_music_player_playcontinuous",
+                    "proxy_path": "",
+                    "proxy_url": "",
+                    "brand_id": "",
+                    "cookie": "accept: */* accept-encoding: gzip, deflate, br accept-language: en-US,en;q=0.9 authorization: SAPISIDHASH 1611308896_49b128cf3f003e7e1eeb7d475db5d701ee50b307 content-length: 908 content-type: application/json cookie: YSC=2oLZQG3e_hk; VISITOR_INFO1_LIVE=3KiSMzLJUmM; PREF=volume=100; SID=6Aeu_xK4_rLf21Zp_6wT-tXXlrI-pindqIJ7jKXfB81leuGhZwjVhFNX-k3Ki29DikQQfQ.; __Secure-3PSID=6Aeu_xK4_rLf21Zp_6wT-tXXlrI-pindqIJ7jKXfB81leuGh-fgyvD8Bn9dIZVw2bFwpuQ.; HSID=AUPWK1VOgk6MW27Cr; SSID=Awz66A23xBfNAlBtD; APISID=jIdvO3rJKvb7QWv2/A4YoqWEtmA23SQQXd; SAPISID=NPFEljyYEY5f9ek_/A9CAnlbKO8hppRVdA; __Secure-3PAPISID=NPFEljyYEY5f9ek_/A9CAnlbKO8hppRVdA; CONSENT=YES+DE.en+20160410-02-0; LOGIN_INFO=AFmmF2swRgIhALdkVbBaEYBZ6Q95E5e2REIF3aD8cV6B3jIsDIgi19cBAiEArFCUy3yG05nV_rzcj0DNgYjvaic8vcHAe3abSBGCYNI:QUQ3MjNmeEFNVHQtd0J3TDk4QlJITzE5MnJQbHFSVjJPSlh5VUZDZC1KN19za1dMdmxibTRxSG9NcFJrdWV4Q1ZfdXVPd0pyX1VqTEdHbU1qNEs5d1dRY1lQRXNRTlJhenBUa0ZPbUdZWHZmOWFlZWdicWtWbXpxZEg1NkRWOE1Ea21FX3pSVjQ3LThKQTMxRHJBNGFVb3ppem9aZWRWdjVfM3NiMjdqekNudmUxNHJTYzRFZk84; YTC=exp|1611309492; SIDCC=AJi4QfFNKvPdcP6E1GDmba-kjdG_L0nsatBcwrsTHnt_hqBKd3Q4g1pwKBa2onLB2Lth_7La; __Secure-3PSIDCC=AJi4QfEzLP3PMbXwMDrHRRQfqd-uyrEso7hJUe8cxPz4Nvr3PVDTamUegN4ZlgDdqrlU9Oud origin: https://music.youtube.com referer: https://music.youtube.com/ sec-fetch-dest: empty sec-fetch-mode: cors sec-fetch-site: same-origin user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Mobile Safari/537.36 x-goog-authuser: 0 x-goog-visitor-id: CgszS2lTTXpMSlVtTSjcvqqABg%3D%3D",
+                    "header_path": "/config/.storage/ytube_header.json"
                 },
                 "system_options": {
                     "disable_new_entities": false
                 },
                 "source": "user",
                 "connection_class": "local_poll",
+                "unique_id": null
+            },
+            {
+                "entry_id": "741e6f7d1fce1214830eff41949cf4a7",
+                "version": 1,
+                "domain": "ytube_music_player",
+                "title": "yTubeMusic",
+                "data": {
+                    "name": "ytube_music_player_carlo",
+                    "speakers": "carlo",
+                    "shuffle": true,
+                    "shuffle_mode": 1,
+                    "select_source": "input_select.ytube_music_player_source",
+                    "select_playlist": "input_select.ytube_music_player_playlist",
+                    "select_playmode": "input_select.ytube_music_player_playmode",
+                    "select_speakers": "input_select.ytube_music_player_speakers",
+                    "select_playcontinuous": "input_boolean.ytube_music_player_playcontinuous",
+                    "proxy_path": "",
+                    "proxy_url": "",
+                    "brand_id": "",
+                    "cookie": "accept-encoding: gzip, deflate, br accept-language: de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7,fr;q=0.6 authorization: SAPISIDHASH 1610024480_96c8fe7a5a11600013ac1e52d7ca8275373e7cfd content-length: 782 content-type: application/json Cookie: CONSENT=YES+DE.en+20160410-02-0; VISITOR_INFO1_LIVE=x0v8XJYxZ6U; _gcl_au=1.1.2010865658.1605862940; LOGIN_INFO=AFmmF2swRQIhANKpBWythSdRzt7IcyYiBcZbi4lbujUc9z9vjYSxbSSLAiBrrAJPoNfrWWyQISM-6MadSSnuGhLY14MYjmyPBGwpXA:QUQ3MjNmd0ZWSzJTUks2Y0RUM1lTZUY1WjFEUlhwNU9SNVg5eXByWVNfZ2k4Tml1aFozOEJSbDdoMGlJaHR5LUV6WUlxb0Rha2czNXZEelRNUXFZUGxQdkZvSjVGeHNha2lfRWZJRXkxcGU3dm1PM1p3ZFAtTHNqZjBZaGJ6MjNCWk83LXN5RlppemQ3ZngyNE1kenpqRTlkcXViemZnUnd5RVBFWnpXVjJqZ1ZjUS03V3lRSmFr; HSID=ARU3D7uRIlA1ZTIs6; SSID=A7uRiVMt824h6d0Hq; APISID=fgIvCx6fhkDPEdii/Aqf-qdowOWwTJu9Pf; SAPISID=MUi58WttQ0g10Yam/A8IFolrJmilqSAcx6; __Secure-3PAPISID=MUi58WttQ0g10Yam/A8IFolrJmilqSAcx6; SID=5Qeu_wUgSqB8i1DNMDRdbelXT6BbeAUpYoKXoYwUyGvupQizdKRAkbUaOoXpYVjVGMnvbQ.; __Secure-3PSID=5Qeu_wUgSqB8i1DNMDRdbelXT6BbeAUpYoKXoYwUyGvupQizBDCNcEt1kNBLVY2gkoADOQ.; PREF=volume=100&library_tab_browse_id=FEmusic_library_privately_owned_artists&al=de%2Ben-DE%2Ben&f4=4000000; YSC=lou5bil_zZk; SIDCC=AJi4QfGno8cOgcM7ezSYqAySVxAqLli4kLU3kMpypHjSXMzAVCyDkGUh7f80J3kyeKN1z81_sQ; __Secure-3PSIDCC=AJi4QfGgJaM2xUpY2l1f30-v0pkByAA2a8RaOoUudrTx5RvuI_E4kar5bbI3owBzNzd233eHJQ origin: https://music.youtube.com referer: https://music.youtube.com/ sec-fetch-dest: empty sec-fetch-mode: cors sec-fetch-site: same-origin user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 x-client-data: CJa2yQEIpbbJAQipncoBCMfCygEIrMfKAQj1x8oBCKTNygEI3NXKAQjul8sBCM2aywEI0ZvLAQjCnMsB Decoded: message ClientVariations {   // Active client experiment variation IDs.   repeated int32 variation_id = [3300118, 3300133, 3313321, 3318087, 3318700, 3318773, 3319460, 3320540, 3329006, 3329357, 3329489, 3329602]; } x-goog-authuser: 0 x-goog-visitor-id: Cgt4MHY4WEpZeFo2VSicjNz_BQ%3D%3D",
+                    "header_path": "/config/.storage/ytube_header.json"
+                },
+                "options": {
+                    "name": "ytube_music_player_carlo",
+                    "speakers": "carlo",
+                    "shuffle": true,
+                    "shuffle_mode": 1,
+                    "select_source": "input_select.ytube_music_player_source",
+                    "select_playlist": "input_select.ytube_music_player_playlist",
+                    "select_playmode": "input_select.ytube_music_player_playmode",
+                    "select_speakers": "input_select.ytube_music_player_speakers",
+                    "select_playcontinuous": "input_boolean.ytube_music_player_playcontinuous",
+                    "proxy_path": "",
+                    "proxy_url": "",
+                    "brand_id": "",
+                    "cookie": "accept-encoding: gzip, deflate, br accept-language: de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7,fr;q=0.6 authorization: SAPISIDHASH 1610024480_96c8fe7a5a11600013ac1e52d7ca8275373e7cfd content-length: 782 content-type: application/json Cookie: CONSENT=YES+DE.en+20160410-02-0; VISITOR_INFO1_LIVE=x0v8XJYxZ6U; _gcl_au=1.1.2010865658.1605862940; LOGIN_INFO=AFmmF2swRQIhANKpBWythSdRzt7IcyYiBcZbi4lbujUc9z9vjYSxbSSLAiBrrAJPoNfrWWyQISM-6MadSSnuGhLY14MYjmyPBGwpXA:QUQ3MjNmd0ZWSzJTUks2Y0RUM1lTZUY1WjFEUlhwNU9SNVg5eXByWVNfZ2k4Tml1aFozOEJSbDdoMGlJaHR5LUV6WUlxb0Rha2czNXZEelRNUXFZUGxQdkZvSjVGeHNha2lfRWZJRXkxcGU3dm1PM1p3ZFAtTHNqZjBZaGJ6MjNCWk83LXN5RlppemQ3ZngyNE1kenpqRTlkcXViemZnUnd5RVBFWnpXVjJqZ1ZjUS03V3lRSmFr; HSID=ARU3D7uRIlA1ZTIs6; SSID=A7uRiVMt824h6d0Hq; APISID=fgIvCx6fhkDPEdii/Aqf-qdowOWwTJu9Pf; SAPISID=MUi58WttQ0g10Yam/A8IFolrJmilqSAcx6; __Secure-3PAPISID=MUi58WttQ0g10Yam/A8IFolrJmilqSAcx6; SID=5Qeu_wUgSqB8i1DNMDRdbelXT6BbeAUpYoKXoYwUyGvupQizdKRAkbUaOoXpYVjVGMnvbQ.; __Secure-3PSID=5Qeu_wUgSqB8i1DNMDRdbelXT6BbeAUpYoKXoYwUyGvupQizBDCNcEt1kNBLVY2gkoADOQ.; PREF=volume=100&library_tab_browse_id=FEmusic_library_privately_owned_artists&al=de%2Ben-DE%2Ben&f4=4000000; YSC=lou5bil_zZk; SIDCC=AJi4QfGno8cOgcM7ezSYqAySVxAqLli4kLU3kMpypHjSXMzAVCyDkGUh7f80J3kyeKN1z81_sQ; __Secure-3PSIDCC=AJi4QfGgJaM2xUpY2l1f30-v0pkByAA2a8RaOoUudrTx5RvuI_E4kar5bbI3owBzNzd233eHJQ origin: https://music.youtube.com referer: https://music.youtube.com/ sec-fetch-dest: empty sec-fetch-mode: cors sec-fetch-site: same-origin user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 x-client-data: CJa2yQEIpbbJAQipncoBCMfCygEIrMfKAQj1x8oBCKTNygEI3NXKAQjul8sBCM2aywEI0ZvLAQjCnMsB Decoded: message ClientVariations {   // Active client experiment variation IDs.   repeated int32 variation_id = [3300118, 3300133, 3313321, 3318087, 3318700, 3318773, 3319460, 3320540, 3329006, 3329357, 3329489, 3329602]; } x-goog-authuser: 0 x-goog-visitor-id: Cgt4MHY4WEpZeFo2VSicjNz_BQ%3D%3D",
+                    "header_path": "/config/.storage/ytube_header.json"
+                },
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "user",
+                "connection_class": "local_poll",
+                "unique_id": null
+            },
+            {
+                "entry_id": "83b9eef88a02ca10b9b359e6ff685327",
+                "version": 1,
+                "domain": "mobile_app",
+                "title": "Pixel 3a XL",
+                "data": {
+                    "app_id": "io.homeassistant.companion.android",
+                    "app_name": "Home Assistant",
+                    "app_version": "3.0.2-full (521)",
+                    "device_name": "Pixel 3a XL",
+                    "manufacturer": "Google",
+                    "model": "Pixel 3a XL",
+                    "os_name": "Android",
+                    "os_version": "30",
+                    "supports_encryption": false,
+                    "app_data": {
+                        "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+                        "push_token": "d3mgTq37Qd2z_FzN8VdEK6:APA91bFX3pihF8Ts7C2bTSY7SotpfStQBEPdOMob5LcMklx5xu3WsrGeSZrv1lo1MJQCtPrs38GvzuyAbcfLRBpPgk5n8siUAgkoaiJTLsZPO0ClXV5AnwN-JMkAEBjrqHggN1r7bAr-"
+                    },
+                    "device_id": "7ba8f78d02808622",
+                    "webhook_id": "745a638b456de9146be15c3df6f8cc7a89bd98d3a4f063d7c68796c55a37ae2d",
+                    "user_id": "4d052cf1c12e4da5a9575117343910fc"
+                },
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "registration",
+                "connection_class": "cloud_push",
+                "unique_id": "io.homeassistant.companion.android-7ba8f78d02808622"
+            },
+            {
+                "entry_id": "d2007a6ca43c53da316be6d51b211fbb",
+                "version": 1,
+                "domain": "ytube_music_player",
+                "title": "yTubeMusic",
+                "data": {
+                    "name": "ytube_music_player_keller",
+                    "speakers": "keller_2",
+                    "shuffle": true,
+                    "shuffle_mode": 1,
+                    "select_source": "input_select.ytube_music_player_source_keller",
+                    "select_playlist": "input_select.ytube_music_player_playlist_keller",
+                    "select_playmode": "input_select.ytube_music_player_playmode",
+                    "select_speakers": "input_select.ytube_music_player_speakers_keller",
+                    "select_playcontinuous": "input_boolean.ytube_music_player_playcontinuous_keller",
+                    "proxy_path": "",
+                    "proxy_url": "",
+                    "brand_id": "",
+                    "cookie": "accept-encoding: gzip, deflate, br accept-language: de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7,fr;q=0.6 authorization: SAPISIDHASH 1610024480_96c8fe7a5a11600013ac1e52d7ca8275373e7cfd content-length: 782 content-type: application/json Cookie: CONSENT=YES+DE.en+20160410-02-0; VISITOR_INFO1_LIVE=x0v8XJYxZ6U; _gcl_au=1.1.2010865658.1605862940; LOGIN_INFO=AFmmF2swRQIhANKpBWythSdRzt7IcyYiBcZbi4lbujUc9z9vjYSxbSSLAiBrrAJPoNfrWWyQISM-6MadSSnuGhLY14MYjmyPBGwpXA:QUQ3MjNmd0ZWSzJTUks2Y0RUM1lTZUY1WjFEUlhwNU9SNVg5eXByWVNfZ2k4Tml1aFozOEJSbDdoMGlJaHR5LUV6WUlxb0Rha2czNXZEelRNUXFZUGxQdkZvSjVGeHNha2lfRWZJRXkxcGU3dm1PM1p3ZFAtTHNqZjBZaGJ6MjNCWk83LXN5RlppemQ3ZngyNE1kenpqRTlkcXViemZnUnd5RVBFWnpXVjJqZ1ZjUS03V3lRSmFr; HSID=ARU3D7uRIlA1ZTIs6; SSID=A7uRiVMt824h6d0Hq; APISID=fgIvCx6fhkDPEdii/Aqf-qdowOWwTJu9Pf; SAPISID=MUi58WttQ0g10Yam/A8IFolrJmilqSAcx6; __Secure-3PAPISID=MUi58WttQ0g10Yam/A8IFolrJmilqSAcx6; SID=5Qeu_wUgSqB8i1DNMDRdbelXT6BbeAUpYoKXoYwUyGvupQizdKRAkbUaOoXpYVjVGMnvbQ.; __Secure-3PSID=5Qeu_wUgSqB8i1DNMDRdbelXT6BbeAUpYoKXoYwUyGvupQizBDCNcEt1kNBLVY2gkoADOQ.; PREF=volume=100&library_tab_browse_id=FEmusic_library_privately_owned_artists&al=de%2Ben-DE%2Ben&f4=4000000; YSC=lou5bil_zZk; SIDCC=AJi4QfGno8cOgcM7ezSYqAySVxAqLli4kLU3kMpypHjSXMzAVCyDkGUh7f80J3kyeKN1z81_sQ; __Secure-3PSIDCC=AJi4QfGgJaM2xUpY2l1f30-v0pkByAA2a8RaOoUudrTx5RvuI_E4kar5bbI3owBzNzd233eHJQ origin: https://music.youtube.com referer: https://music.youtube.com/ sec-fetch-dest: empty sec-fetch-mode: cors sec-fetch-site: same-origin user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 x-client-data: CJa2yQEIpbbJAQipncoBCMfCygEIrMfKAQj1x8oBCKTNygEI3NXKAQjul8sBCM2aywEI0ZvLAQjCnMsB Decoded: message ClientVariations {   // Active client experiment variation IDs.   repeated int32 variation_id = [3300118, 3300133, 3313321, 3318087, 3318700, 3318773, 3319460, 3320540, 3329006, 3329357, 3329489, 3329602]; } x-goog-authuser: 0 x-goog-visitor-id: Cgt4MHY4WEpZeFo2VSicjNz_BQ%3D%3D",
+                    "header_path": "/config/.storage/ytube_header.json"
+                },
+                "options": {
+                    "name": "ytube_music_player_keller",
+                    "speakers": "keller_2",
+                    "shuffle": true,
+                    "shuffle_mode": 1,
+                    "select_source": "input_select.ytube_music_player_source_keller",
+                    "select_playlist": "input_select.ytube_music_player_playlist_keller",
+                    "select_playmode": "input_select.ytube_music_player_playmode",
+                    "select_speakers": "input_select.ytube_music_player_speakers_keller",
+                    "select_playcontinuous": "input_boolean.ytube_music_player_playcontinuous_keller",
+                    "proxy_path": "",
+                    "proxy_url": "",
+                    "brand_id": "",
+                    "cookie": "accept-encoding: gzip, deflate, br accept-language: de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7,fr;q=0.6 authorization: SAPISIDHASH 1610024480_96c8fe7a5a11600013ac1e52d7ca8275373e7cfd content-length: 782 content-type: application/json Cookie: CONSENT=YES+DE.en+20160410-02-0; VISITOR_INFO1_LIVE=x0v8XJYxZ6U; _gcl_au=1.1.2010865658.1605862940; LOGIN_INFO=AFmmF2swRQIhANKpBWythSdRzt7IcyYiBcZbi4lbujUc9z9vjYSxbSSLAiBrrAJPoNfrWWyQISM-6MadSSnuGhLY14MYjmyPBGwpXA:QUQ3MjNmd0ZWSzJTUks2Y0RUM1lTZUY1WjFEUlhwNU9SNVg5eXByWVNfZ2k4Tml1aFozOEJSbDdoMGlJaHR5LUV6WUlxb0Rha2czNXZEelRNUXFZUGxQdkZvSjVGeHNha2lfRWZJRXkxcGU3dm1PM1p3ZFAtTHNqZjBZaGJ6MjNCWk83LXN5RlppemQ3ZngyNE1kenpqRTlkcXViemZnUnd5RVBFWnpXVjJqZ1ZjUS03V3lRSmFr; HSID=ARU3D7uRIlA1ZTIs6; SSID=A7uRiVMt824h6d0Hq; APISID=fgIvCx6fhkDPEdii/Aqf-qdowOWwTJu9Pf; SAPISID=MUi58WttQ0g10Yam/A8IFolrJmilqSAcx6; __Secure-3PAPISID=MUi58WttQ0g10Yam/A8IFolrJmilqSAcx6; SID=5Qeu_wUgSqB8i1DNMDRdbelXT6BbeAUpYoKXoYwUyGvupQizdKRAkbUaOoXpYVjVGMnvbQ.; __Secure-3PSID=5Qeu_wUgSqB8i1DNMDRdbelXT6BbeAUpYoKXoYwUyGvupQizBDCNcEt1kNBLVY2gkoADOQ.; PREF=volume=100&library_tab_browse_id=FEmusic_library_privately_owned_artists&al=de%2Ben-DE%2Ben&f4=4000000; YSC=lou5bil_zZk; SIDCC=AJi4QfGno8cOgcM7ezSYqAySVxAqLli4kLU3kMpypHjSXMzAVCyDkGUh7f80J3kyeKN1z81_sQ; __Secure-3PSIDCC=AJi4QfGgJaM2xUpY2l1f30-v0pkByAA2a8RaOoUudrTx5RvuI_E4kar5bbI3owBzNzd233eHJQ origin: https://music.youtube.com referer: https://music.youtube.com/ sec-fetch-dest: empty sec-fetch-mode: cors sec-fetch-site: same-origin user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 x-client-data: CJa2yQEIpbbJAQipncoBCMfCygEIrMfKAQj1x8oBCKTNygEI3NXKAQjul8sBCM2aywEI0ZvLAQjCnMsB Decoded: message ClientVariations {   // Active client experiment variation IDs.   repeated int32 variation_id = [3300118, 3300133, 3313321, 3318087, 3318700, 3318773, 3319460, 3320540, 3329006, 3329357, 3329489, 3329602]; } x-goog-authuser: 0 x-goog-visitor-id: Cgt4MHY4WEpZeFo2VSicjNz_BQ%3D%3D",
+                    "header_path": "/config/.storage/ytube_header.json"
+                },
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "user",
+                "connection_class": "local_poll",
+                "unique_id": null
+            },
+            {
+                "entry_id": "f9324eb9445296162f7fb82436fb99fb",
+                "version": 1,
+                "domain": "esphome",
+                "title": "tagreader",
+                "data": {
+                    "host": "192.168.2.112",
+                    "port": 6053,
+                    "password": ""
+                },
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "zeroconf",
+                "connection_class": "local_push",
+                "unique_id": "tagreader"
+            },
+            {
+                "entry_id": "8bb26e99590305a527e84b70aaf930b1",
+                "version": 1,
+                "domain": "mobile_app",
+                "title": "SM-P600",
+                "data": {
+                    "app_id": "io.homeassistant.companion.android",
+                    "app_name": "Home Assistant",
+                    "app_version": "2021.1.1-full (555)",
+                    "device_name": "SM-P600",
+                    "manufacturer": "samsung",
+                    "model": "SM-P600",
+                    "os_name": "Android",
+                    "os_version": "22",
+                    "supports_encryption": false,
+                    "app_data": {
+                        "push_token": "eN5YPkfnRBimSvPQEOtszY:APA91bFVP28ScTWfSgL4LhZBhDt7PTzqbSrqglp9yji4fLHJ10eKAKdOd4tnARYBX2QBHhaV5ocGF5yQf3ZEgfBQELfqh93oKYHy0gGTnYagds1pn4sSf7Wr2rRU5DMCw0oSqMDL3yhZ",
+                        "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1"
+                    },
+                    "device_id": "de27ffbb8b06d14e",
+                    "webhook_id": "1d7e567879d65d4c15e92d0fabbbbb7aaa34d1f81a44920ab0670439dcabaa7a",
+                    "user_id": "7bf3ac0bc82549ba99e0fa7737e3f715"
+                },
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "registration",
+                "connection_class": "cloud_push",
+                "unique_id": "io.homeassistant.companion.android-de27ffbb8b06d14e"
+            },
+            {
+                "entry_id": "91a6fcb278dbda1ccd38e12121cf5b9b",
+                "version": 1,
+                "domain": "browser_mod",
+                "title": "Browser Mod",
+                "data": {},
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "import",
+                "connection_class": "unknown",
                 "unique_id": null
             }
         ]

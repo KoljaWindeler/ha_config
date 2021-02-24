@@ -13,7 +13,8 @@ class louisaWorld(hass.Hass):
     def initialize(self):
         self.log("Starting louisa Service")
         wait.wait_available(self,["binary_sensor.dev24_button1s","binary_sensor.dev24_button","light.dev55"],False)
-        self.listen_state(self.main_toggle,"binary_sensor.dev24_button1s", new = "on", old="off")
+        self.listen_state(self.lampinions_toggle,"binary_sensor.dev24_button1s", new = "on", old="off")
+        self.listen_state(self.main_toggle,"binary_sensor.dev24_button2s", new = "on", old="off")
         self.listen_state(self.tower_toggle,"binary_sensor.dev24_button", new = "on", old="off")
 
     def lampinions_toggle(self, entity, attribute, old, new,kwargs):

@@ -12,7 +12,7 @@ class OwntracksWorld(hass.Hass):
 		self.log("Starting owntracks Service")
 		self.kolja = json.dumps(self.get_state("device_tracker.illuminum_kolja",attribute="all"))
 		self.caro = json.dumps(self.get_state("device_tracker.illuminum_caro",attribute="all"))
-		self.run_in(self.check,2*60*60)
+		#self.run_in(self.check,2*60*60)
 
 	def check(self, entity='', attribute='', old='', new='',kwargs=''):
 		test_kolja = json.dumps(self.get_state("device_tracker.illuminum_kolja",attribute="all"))

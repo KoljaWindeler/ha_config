@@ -7,10 +7,10 @@ class EnergyWorld(hass.Hass):
 
 	def initialize(self):
 		self.log("Starting Energy Service")
-		wait.wait_available(self,["sensor.dev37_em_tot","sensor.kaco_194"],False)
+		wait.wait_available(self,["sensor.dev37_em_tot_grid","sensor.pv_power_int"],False)
 		#self.listen_state(self.update, "input_boolean.clear_Energy")
-		self.cost_kwh = 0.2231 # 25.35 
-		self.cost_fix_month = 17.85 # 196.46 = 16.37
+		self.cost_kwh = 0.247 #0.2231 # 25.35
+		self.cost_fix_month = 17.31 # 17.85 # 196.46 = 16.37
 		self.payment_month = 115
 		self.dbg = True
 		self.update()
@@ -35,17 +35,17 @@ class EnergyWorld(hass.Hass):
 		self.sp_off_delay = []
 
 		self.sp_add(dev="switch.dev40_gpio_12", pwr=240) # dehumidifier has a build in safety feature to way 3 min before start, removed, power impact small
-#		self.sp_add(dev="switch.dev30_gpio_0",  pwr=600, time=180,timesensor="sensor.pump_time") # pool pump
-		self.sp_add(dev="switch.dev41_gpio_5",  pwr=500, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 2
-		self.sp_add(dev="switch.dev41_gpio_12", pwr=500, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 3
-#		self.sp_add(dev="switch.dev38_gpio_5",  pwr=2200, on_delay=90, off_delay=10) # pool heat will start approximatly 80 sec after flow
-		self.sp_add(dev="switch.dev41_gpio_4",  pwr=1000, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 1
+#sommer		self.sp_add(dev="switch.dev30_gpio_0",  pwr=600, time=180,timesensor="sensor.pump_time") # pool pump
+#sommer		self.sp_add(dev="switch.dev41_gpio_4",  pwr=1000, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 1
+#sommer		self.sp_add(dev="switch.dev41_gpio_5",  pwr=500, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 2
+#sommer		self.sp_add(dev="switch.dev41_gpio_12", pwr=500, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 3
+#sommer extreme		self.sp_add(dev="switch.dev38_gpio_5",  pwr=2200, on_delay=90, off_delay=10) # pool heat will start approximatly 80 sec after flow
 
 		self.run_daily(self.sp_reset, runtime)
 		self.sp_time = datetime.datetime.now()
 		self.listen_state(self.sp, "sensor.dev37_em_cur_fast")
 		############ smart power ###############
-		self.listen_state(self.pv_watch, "sensor.kaco_194", attribute = "status_code")
+		#self.listen_state(self.pv_watch, "sensor.kaco_194", attribute = "status_code")
 
 	def pv_watch(self, entity="", attribute="", old="", new="", kwargs=""):
 		try:
@@ -80,7 +80,7 @@ class EnergyWorld(hass.Hass):
 			else:
 				net = round((2*self.sp_net_lp+net_d)/3)
 			self.sp_net_lp = net
-			solar = float(self.get_state("sensor.kaco_194"))
+			solar = float(self.get_state("sensor.pv_power_int"))
 		except:
 			self.log("smart power exception")
 			return
@@ -209,7 +209,7 @@ class EnergyWorld(hass.Hass):
 				return
 
 			now = datetime.date.today()
-			e_now = float(self.get_state("sensor.dev37_em_tot"))
+			e_now = float(self.get_state("sensor.dev37_em_tot_grid"))
 			e_old = 0
 			c = self.get_state("sensor.long_term_power",attribute="all")['attributes']['entries']
 			for i in c:
@@ -238,7 +238,7 @@ class EnergyWorld(hass.Hass):
 
 			net = float(self.get_state("sensor.dev37_em_stst",attribute="total"))
 			net = net/(60*24*1000)
-			kaco = float(self.get_state("sensor.kaco_194_kwh"))
+			kaco = float(self.get_state("sensor.pv_daily_int"))
 			selfconsume = kaco+net
 			self.log("generiert: "+str(kaco)+", verbraucht: "+str(selfconsume)+", eingespeist: "+str(-net))
 		except:

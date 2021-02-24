@@ -40,7 +40,7 @@
       - light.dev36 # pillar
       - light.dev6 # cherry
       - light.dev18 # pi
-      - light.dev4 # star / pump
+      #- light.dev4 # star / pump
 # --------------------------------------------------
   - platform: group
     name: "joiner_workshop"

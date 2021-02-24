@@ -1,6 +1,7 @@
 import appdaemon.plugins.hass.hassapi as hass 
 import datetime, time
 import wait 
+from random import *
 #
 # Hellow World App
 #
@@ -29,3 +30,5 @@ class carloWorld(hass.Hass):
            self.toggle("light.dev23")
         else:
            self.log("carlo lock active")
+
+

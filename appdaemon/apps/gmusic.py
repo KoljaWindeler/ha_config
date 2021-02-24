@@ -53,12 +53,12 @@ class gmusicWorld(hass.Hass):
     ###############    ###############    ###############
 
     def play(self, entity="", attribute="", old="", new="", kwargs=""):
-        self.handle = self.run_in(self.set_vol, delay=3)
+        self.handle = self.run_in(self.set_vol, delay=5)
         self.turn_off("media_player.ytube_music_player")
 #        self.set_state("input_select.gmusic_player_source",state="Station")
 #        self.set_state("input_select.gmusic_player_station",state="I'm Feeling Lucky")
 
     def set_vol(self, entity="", attribute="", old="", new="", kwargs=""):
-        self.call_service("media_player/volume_set", entity_id="media_player.yamaha_receiver", volume_level="0.5")
+        self.call_service("media_player/volume_set", entity_id="media_player.yamaha_receiver", volume_level="0.4")
         self.turn_on("media_player.ytube_music_player")
 

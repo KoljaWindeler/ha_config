@@ -20,3 +20,16 @@ input_boolean:
     name: Carlo light lock
     initial: off
     icon: mdi:lock
+
+# -----------------------------------------------
+
+binary_sensor:
+  - platform: mqtt
+    state_topic: "dev23/r/button2s"
+    name: "dev23_button2s"
+  - platform: mqtt
+    state_topic: "dev23/r/button3s"
+    name: "dev23_button3s"
+
+# -----------------------------------------------
+

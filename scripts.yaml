@@ -1,89 +1,94 @@
-  seq_harmony:
-    sequence:
-      - service: remote.turn_on
-        entity_id: remote.tvhub_2
-        data:
-          activity: "28402150"
-
-# ---------------------------------------------------------
-  seq_tv_off:
-    sequence:
-      - service: media_player.media_stop
-        entity_id: media_player.jkw_cast2
-      - service: remote.turn_on
-        entity_id: remote.tvhub
-        data:
-          activity: "-1"
-# ---------------------------------------------------------
-  update_location:
-    sequence:
-      -  service: mqtt.publish
-         data:
-          topic: "owntracks/illuminum/kolja/cmd"
-          payload: "{\"_type\":\"cmd\",\"action\":\"reportLocation\"}"
-
-      -  service: mqtt.publish
-         data:
-          topic: "owntracks/illuminum/caro/cmd"
-          payload: "{\"_type\":\"cmd\",\"action\":\"reportLocation\"}"
-# ---------------------------------------------------------
-  the_buzz:
-    sequence:
-      - service: media_player.play_media
-        entity_id: media_player.jkw_cast2
-        data:
-          media_content_id: https://c1icy.prod.playlists.ihrhls.com/2281_icy
-          media_content_type: audio/mp3
-# based on https://github.com/oldlaptop/iheart-mplayer
-      - service: remote.turn_on
-        entity_id: remote.tvhub
-        data:
-          activity: "32486021"
-# ---------------------------------------------------------
-  the_dog:
-    sequence:
-      - service: media_player.play_media
-        entity_id: media_player.jkw_cast2
-        data:
-          media_content_id: http://192.168.2.84:90/b.mp3
-          media_content_type: audio/mp3
-      - service: remote.turn_on
-        entity_id: remote.tvhub
-        data:
-          activity: "32486021"
-# ---------------------------------------------------------
-  yamaha_vol_up:
-    sequence:
-      - service: media_player.volume_set
-        data_template:
-          entity_id: media_player.yamaha_receiver
-          volume_level: '{{states.media_player.yamaha_receiver.attributes.volume_level | float + 0.05}}'
-# ---------------------------------------------------------
-  yamaha_vol_up_2:
-    sequence:
-      - service: media_player.volume_set
-        data_template:
-          entity_id: media_player.yamaha_receiver
-          volume_level: '{{states.media_player.yamaha_receiver.attributes.volume_level | float + 0.02}}'
-# ---------------------------------------------------------
-  yamaha_vol_down:
-    sequence:
-      - service: media_player.volume_set
-        data_template:
-          entity_id: media_player.yamaha_receiver
-          volume_level: '{{states.media_player.yamaha_receiver.attributes.volume_level | float - 0.05}}'
-# ---------------------------------------------------------
-  yamaha_vol_down_2:
-    sequence:
-      - service: media_player.volume_set
-        data_template:
-          entity_id: media_player.yamaha_receiver
-          volume_level: '{{states.media_player.yamaha_receiver.attributes.volume_level | float - 0.02}}'
-# ---------------------------------------------------------
-  test:
-    sequence:
-      - service: notify.pb 
-        data:
-          title: "seq"
-          message: "yeah"
-
+seq_harmony:
+  sequence:
+  - service: remote.turn_on
+    entity_id: remote.tvhub_2
+    data:
+      activity: '28402150'
+seq_tv_off:
+  sequence:
+  - service: media_player.media_stop
+    entity_id: media_player.jkw_cast2
+  - service: remote.turn_on
+    entity_id: remote.tvhub
+    data:
+      activity: '-1'
+update_location:
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: owntracks/illuminum/kolja/cmd
+      payload: '{"_type":"cmd","action":"reportLocation"}'
+  - service: mqtt.publish
+    data:
+      topic: owntracks/illuminum/caro/cmd
+      payload: '{"_type":"cmd","action":"reportLocation"}'
+the_buzz:
+  sequence:
+  - service: media_player.play_media
+    entity_id: media_player.jkw_cast2
+    data:
+      media_content_id: https://c1icy.prod.playlists.ihrhls.com/2281_icy
+      media_content_type: audio/mp3
+  - service: remote.turn_on
+    entity_id: remote.tvhub
+    data:
+      activity: '32486021'
+the_dog:
+  sequence:
+  - service: media_player.play_media
+    entity_id: media_player.jkw_cast2
+    data:
+      media_content_id: http://192.168.2.84:90/b.mp3
+      media_content_type: audio/mp3
+  - service: remote.turn_on
+    entity_id: remote.tvhub
+    data:
+      activity: '32486021'
+yamaha_vol_up:
+  sequence:
+  - service: media_player.volume_set
+    data_template:
+      entity_id: media_player.yamaha_receiver
+      volume_level: '{{states.media_player.yamaha_receiver.attributes.volume_level
+        | float + 0.05}}'
+yamaha_vol_up_2:
+  sequence:
+  - service: media_player.volume_set
+    data_template:
+      entity_id: media_player.yamaha_receiver
+      volume_level: '{{states.media_player.yamaha_receiver.attributes.volume_level
+        | float + 0.02}}'
+yamaha_vol_down:
+  sequence:
+  - service: media_player.volume_set
+    data_template:
+      entity_id: media_player.yamaha_receiver
+      volume_level: '{{states.media_player.yamaha_receiver.attributes.volume_level
+        | float - 0.05}}'
+yamaha_vol_down_2:
+  sequence:
+  - service: media_player.volume_set
+    data_template:
+      entity_id: media_player.yamaha_receiver
+      volume_level: '{{states.media_player.yamaha_receiver.attributes.volume_level
+        | float - 0.02}}'
+test:
+  sequence:
+  - service: notify.pb
+    data:
+      title: seq
+      message: yeah
+carlo_fire:
+  alias: carlo_fire
+  sequence:
+  - event: tag_scanned
+    event_data:
+      tag_id: 13541d80-11ed-48f6-94ae-9237029dce7b
+  mode: single
+carlo_fire_pp:
+  alias: carlo_fire_pp
+  sequence:
+  - event: tag_scanned
+    event_data:
+      tag_id: e2976d7b-d508-4a31-b308-20d6ea4432ca
+  mode: single

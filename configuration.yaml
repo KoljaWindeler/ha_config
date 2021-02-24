@@ -163,6 +163,10 @@ recorder:
       - sensor.house_power_rem
       - sensor.house_power
       - sensor.dev37_em_cur_fast
+      - sensor.szn_uptime
+      - sensor.szn_time_since_state_change
+      - sensor.szw_uptime
+      - sensor.szw_time_since_state_change
       
 logbook:
 sun:

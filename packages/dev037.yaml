@@ -21,20 +21,14 @@ homeassistant:
     sensor.dev37_em_cur:
       friendly_name: "EM current"
       unit_of_measurement: "W"
-    sensor.dev37_em_cur_l1:
-      friendly_name: "EM current L1"
-      unit_of_measurement: "W"
-    sensor.dev37_em_cur_l2:
-      friendly_name: "EM current L2"
-      unit_of_measurement: "W"
-    sensor.dev37_em_cur_l3:
-      friendly_name: "EM current L3"
-      unit_of_measurement: "W"
     sensor.dev37_em_cur_fast:
       friendly_name: "EM current fast"
       unit_of_measurement: "W"
-    sensor.dev37_em_tot:
-      friendly_name: "EM total"
+    sensor.dev37_em_tot_grid:
+      friendly_name: "EM total grid"
+      unit_of_measurement: "kWh"
+    sensor.dev37_em_tot_solar:
+      friendly_name: "EM total solar"
       unit_of_measurement: "kWh"
 # -----------------------------------------------
 

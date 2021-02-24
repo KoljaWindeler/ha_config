@@ -1,0 +1,24 @@
+homeassistant:
+  customize:
+    sensor.pv_power_int:
+      friendly_name: "Solar"
+
+sensor:
+  - platform: sma
+    host: 192.168.2.214
+    ssl: true
+    verify_ssl: false
+    password: !secret sma_pw
+    sensors:
+      - pv_power
+      - total_yield
+      - daily_yield
+
+  - platform: template
+    sensors:
+      pv_power_int:
+        value_template: '{{states("sensor.pv_power")| float | round}}'
+        unit_of_measurement: "W"
+      pv_daily_int:
+        value_template: '{{(states("sensor.daily_yield")| float)/1000}}'
+        unit_of_measurement: "kWh"

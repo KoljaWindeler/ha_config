@@ -9,6 +9,13 @@ sensor:
 
 # -----------------------------------------------
 
+binary_sensor:
+  - platform: mqtt
+    state_topic: "dev24/r/button2s"
+    name: "dev24_button2s"
+
+# -----------------------------------------------
+
 homeassistant:
   customize:
     light.dev24:
