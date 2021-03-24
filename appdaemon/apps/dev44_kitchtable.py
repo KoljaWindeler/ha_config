@@ -13,6 +13,7 @@ class kitchenTableWorld(hass.Hass):
         self.log("Starting kitchenTable Service")
         wait.wait_available(self,["binary_sensor.dev44_gpio_13","light.dev44_2"],False)
         self.listen_state(self.couch_toggle,"binary_sensor.dev44_gpio_13")
+        self.listen_state(self.table_toggle,"binary_sensor.dev44_button")
         self.listen_state(self.tower_toggle,"light.dev44")
 
     def couch_toggle(self, entity, attribute, old, new,kwargs):
@@ -26,3 +27,9 @@ class kitchenTableWorld(hass.Hass):
            self.turn_on("light.dev7")
         elif(new=="off"):
            self.turn_off("light.dev7")
+
+    def table_toggle(self, entity, attribute, old, new,kwargs):
+        if(old=="unknown"):
+           return
+        self.log("Toggle table")
+        self.toggle("light.dev44")

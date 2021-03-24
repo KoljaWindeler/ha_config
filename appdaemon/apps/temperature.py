@@ -12,7 +12,7 @@ class temperatureWorld(hass.Hass):
 
         self.pool_kw_thres = 500
         self.pool_kw_timeout = 99
-        self.listen_state(self.set_pool,"sensor.dev16_ads_ch3_kw")
+        self.listen_state(self.set_pool,"sensor.dev37_ads_ch3_kw")
 
 
     def set_pool(self, entity, attribute, old, new, kwargs):

@@ -7,7 +7,7 @@ import datetime, time
 # Args:
 #
 
-LOW_TEMP = 12 # above this the veggies will run
+LOW_TEMP = 22 # above this the veggies will run, set this to 12 once summer is here
 REG_TEMP = 22 # above this all circuits will run
 HIGH_TEMP = 28 # above this all circuits will run 200% of the time
 
@@ -46,8 +46,8 @@ class SprinklerWorld(hass.Hass):
 		self.listen_state(self.start,"input_boolean.irrigation", new = "on")
 		self.listen_state(self.start_o,"input_boolean.irrigation_override", new = "on")
 		self.turn_off(SWITCH_PUMP)
-#		self.run_daily(self.start_o, datetime.time(9, 0, 0))
-		self.run_daily(self.start_o, datetime.time(13, 0, 0))
+		self.run_daily(self.start_o, datetime.time(9, 0, 0))
+#		self.run_daily(self.start_o, datetime.time(13, 0, 0))
 #		self.run_daily(self.start_o, datetime.time(18, 8, 0))
 
 
@@ -61,7 +61,7 @@ class SprinklerWorld(hass.Hass):
 		self.log("################################################")
 		self.log("Starting Sprinker call")
 		self.set_state("sensor.dev30_state",state="Starting")
-		self.max_time = 15 #30 # Minutes!
+		self.max_time = 30 # Minutes!
 
 		self.limited_config = [[[SWITCH_VALVE5],1]] #veggi
 
@@ -72,15 +72,6 @@ class SprinklerWorld(hass.Hass):
 			[[SWITCH_VALVE1],1] # two valves, 150% time
 				]
 
-		# remove me
-		LOW_TEMP = 5 # above this the veggies will run
-		self.limited_config = [[[SWITCH_VALVE6],1]]
-		self.max_time = 3 #30 # Minutes!
-		self.config = [
-			[[SWITCH_VALVE6],1] # one valve, 4x t200 frontlawn, 150%
-				]
-		# remove me
-
 		self.valve_list = [SWITCH_VALVE1,SWITCH_VALVE2,SWITCH_VALVE3,SWITCH_VALVE4,SWITCH_VALVE5,SWITCH_VALVE6]
 
 		#today_max_temp = int(float(self.g("sensor.yweather_temperature_max","28")))
@@ -88,11 +79,13 @@ class SprinklerWorld(hass.Hass):
 			today_max_temp = int(float(self.g("sensor.dark_sky_daytime_high_temperature_0d","28")))
 			if(today_max_temp > HIGH_TEMP):
 				self.max_time = 30
-			elif(today_max_temp < REG_TEMP):
-				if(today_max_temp > LOW_TEMP):
+			elif(today_max_temp > LOW_TEMP):
+				if(today_max_temp < REG_TEMP):
 					# leave the time at 15 min, but only run limted config (only veggetables)
 					self.log("running limited config only")
 					self.config = self.limited_config
+			else:
+				self.max_time = 0
 			self.log("Today max temp is "+str(today_max_temp)+", will irrigate for "+str(self.max_time)+ " min")
 			rain_today = int(float(self.g("sensor.dev30_uptime","0"))/5)
 		else:

@@ -16,7 +16,7 @@
                 ],
                 "manufacturer": null,
                 "model": null,
-                "name": "illuminum",
+                "name": null,
                 "sw_version": null,
                 "entry_type": null,
                 "id": "f95059caf8df4920837ca98457cb1131",
@@ -38,7 +38,7 @@
                 ],
                 "manufacturer": null,
                 "model": null,
-                "name": "illuminum",
+                "name": null,
                 "sw_version": null,
                 "entry_type": null,
                 "id": "23aa7f64ae9d45539ef374d49eef395c",
@@ -61,7 +61,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Outside",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "6d52a7a76fcf43ca90c5cf6c4982818f",
                 "via_device_id": null,
@@ -83,7 +83,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Bathroom U.",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "49297baa478642ed8d1995381de9db97",
                 "via_device_id": null,
@@ -105,7 +105,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Carlo",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "a87b92aa2e8b4ce08c61132cf9d436cb",
                 "via_device_id": null,
@@ -127,7 +127,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Beamer",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "b7fb35014e62407c8f034bb047017adc",
                 "via_device_id": null,
@@ -149,7 +149,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Livingroom",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "1e4efe6b951f4ecb98d88a9ba7bf8d9c",
                 "via_device_id": null,
@@ -171,7 +171,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Foyer",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "03b6c6ee48a54fc8872931e9f7b475c1",
                 "via_device_id": null,
@@ -193,7 +193,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia human body movement sensor (RTCGQ01LM)",
                 "name": "Hallway U motion",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "a0ed667abd17486a9abefb7c698c89bc",
                 "via_device_id": null,
@@ -215,7 +215,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Supplyroom",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "de264f7fdd9f40b88a014295ce19bb13",
                 "via_device_id": null,
@@ -237,7 +237,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Bedroom Z",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "43f9b2a73d4845859c7c3105d000a544",
                 "via_device_id": null,
@@ -259,7 +259,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Lara Z",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "647a1ebba9234ffd852547439dc86033",
                 "via_device_id": null,
@@ -281,7 +281,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Bathroom B.",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "9e4a9a65918847c5b8b4f3af2e9946e6",
                 "via_device_id": null,
@@ -303,7 +303,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Caro",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "25bd56751a0145dab73575dafda72e0f",
                 "via_device_id": null,
@@ -325,7 +325,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia temperature & humidity sensor (WSDCGQ01LM)",
                 "name": "Workshop",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "56d4cc7c8fa24e9191b2ae7de3d31cdf",
                 "via_device_id": null,
@@ -350,28 +350,6 @@
                 "sw_version": "Zigbee2MQTT 1.17.0",
                 "entry_type": null,
                 "id": "0ec8561fc1624576a5127a2272931b69",
-                "via_device_id": null,
-                "area_id": null,
-                "name_by_user": null,
-                "disabled_by": null
-            },
-            {
-                "config_entries": [
-                    "50b9f55a97aa48e48650a01e9e68a5a9"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "hacs",
-                        "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
-                    ]
-                ],
-                "manufacturer": "hacs.xyz",
-                "model": "",
-                "name": "HACS",
-                "sw_version": "1.11.3",
-                "entry_type": "service",
-                "id": "f90291220ad44e1e8b2d32cb910ebf48",
                 "via_device_id": null,
                 "area_id": null,
                 "name_by_user": null,
@@ -413,7 +391,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "MiJia human body movement sensor (RTCGQ01LM)",
                 "name": "Heater",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "ed47d19337b149f79e5689bfb92e14c6",
                 "via_device_id": null,
@@ -478,7 +456,7 @@
                 ],
                 "manufacturer": null,
                 "model": null,
-                "name": "illuminum",
+                "name": null,
                 "sw_version": null,
                 "entry_type": null,
                 "id": "751585d087d1435dad529d57c3492b8c",
@@ -758,7 +736,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "Aqara human body movement and illuminance sensor (RTCGQ11LM)",
                 "name": "Cellar_foyer",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "b0b5acdbbb77f4e4cede473afc2ec6a7",
                 "via_device_id": null,
@@ -780,7 +758,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "Aqara human body movement and illuminance sensor (RTCGQ11LM)",
                 "name": "wardrobe",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "5f75a94b28200abe5e7816a6131dca12",
                 "via_device_id": null,
@@ -802,7 +780,7 @@
                 "manufacturer": "Xiaomi",
                 "model": "Aqara human body movement and illuminance sensor (RTCGQ11LM)",
                 "name": "Hallway upstairs",
-                "sw_version": "Zigbee2MQTT 1.17.1",
+                "sw_version": "Zigbee2MQTT 1.18.1",
                 "entry_type": null,
                 "id": "1cdc697e92486d01834d81a30a57fd43",
                 "via_device_id": null,
@@ -981,6 +959,148 @@
                 "sw_version": null,
                 "entry_type": null,
                 "id": "ad280af902146490200bb74671841d06",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "b7742bedd557faa801863dd36e355923"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "hacs",
+                        "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
+                    ]
+                ],
+                "manufacturer": "hacs.xyz",
+                "model": "",
+                "name": "HACS",
+                "sw_version": "1.11.3",
+                "entry_type": "service",
+                "id": "f90291220ad44e1e8b2d32cb910ebf48",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "91a6fcb278dbda1ccd38e12121cf5b9b"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "browser_mod",
+                        "e250d7b2-3ff893a6"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "e250d7b2-3ff893a6",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "ea1f83998dad4237cf525fdb3f13f1a8",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "ad99979c5f6458323f3a620fbed4a2bc"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "04:cf:8c:f9:2e:51"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "xiaomi_miio",
+                        "04:cf:8c:f9:2e:51"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "roborock.vacuum.s5",
+                "name": "xiaomi_vacuum_cleaner_2",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "521cb5e672bf0b9cfa5b5c9d680810b5",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "f47c6468185f6a6ae49df226f7c40e8f"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "78:11:dc:e6:f0:bd"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "xiaomi_miio",
+                        "78:11:dc:e6:f0:bd"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "rockrobo.vacuum.v1",
+                "name": "xiaomi_vacuum_cleaner",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "7593451ad14ae4e4d37f68c49dbc3881",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "91a6fcb278dbda1ccd38e12121cf5b9b"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "browser_mod",
+                        "0279a6ef-b3d9b9d1"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "0279a6ef-b3d9b9d1",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "80a9b8eecc75937ae1e41cc57ffae06d",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "91a6fcb278dbda1ccd38e12121cf5b9b"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "browser_mod",
+                        "bb44472a-bc71af68"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "bb44472a-bc71af68",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "2bf8c0415973ac9da12cc0e4c2b01de9",
                 "via_device_id": null,
                 "area_id": null,
                 "name_by_user": null,

@@ -44,10 +44,10 @@ class bedroomWorld(hass.Hass):
     def bedlight_toggle(self, entity, attribute, old, new,kwargs):
         self.log("Toggle bed lights")
         now = datetime.datetime.now().time()
-        if(now >= datetime.time(20,00,00) or now <= datetime.time(5,00,00)):
-           self.toggle("light.dev19") # crip
-        else:
-           self.toggle("light.joiner_bedroom")
+#        if(now >= datetime.time(20,00,00) or now <= datetime.time(5,00,00)):
+#           self.toggle("light.dev19") # crip
+#        else:
+        self.toggle("light.joiner_bedroom")
 
     def main_toggle(self, entity, attribute, old, new,kwargs):
         self.log("Toggle main lights")
@@ -82,7 +82,7 @@ class bedroomWorld(hass.Hass):
                m+="the cellar door is still open!"
                self.call_service("notify/pb", title=t, message=m)
                self.call_service("notify/pb_c", title=t, message=m)
-            if(float(self.get_state("sensor.dev16_ads_ch8_kw"))>30):
+            if(float(self.get_state("sensor.dev37_ads_ch8_kw"))>30):
                t="Garage light"
                m+="the garage light is still on!"
                self.call_service("notify/pb", title=t, message=m)

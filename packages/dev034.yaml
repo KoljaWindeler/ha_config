@@ -27,3 +27,13 @@ sensor:
     fname: "34 Spielecke Button"
 
 # -----------------------------------------------
+
+binary_sensor:
+  - platform: mqtt
+    state_topic: "dev34/r/button2s"
+    name: "dev34_button2s"
+  - platform: mqtt
+    state_topic: "dev34/r/button3s"
+    name: "dev34_button3s"
+
+# -----------------------------------------------

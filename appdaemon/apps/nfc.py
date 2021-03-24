@@ -14,6 +14,7 @@ class NfcWorld(hass.Hass):
 		self.log("Starting nfc Service")
 		self.listen_event(self.tag,"tag_scanned")
 		self.listen_state(self.pp,"binary_sensor.dev23_button2s", new = "on", old="off")
+		self.listen_state(self.pp_unten,"binary_sensor.dev34_button2s", new = "on", old="off")
 
 	def pp(self, entity, attribute, old, new,kwargs):
 		self.log("carlo 2s")
@@ -21,6 +22,11 @@ class NfcWorld(hass.Hass):
 			self.tag(' ',{'tag_id':'e2976d7b-d508-4a31-b308-20d6ea4432ca'})
 		else:
 			self.log("lock")
+
+	def pp_unten(self, entity, attribute, old, new,kwargs):
+		self.log("carlo unten 2s")
+		self.tag(' ',{'tag_id':'3ffe57f5-0dcd-45ad-a6b6-3cdaa170cfe0'})
+
 
 	def tag(self, event, data, kwargs=None):
 		self.log("Tag")
@@ -94,7 +100,36 @@ class NfcWorld(hass.Hass):
 				_source = 'keller_2'
 				_type = "channel"
 				_vol=1
-		elif(data['tag_id'] == 'e2976d7b-d508-4a31-b308-20d6ea4432ca'): # random Pawpatrol
+		elif(data['tag_id'] == 'de37d2f3-cf0d-476c-af63-7ab951693347'): #holz tag feuermann sam
+			_ids = []
+			_ids.append('MPREb_o9nL4EQho3G')
+			_ids.append('MPREb_hu5FRQNIOav')
+			_ids.append('MPREb_BfmgAjML3Zw')
+			_ids.append('MPREb_OKClsYnH8Fq')
+			_ids.append('MPREb_oYAOqxEFEvc')
+			_type = "album"
+			_vol=0.32
+			_shuffle=False
+			_repeat='off'
+			_id = _ids[randint(0,len(_ids))]
+		elif(data['tag_id'] == '872d21c7-5f80-4632-8965-8e9aa0f3ab8a'): #holz tag rabe socke
+			_ids = []
+			_ids.append('MPREb_BelcOuwzEaS')
+			_ids.append('MPREb_g5nRHob42pW')
+			_ids.append('MPREb_AOOtClRKUZR')
+			_ids.append('MPREb_Jf7dNA0ddoZ')
+			_ids.append('MPREb_m9nj52x8IYl')
+			_ids.append('MPREb_dM8DvZMFcUQ')
+			_ids.append('MPREb_AOOtClRKUZR')
+			_ids.append('MPREb_koF1MsWFxjb')
+			_type = "album"
+			_vol=0.32
+			_shuffle=False
+			_repeat='off'
+			_id = _ids[randint(0,len(_ids))]
+		elif(data['tag_id'] == 'e2976d7b-d508-4a31-b308-20d6ea4432ca'
+		   or data['tag_id'] == '3ffe57f5-0dcd-45ad-a6b6-3cdaa170cfe0'
+		   or data['tag_id'] == '41e029b0-3b24-4397-9d09-ebb811c01ee1'): # random Pawpatrol
 			_ids = []
 			_ids.append('MPREb_B4B3YfQfOLG') # Folge 120: Die Überschwemmung
 			_ids.append('MPREb_2BwoDLCJFTf') # Folge 117: Das versunkene Piratenschiff
@@ -219,12 +254,15 @@ class NfcWorld(hass.Hass):
 			_ids.append('MPREb_o9y8shqP8S0') # Folge 06: Die Zugrettung
 			_ids.append('MPREb_26OinQqVVdi') # Folge 08: Hunde im Nebel
 			_id = _ids[randint(0,len(_ids))]
-			_type = "album"
-			_vol=0.32
 			_shuffle=False
 			_repeat='off'
-
-
+			_type = "album"
+			if(data['tag_id'] == '3ffe57f5-0dcd-45ad-a6b6-3cdaa170cfe0'): # random Pawpatrol
+				_vol=1
+				_e="media_player.ytube_music_player"
+				_source = 'jkw_cast2'
+			else:
+				_vol=0.32
 		if(_id and _type):
 			self.turn_off(_e)
 			self.call_service("media_player/shuffle_set", entity_id=_e, shuffle=_shuffle)

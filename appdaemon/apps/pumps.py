@@ -12,7 +12,7 @@ class PumpWorld(hass.Hass):
 		self.log("Starting Pump Service")
 		# ch1 = garden, 2 = house
 		self.n=["Garden","House"]
-		self.s=["sensor.dev16_ads_ch1_kw","sensor.dev16_ads_ch2_kw"]
+		self.s=["sensor.dev37_ads_ch1_kw","sensor.dev37_ads_ch2_kw"]
 
 		self.states = [0,0]
 		self.counts = [0,0]

@@ -18,8 +18,8 @@ class WashingWorld(hass.Hass):
 
 		self.wash_ts = datetime.datetime.now().time()
 		self.light_ts = datetime.datetime.now().time()
-		self.listen_state(self.update_wm, "sensor.dev16_ads_ch0_kw")
-		#self.listen_state(self.update_light, "sensor.dev16_ads_ch10_kw")
+		self.listen_state(self.update_wm, "sensor.dev37_ads_ch0_kw")
+		#self.listen_state(self.update_light, "sensor.dev37_ads_ch10_kw")
 
 		self.handle_m = []
 		self.handle_t = []

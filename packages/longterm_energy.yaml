@@ -24,7 +24,7 @@ automation:
           message: "{{now().strftime('%Y-%m-%d')}},{{ states.sensor.energy_cost.state }}"
       - service: notify.filenotify_solar
         data_template: 
-          message: "{{now().strftime('%Y-%m-%d')}},{{ states.sensor.pv_daily_int.state }}, {{ states.sensor.energy_calc.state }}"
+          message: "{{now().strftime('%Y-%m-%d')}},{{ states.sensor.pv_daily_int.state }}, {{ states.sensor.energy_calc.state }}, {{ states.sensor.burn_energy.state }}"
 
 sensor:
   - platform: load_external

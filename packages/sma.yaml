@@ -22,3 +22,10 @@ sensor:
       pv_daily_int:
         value_template: '{{(states("sensor.daily_yield")| float)/1000}}'
         unit_of_measurement: "kWh"
+
+  - platform: statistics
+    entity_id: sensor.pv_power_int
+    sampling_size: 14400
+    max_age:
+      hours: 24
+    name: pv_power_stat

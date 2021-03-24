@@ -33,21 +33,6 @@
                 ]
             }
         ],
-        "light": [
-            {
-                "object_id": "tagreader_led",
-                "key": 1669987956,
-                "name": "TagReader LED",
-                "unique_id": "tagreaderlighttagreader_led",
-                "supports_brightness": true,
-                "supports_rgb": true,
-                "supports_white_value": false,
-                "supports_color_temperature": false,
-                "min_mireds": 0.0,
-                "max_mireds": 0.0,
-                "effects": []
-            }
-        ],
         "switch": [
             {
                 "object_id": "tagreader_buzzer_enabled",
@@ -74,6 +59,21 @@
                 "unique_id": "tagreaderbinary_sensortagreader_status",
                 "device_class": "connectivity",
                 "is_status_binary_sensor": true
+            }
+        ],
+        "light": [
+            {
+                "object_id": "tagreader_led",
+                "key": 1669987956,
+                "name": "TagReader LED",
+                "unique_id": "tagreaderlighttagreader_led",
+                "supports_brightness": true,
+                "supports_rgb": true,
+                "supports_white_value": false,
+                "supports_color_temperature": false,
+                "min_mireds": 0.0,
+                "max_mireds": 0.0,
+                "effects": []
             }
         ]
     }

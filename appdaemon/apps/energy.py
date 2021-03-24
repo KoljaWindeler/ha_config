@@ -36,9 +36,9 @@ class EnergyWorld(hass.Hass):
 
 		self.sp_add(dev="switch.dev40_gpio_12", pwr=240) # dehumidifier has a build in safety feature to way 3 min before start, removed, power impact small
 #sommer		self.sp_add(dev="switch.dev30_gpio_0",  pwr=600, time=180,timesensor="sensor.pump_time") # pool pump
-#sommer		self.sp_add(dev="switch.dev41_gpio_4",  pwr=1000, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 1
-#sommer		self.sp_add(dev="switch.dev41_gpio_5",  pwr=500, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 2
-#sommer		self.sp_add(dev="switch.dev41_gpio_12", pwr=500, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 3
+		self.sp_add(dev="switch.dev41_gpio_4",  pwr=1000, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 1
+		self.sp_add(dev="switch.dev41_gpio_5",  pwr=500, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 2
+		self.sp_add(dev="switch.dev41_gpio_12", pwr=500, constrain="sensor.dev29_temperature", lower=0, upper=65) # WW Heater 3
 #sommer extreme		self.sp_add(dev="switch.dev38_gpio_5",  pwr=2200, on_delay=90, off_delay=10) # pool heat will start approximatly 80 sec after flow
 
 		self.run_daily(self.sp_reset, runtime)

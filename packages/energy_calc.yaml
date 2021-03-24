@@ -12,6 +12,21 @@ sensor:
         icon_template: 'mdi:weather-sunny'
         unit_of_measurement: "%"
         value_template: "{{ states.sensor.energy_calc.attributes['Home_from_Solar_[%]'] }}"
+      energy_calc_solar_to_home_kwh:
+        friendly_name: "Home from solar"
+        icon_template: 'mdi:weather-sunny'
+        unit_of_measurement: "kWh"
+        value_template: "{{ states.sensor.energy_calc.attributes['Solar_to_home_[kWh]'] }}"
+      energy_calc_solar_to_grid_kwh:
+        friendly_name: "Solar to grid"
+        icon_template: 'mdi:transmission-tower'
+        unit_of_measurement: "kWh"
+        value_template: "{{ states.sensor.energy_calc.attributes['Solar_to_grid_[kWh]'] }}"
+      energy_calc_grid_to_home_kwh:
+        friendly_name: "Grid to home"
+        icon_template: 'mdi:transmission-tower'
+        unit_of_measurement: "kWh"
+        value_template: "{{ states.sensor.energy_calc.attributes['Grid_to_home_[kWh]'] }}"
 # -----------------------------------------------
   - platform: template
     sensors:

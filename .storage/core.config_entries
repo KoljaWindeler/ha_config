@@ -15,7 +15,8 @@
                 },
                 "source": "import",
                 "connection_class": "local_push",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "108f59241d3a4e758bc7da4a8e6b2a5b",
@@ -32,28 +33,8 @@
                 },
                 "source": "import",
                 "connection_class": "unknown",
-                "unique_id": null
-            },
-            {
-                "entry_id": "50b9f55a97aa48e48650a01e9e68a5a9",
-                "version": 1,
-                "domain": "hacs",
-                "title": "",
-                "data": {
-                    "appdaemon": false,
-                    "python_script": false,
-                    "sidepanel_icon": "mdi:alpha-c-box",
-                    "sidepanel_title": "Community",
-                    "theme": true,
-                    "token": "6ac7fb2e31ca3753ad7dabecde8005a7b817ede6"
-                },
-                "options": {},
-                "system_options": {
-                    "disable_new_entities": false
-                },
-                "source": "user",
-                "connection_class": "cloud_poll",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "d6061b7e7de74070a4d34faae490079f",
@@ -84,7 +65,8 @@
                 },
                 "source": "registration",
                 "connection_class": "cloud_push",
-                "unique_id": "io.homeassistant.companion.android-76b7ae1f9de3a3e4"
+                "unique_id": "io.homeassistant.companion.android-76b7ae1f9de3a3e4",
+                "disabled_by": null
             },
             {
                 "entry_id": "2b4890a4778a4514bc27fd601987b374",
@@ -104,7 +86,8 @@
                 },
                 "source": "import",
                 "connection_class": "local_push",
-                "unique_id": "11192165"
+                "unique_id": "11192165",
+                "disabled_by": null
             },
             {
                 "entry_id": "4dcaf2967d264babbfd5ea6b0b3585bd",
@@ -124,7 +107,8 @@
                 },
                 "source": "import",
                 "connection_class": "local_push",
-                "unique_id": "15133743"
+                "unique_id": "15133743",
+                "disabled_by": null
             },
             {
                 "entry_id": "74ab52c9ba4341eb9f48d428ff057d52",
@@ -142,7 +126,8 @@
                 },
                 "source": "user",
                 "connection_class": "local_poll",
-                "unique_id": "123402409-bccb-40e7-8e6c-C80E149D6149"
+                "unique_id": "123402409-bccb-40e7-8e6c-C80E149D6149",
+                "disabled_by": null
             },
             {
                 "entry_id": "30380f05c628469c970ccc7441643e90",
@@ -188,7 +173,8 @@
                 },
                 "source": "user",
                 "connection_class": "local_poll",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "66208df8d75b4738a2dabce0694accf7",
@@ -234,7 +220,8 @@
                 },
                 "source": "user",
                 "connection_class": "local_poll",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "ec1516a6fe46432f9a452cc61616b2a2",
@@ -280,7 +267,8 @@
                 },
                 "source": "user",
                 "connection_class": "local_poll",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "ca28a760904144919be3c1bfb385c500",
@@ -296,7 +284,8 @@
                 },
                 "source": "user",
                 "connection_class": "local_push",
-                "unique_id": "cast"
+                "unique_id": "cast",
+                "disabled_by": null
             },
             {
                 "entry_id": "d670cc61f98c11eab7a7b50016a36398",
@@ -306,7 +295,7 @@
                 "data": {
                     "app_id": "io.homeassistant.companion.android",
                     "app_name": "Home Assistant",
-                    "app_version": "3.0.2-full (521)",
+                    "app_version": "2021.2.2-full (589)",
                     "device_name": "EML-L29",
                     "manufacturer": "Google",
                     "model": "Pixel 4a (5G)",
@@ -327,7 +316,8 @@
                 },
                 "source": "registration",
                 "connection_class": "cloud_push",
-                "unique_id": "io.homeassistant.companion.android-8d286006dd54decc"
+                "unique_id": "io.homeassistant.companion.android-8d286006dd54decc",
+                "disabled_by": null
             },
             {
                 "entry_id": "5346274afc0911ea80b4d361e29a2ddd",
@@ -351,7 +341,8 @@
                 },
                 "source": "import",
                 "connection_class": "local_poll",
-                "unique_id": "00:12:31:37:c8:84"
+                "unique_id": "00:12:31:37:c8:84",
+                "disabled_by": null
             },
             {
                 "entry_id": "534bf206fc0911ea8080654e3e65dc5b",
@@ -375,7 +366,8 @@
                 },
                 "source": "import",
                 "connection_class": "local_poll",
-                "unique_id": "00:12:31:5c:17:dc"
+                "unique_id": "00:12:31:5c:17:dc",
+                "disabled_by": null
             },
             {
                 "entry_id": "543e98fffc0911eab16d897eaac663d2",
@@ -399,7 +391,8 @@
                 },
                 "source": "import",
                 "connection_class": "local_poll",
-                "unique_id": "00:12:31:2c:e7:bb"
+                "unique_id": "00:12:31:2c:e7:bb",
+                "disabled_by": null
             },
             {
                 "entry_id": "3988d3b5003511eb890431736d1bba59",
@@ -415,7 +408,8 @@
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "123402409-bccb-40e7-8e6c-989BCBF69928"
+                "unique_id": "123402409-bccb-40e7-8e6c-989BCBF69928",
+                "disabled_by": null
             },
             {
                 "entry_id": "3b0b4222003511eb974ab5831c2e198b",
@@ -431,63 +425,76 @@
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "123402409-bccb-40e7-8e6c-989BCBF69A40"
+                "unique_id": "123402409-bccb-40e7-8e6c-989BCBF69A40",
+                "disabled_by": null
             },
             {
                 "entry_id": "3f19f9bf003511ebbb24d384e32163d4",
                 "version": 1,
                 "domain": "upnp",
                 "title": "Ignored",
-                "data": {},
+                "data": {
+                    "hostname": "192.168.2.4"
+                },
                 "options": {},
                 "system_options": {
                     "disable_new_entities": false
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "uuid:75802409-bccb-40e7-9f6c-0896D74046BE::urn:schemas-upnp-org:device:InternetGatewayDevice:2"
+                "unique_id": "uuid:75802409-bccb-40e7-9f6c-0896D74046BE::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
+                "disabled_by": null
             },
             {
                 "entry_id": "42ac0459003511eb982977b327bb7b03",
                 "version": 1,
                 "domain": "upnp",
                 "title": "Ignored",
-                "data": {},
+                "data": {
+                    "hostname": "192.168.2.2"
+                },
                 "options": {},
                 "system_options": {
                     "disable_new_entities": false
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "uuid:75802409-bccb-40e7-8e6c-989BCBF69A40::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
+                "unique_id": "uuid:75802409-bccb-40e7-8e6c-989BCBF69A40::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+                "disabled_by": null
             },
             {
                 "entry_id": "44615c6e003511eb8ef1d976418926ba",
                 "version": 1,
                 "domain": "upnp",
                 "title": "Ignored",
-                "data": {},
+                "data": {
+                    "hostname": "192.168.2.3"
+                },
                 "options": {},
                 "system_options": {
                     "disable_new_entities": false
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "uuid:75802409-bccb-40e7-8e6c-989BCBF69928::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
+                "unique_id": "uuid:75802409-bccb-40e7-8e6c-989BCBF69928::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+                "disabled_by": null
             },
             {
                 "entry_id": "4814f74a003511eb9083e53e2c54bb3c",
                 "version": 1,
                 "domain": "upnp",
                 "title": "Ignored",
-                "data": {},
+                "data": {
+                    "hostname": "192.168.2.4"
+                },
                 "options": {},
                 "system_options": {
                     "disable_new_entities": false
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "uuid:75802409-bccb-40e7-8e6c-0896D74046BE::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
+                "unique_id": "uuid:75802409-bccb-40e7-8e6c-0896D74046BE::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+                "disabled_by": null
             },
             {
                 "entry_id": "4fcc970b003511ebbd9f1bb078d2f76c",
@@ -503,74 +510,88 @@
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "123402409-bccb-40e7-8e6c-0896D74046BE"
+                "unique_id": "123402409-bccb-40e7-8e6c-0896D74046BE",
+                "disabled_by": null
             },
             {
                 "entry_id": "512bce7b003511eb86e275e40b0ce79a",
                 "version": 1,
                 "domain": "upnp",
                 "title": "Ignored",
-                "data": {},
+                "data": {
+                    "hostname": "192.168.2.2"
+                },
                 "options": {},
                 "system_options": {
                     "disable_new_entities": false
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "uuid:75802409-bccb-40e7-9f6c-989BCBF69A40::urn:schemas-upnp-org:device:InternetGatewayDevice:2"
+                "unique_id": "uuid:75802409-bccb-40e7-9f6c-989BCBF69A40::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
+                "disabled_by": null
             },
             {
                 "entry_id": "526db8d3003511eb94f85be37ece39cf",
                 "version": 1,
                 "domain": "upnp",
                 "title": "Ignored",
-                "data": {},
+                "data": {
+                    "hostname": "192.168.2.3"
+                },
                 "options": {},
                 "system_options": {
                     "disable_new_entities": false
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "uuid:75802409-bccb-40e7-9f6c-989BCBF69928::urn:schemas-upnp-org:device:InternetGatewayDevice:2"
+                "unique_id": "uuid:75802409-bccb-40e7-9f6c-989BCBF69928::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
+                "disabled_by": null
             },
             {
                 "entry_id": "539f3f3f003511ebb7cc372b1fbeb3af",
                 "version": 1,
                 "domain": "upnp",
                 "title": "Ignored",
-                "data": {},
+                "data": {
+                    "hostname": "192.168.2.1"
+                },
                 "options": {},
                 "system_options": {
                     "disable_new_entities": false
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "uuid:75802409-bccb-40e7-8e6c-C80E149D6149::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
+                "unique_id": "uuid:75802409-bccb-40e7-8e6c-C80E149D6149::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+                "disabled_by": null
             },
             {
                 "entry_id": "54c17159003511eb809b1582dc490626",
                 "version": 1,
                 "domain": "upnp",
                 "title": "Ignored",
-                "data": {},
+                "data": {
+                    "hostname": "192.168.2.1"
+                },
                 "options": {},
                 "system_options": {
                     "disable_new_entities": false
                 },
                 "source": "ignore",
                 "connection_class": "local_poll",
-                "unique_id": "uuid:75802409-bccb-40e7-9f6c-C80E149D6149::urn:schemas-upnp-org:device:InternetGatewayDevice:2"
+                "unique_id": "uuid:75802409-bccb-40e7-9f6c-C80E149D6149::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
+                "disabled_by": null
             },
             {
                 "entry_id": "5f1146d6015911eba3a74533b43a257c",
-                "version": 1,
+                "version": 2,
                 "domain": "dwd_weather",
                 "title": "Celle",
                 "data": {
                     "latitude": 52.628997,
                     "longitude": 9.935877,
                     "station_id": "",
-                    "name": "Celle"
+                    "name": "Celle",
+                    "weather_interval": 24
                 },
                 "options": {},
                 "system_options": {
@@ -578,7 +599,8 @@
                 },
                 "source": "user",
                 "connection_class": "cloud_poll",
-                "unique_id": "celle"
+                "unique_id": "celle",
+                "disabled_by": null
             },
             {
                 "entry_id": "f00ea0f936768123a5a17eb8c37673e5",
@@ -622,7 +644,8 @@
                 },
                 "source": "user",
                 "connection_class": "local_poll",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "741e6f7d1fce1214830eff41949cf4a7",
@@ -666,7 +689,8 @@
                 },
                 "source": "user",
                 "connection_class": "local_poll",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "83b9eef88a02ca10b9b359e6ff685327",
@@ -697,7 +721,8 @@
                 },
                 "source": "registration",
                 "connection_class": "cloud_push",
-                "unique_id": "io.homeassistant.companion.android-7ba8f78d02808622"
+                "unique_id": "io.homeassistant.companion.android-7ba8f78d02808622",
+                "disabled_by": null
             },
             {
                 "entry_id": "d2007a6ca43c53da316be6d51b211fbb",
@@ -741,7 +766,8 @@
                 },
                 "source": "user",
                 "connection_class": "local_poll",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "f9324eb9445296162f7fb82436fb99fb",
@@ -759,7 +785,8 @@
                 },
                 "source": "zeroconf",
                 "connection_class": "local_push",
-                "unique_id": "tagreader"
+                "unique_id": "tagreader",
+                "disabled_by": null
             },
             {
                 "entry_id": "8bb26e99590305a527e84b70aaf930b1",
@@ -790,7 +817,8 @@
                 },
                 "source": "registration",
                 "connection_class": "cloud_push",
-                "unique_id": "io.homeassistant.companion.android-de27ffbb8b06d14e"
+                "unique_id": "io.homeassistant.companion.android-de27ffbb8b06d14e",
+                "disabled_by": null
             },
             {
                 "entry_id": "91a6fcb278dbda1ccd38e12121cf5b9b",
@@ -804,7 +832,76 @@
                 },
                 "source": "import",
                 "connection_class": "unknown",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
+            },
+            {
+                "entry_id": "b7742bedd557faa801863dd36e355923",
+                "version": 1,
+                "domain": "hacs",
+                "title": "",
+                "data": {
+                    "token": "49172efab6b3b8d5fd292ce43c05cbabf02179bb"
+                },
+                "options": {
+                    "sidepanel_title": "HACS",
+                    "sidepanel_icon": "hacs:hacs",
+                    "release_limit": 5,
+                    "country": "ALL",
+                    "appdaemon": false,
+                    "netdaemon": false,
+                    "debug": false,
+                    "experimental": false
+                },
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "user",
+                "connection_class": "cloud_poll",
+                "unique_id": null,
+                "disabled_by": null
+            },
+            {
+                "entry_id": "ad99979c5f6458323f3a620fbed4a2bc",
+                "version": 1,
+                "domain": "xiaomi_miio",
+                "title": "xiaomi_vacuum_cleaner_2",
+                "data": {
+                    "config_flow_device": "device",
+                    "host": "192.168.2.92",
+                    "token": "5166515a365a594e3957366462747276",
+                    "model": "roborock.vacuum.s5",
+                    "mac": "04:cf:8c:f9:2e:51"
+                },
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "import",
+                "connection_class": "local_poll",
+                "unique_id": "04:cf:8c:f9:2e:51",
+                "disabled_by": null
+            },
+            {
+                "entry_id": "f47c6468185f6a6ae49df226f7c40e8f",
+                "version": 1,
+                "domain": "xiaomi_miio",
+                "title": "xiaomi_vacuum_cleaner",
+                "data": {
+                    "config_flow_device": "device",
+                    "host": "192.168.2.30",
+                    "token": "48597139467755387972504364425733",
+                    "model": "rockrobo.vacuum.v1",
+                    "mac": "78:11:dc:e6:f0:bd"
+                },
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "import",
+                "connection_class": "local_poll",
+                "unique_id": "78:11:dc:e6:f0:bd",
+                "disabled_by": null
             }
         ]
     }

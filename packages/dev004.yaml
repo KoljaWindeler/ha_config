@@ -24,7 +24,7 @@ homeassistant:
     sensor.dev4_adc:
       friendly_name: "Basement 4CH"
     switch.dev4_gpio_4:
-      friendly_name: "New supply main"
+      friendly_name: "supplyroom main"
     switch.dev4_gpio_13:
       friendly_name: "Dryroom LED" #device internal led
     switch.dev4_gpio_15:

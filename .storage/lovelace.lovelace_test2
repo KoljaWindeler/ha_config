@@ -6,7 +6,20 @@
             "views": [
                 {
                     "badges": [],
-                    "cards": []
+                    "cards": [
+                        {
+                            "type": "custom:mini-media-player",
+                            "entity": "media_player.ytube_music_player_testing"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.dev4_gpio_4"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }

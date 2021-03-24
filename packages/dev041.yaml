@@ -44,3 +44,10 @@ sensor:
     start: '{{ now().replace(hour=0, minute=0, second=0) }}'
     end: '{{ now() }}'
 # -----------------------------------------------
+
+  - platform: template
+    sensors:
+      burn_energy:
+        value_template: "{{ ((states('sensor.ww1')|float) + (states('sensor.ww2')|float/2) + (states('sensor.ww3')|float/2)) | round(2) }}"
+        unit_of_measurement: "kWh"
+

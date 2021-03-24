@@ -189,7 +189,7 @@ views:
                icon: mdi:baby
                name: Crip
                state_color: true
-#### 4th line
+#### 3rd line
          - type: horizontal-stack
            cards:
              - type: entity-button
@@ -217,7 +217,7 @@ views:
                icon: mdi:bed-double-outline
                name: Bedroom
                state_color: true
-#### 5th line
+#### 4th line
          - type: horizontal-stack
            cards:
              - type: entity-button
@@ -460,7 +460,7 @@ views:
                          id: RDTMAK5uy_kset8DisdE7LSD4TNjEVvrKRTmG7a56sY
                        - name: Caro
                          type: channel
-                         id: PLZvjm51R8SGuWhMtfSu-A17Kp3jZfg6pg
+                         id: PLZvjm51R8SGuFNGfYDdHSYN7ZjeAnKqM7
                        - name: Coffee
                          type: playlist
                          id: PL6H6TfFpYvpersEdHECeWkocaPueTqieF
@@ -621,6 +621,7 @@ views:
          - type: horizontal-stack
            cards:
             - type: custom:power-wheel-card 
+            
               style: | 
                  ha-card {
                       padding: 6px !important;                 
@@ -629,6 +630,7 @@ views:
                       padding: 0px !important;
                       min-height: 0px;
                  }
+              title: "."
               consuming_color: "#bdbdbd"
               producing_color: "#bdbdbd"
               solar_power_entity: sensor.pv_power_int
@@ -942,6 +944,7 @@ views:
                         tap_action:
                           action: toggle
                       - binary_sensor.dev15_motion
+                      - binary_sensor.dev16_motion
 
           - entity: sensor.zero
             name: Office Caro
@@ -1005,8 +1008,8 @@ views:
                     type: glance
                     entities:
                       - sensor.dev13_adc
-                      - sensor.dev16_ads_ch0_kw
-                      - sensor.dev16_ads_ch10_kw
+                      - sensor.dev37_ads_ch0_kw
+                      - sensor.dev37_ads_ch10_kw
 
 
           - entity: sensor.zero
@@ -1247,7 +1250,7 @@ views:
                     entities:
                       - entity: sensor.dev8_temperature
                         name: Temp
-                      - sensor.dev16_ads_ch8_kw
+                      - sensor.dev37_ads_ch8_kw
                       - entity: switch.dev8
                       - entity: binary_sensor.dev8_motion
                         name: Motion
@@ -1299,9 +1302,9 @@ views:
                         tap_action:
                           action: toggle
                       - entity: sensor.dev30_uptime
-                      - sensor.dev16_ads_ch1_kw
-                      - sensor.dev16_ads_ch2_kw
-                      - sensor.dev16_ads_ch3_kw
+                      - sensor.dev37_ads_ch1_kw
+                      - sensor.dev37_ads_ch2_kw
+                      - sensor.dev37_ads_ch3_kw
                       - entity: camera.cam_dome3_profile_000
                         name: Cam
 
@@ -1409,56 +1412,56 @@ views:
              - entity: sensor.dev30_temperature
                name: Pool water
 
-
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+             - detail: 2
+               graph: line
+               entity: sensor.outside_temperature
+               name: Outside
+               type: sensor 
+             - detail: 2
+               graph: line
+               entity: sensor.dev8_temperature
+               name: Garage
+               type: sensor 
+          - type: horizontal-stack
+            cards:
+             - detail: 2
+               graph: line
+               entity: sensor.carlo_temperature
+               name: Carlo
+               type: sensor 
+             - detail: 2
+               graph: line
+               entity: sensor.livingroom_temperature
+               name: Livingroom
+               type: sensor 
+          - type: horizontal-stack
+            cards:
+             - detail: 2
+               graph: line
+               entity: sensor.beamer_temperature
+               name: Beamer
+               type: sensor 
+             - detail: 2
+               graph: line
+               entity: sensor.foyer_temperature
+               name: Foyer
+               type: sensor 
       - type: weather-forecast
         entity: weather.dark_sky
-      - type: horizontal-stack
-        cards:
-         - detail: 2
-           graph: line
-           entity: sensor.outside_temperature
-           name: Outside
-           type: sensor 
-         - detail: 2
-           graph: line
-           entity: sensor.dev8_temperature
-           name: Garage
-           type: sensor 
-
-      - type: horizontal-stack
-        cards:
-         - detail: 2
-           graph: line
-           entity: sensor.carlo_temperature
-           name: Carlo
-           type: sensor 
-         - detail: 2
-           graph: line
-           entity: sensor.livingroom_temperature
-           name: Livingroom
-           type: sensor 
-      - type: horizontal-stack
-        cards:
-         - detail: 2
-           graph: line
-           entity: sensor.beamer_temperature
-           name: Beamer
-           type: sensor 
-         - detail: 2
-           graph: line
-           entity: sensor.foyer_temperature
-           name: Foyer
-           type: sensor 
 
 
-      - type: picture-entity
-        entity: camera.cam_weather2
-        name: NDS
-        camera_view: live
-      - type: picture-entity
-        entity: camera.cam_weather1
-        name: BRD
-        camera_view: live
+#      - type: picture-entity
+#        entity: camera.cam_weather2
+#        name: NDS
+#        camera_view: live
+#      - type: picture-entity
+#        entity: camera.cam_weather1
+#        name: BRD
+#        camera_view: live
     icon: 'mdi:weather-partly-cloudy'
     title: weather
 
@@ -1469,12 +1472,22 @@ views:
   - cards:
       - type: entities
         entities:
-          - vacuum.xiaomi_vacuum_cleaner
-          - vacuum.xiaomi_vacuum_cleaner_2
-          - input_boolean.cleaning_done_today_0
-          - input_boolean.cleaning_done_today_1
-          - sensor.vac_triggered_0
-          - sensor.vac_triggered_1
+          - entity: vacuum.xiaomi_vacuum_cleaner
+            type: "custom:multiple-entity-row"
+            entities:
+              - entity: input_boolean.cleaning_done_today_0
+                name: false
+                toggle: true
+              - entity: sensor.vac_triggered_0
+                name: Last
+          - entity: vacuum.xiaomi_vacuum_cleaner_2
+            type: "custom:multiple-entity-row"
+            entities:
+              - entity: input_boolean.cleaning_done_today_1
+                name: false
+                toggle: true
+              - entity: sensor.vac_triggered_1
+                name: Last
           - input_boolean.autostart_cleaning
         show_header_toggle: false
         title: Vacuuming
@@ -1504,30 +1517,24 @@ views:
                secondary_info: 
                  name: false
                  entity: sensor.ww1
+             - entity: sensor.dev29_temperature
            show_header_toggle: false 
            title: Heaters
+           footer:
+             type: graph
+             detail: 2
+             entity: sensor.dev29_temperature
+             name: Warm water
+             hours_to_show: 24
           
-         - detail: 2
-           graph: line
-           entity: sensor.dev29_temperature
-           name: Warm water
-           type: sensor 
-#           tap_action: 
-#             action: fire-dom-event
-#             service: browser_mod.more_info
-#             browser_mod:
-#               command: popup
-#               entity_id: sensor.dev29_temperature
-#               large: true 
-
 
       - type: entities
         entities:
           - sensor.ics_1
           - sensor.ics_2
           - sensor.ics_3
-        title: Trash
-
+        title: Trash        
+        
       - type: entities
         entities:
           - sensor.ics_4
@@ -1567,22 +1574,19 @@ views:
         show_header_toggle: false
         title: Pool
 
-      - type: vertical-stack
-        cards:
-         - type: entities
-           entities:
-             - entity: switch.dev40_gpio_12
-         - detail: 2
-           graph: line
-           entity: sensor.dev4_humidity
-           name: Cellar Humidity
-           type: sensor 
+      - type: entities
+        entities:
+          - entity: switch.dev40_gpio_12
+          - entity: sensor.dev4_humidity
+            name: Basement humidity
+        footer:
+          detail: 2
+          type: graph
+          entity: sensor.dev4_humidity
+          name: Cellar Humidity
+          hours_to_show: 24
 
-         - detail: 2
-           graph: line
-           entity: sensor.dev4_humidity_stat_mean
-           name: Cellar Humidity
-           type: sensor 
+
 
       - type: vertical-stack
         cards:
@@ -1664,17 +1668,17 @@ views:
                entities:
                   - entity: switch.dev4_gpio_12
                     name: Garden Pump
-                  - entity: sensor.dev16_ads_ch0_kw
+                  - entity: sensor.dev37_ads_ch0_kw
                     name: Washing Machine
-                  - entity: sensor.dev16_ads_ch1_kw
+                  - entity: sensor.dev37_ads_ch1_kw
                     name: Garden drain
-                  - entity: sensor.dev16_ads_ch2_kw
+                  - entity: sensor.dev37_ads_ch2_kw
                     name: House drain
-                  - entity: sensor.dev16_ads_ch3_kw
+                  - entity: sensor.dev37_ads_ch3_kw
                     name: Pool Pump
-                  - entity: sensor.dev16_ads_ch10_kw
+                  - entity: sensor.dev37_ads_ch10_kw
                     name: Bath Cellar
-                  - entity: sensor.dev16_ads_ch11_kw
+                  - entity: sensor.dev37_ads_ch11_kw
                     name: Pool Heat
                   - entity: sensor.house_power_rem
                     name: House remaining
@@ -1728,60 +1732,137 @@ views:
         cards:
          - type: entities
            entities:
-              - entity: sensor.energy_calc
-              - entity: sensor.energy_calc_home_from_solar
-                icon: mdi:percent-outline
-              - entity: sensor.pv_daily_int
-                name: Today Solar kWh
-                icon: mdi:solar-power
-         - type: entities
-           entities:
-              - entity: sensor.dev37_em_cur
-                name: Grid slow
-                icon: mdi:transmission-tower
               - entity: sensor.pv_power_int
                 name: Solar
                 icon: mdi:weather-sunny
+                type: "custom:multiple-entity-row"
+                styles:
+                  width: 75px
+                  text-align: right
+                  padding-right: 16px
+                entities:
+                  - name: "24h max"
+                    unit: "W"
+                    entity: sensor.pv_power_stat
+                    attribute: max_value
+                    styles:
+                      width: 75px
+                      text-align: right
+                  - name: "Total today"
+                    entity: sensor.pv_daily_int
+                    styles:
+                      width: 75px
+                      text-align: right
               - entity: sensor.house_power
+                type: "custom:multiple-entity-row"
                 name: House
                 icon: mdi:home-outline
+                styles:
+                  width: 75px
+                  text-align: right
+                entities:
+                  - name: "Total today"
+                    unit: "kWh"
+                    entity: sensor.energy_calc
+                    attribute: Home_total_consumed_[kWh]
+                    styles:
+                      width: 75px
+                      text-align: right
+                  - name: "From solar"
+                    unit: "kWh"
+                    entity: sensor.energy_calc_solar_to_home_kwh
+                    styles:
+                      width: 75px
+                      text-align: right
+              - name: Autarkie
+                unit: "%"
+                entity: sensor.energy_calc
+                attribute: Home_from_Solar_[%]
+                type: "custom:multiple-entity-row"
+                icon: mdi:brightness-percent
+                styles:
+                  width: 75px
+                  text-align: right
+                entities:
+                  - name: "Solar to home"
+                    entity: sensor.energy_calc
+                    styles:
+                      width: 75px
+                      text-align: right
+                  - entity: sensor.burn_energy
+                    name: Burned kWh
+                    styles:
+                      width: 75px
+                      text-align: right
+              - entity: sensor.dev37_em_cur
+                icon: mdi:transmission-tower
+                name: Grid
+                type: "custom:multiple-entity-row"
+                styles:
+                  width: 75px
+                  text-align: right
+                entities:
+                  - name: "To net today"
+                    entity: sensor.energy_calc_solar_to_grid_kwh
+                    styles:
+                      width: 75px
+                      text-align: right
+                  - name: "From net today"
+                    entity: sensor.energy_calc_grid_to_home_kwh
+                    styles:
+                      width: 75px
+                      text-align: right
          - type: entities
            entities:
               - entity: sensor.house_power_rem
                 name: House remaining
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch0_kw
+              - entity: sensor.dev37_ads_ch0_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch1_kw
+              - entity: sensor.dev37_ads_ch1_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch2_kw
+              - entity: sensor.dev37_ads_ch2_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch3_kw
+              - entity: sensor.dev37_ads_ch3_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch4_kw
+              - entity: sensor.dev37_ads_ch4_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch5_kw
+              - entity: sensor.dev37_ads_ch5_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch6_kw
+              - entity: sensor.dev37_ads_ch6_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch7_kw
+              - entity: sensor.dev37_ads_ch7_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch8_kw
+              - entity: sensor.dev37_ads_ch8_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch9_kw
+              - entity: sensor.dev37_ads_ch9_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch10_kw
+              - entity: sensor.dev37_ads_ch10_kw
                 icon: mdi:speedometer
-              - entity: sensor.dev16_ads_ch11_kw
+              - entity: sensor.dev37_ads_ch11_kw
                 icon: mdi:speedometer
-         - type: entities
+#         - type: entities
+#           entities:
+#              - entity: sensor.dev37_em_tot_grid
+#                name: Total fed out
+#                icon: mdi:transmission-tower
+#              - entity: sensor.dev37_em_tot_solar
+#                name: Total fed in
+#                icon: mdi:solar-power
+         - type: custom:mini-graph-card
+           name: FedIn/Out 24h 
+           line_width: 1
+           smoothing: false
+           points_per_hour: 60
            entities:
-              - entity: sensor.dev37_em_tot_grid
-                name: Total fed out
-                icon: mdi:transmission-tower
               - entity: sensor.dev37_em_tot_solar
                 name: Total fed in
                 icon: mdi:solar-power
+                color: green
+              - entity: sensor.dev37_em_tot_grid
+                name: Total fed out
+                y_axis: 'secondary'
+                color: red
      ########## details ########  
 
      ########## graph ########  
@@ -1822,16 +1903,16 @@ views:
            unit: 'kWh'
            entities:
             - sensor.long_term_power
-         - type: custom:long-term-card
-           name: 'Energy Cost / Year'
-           display_mode: 'abs'
-           line_width: 1
-           formater: '-yyyy-mm-dd'
-           maxDays: 365
-           data_delimiter: ','
-           unit: 'eur'
-           entities:
-            - sensor.long_term_energy_cost
+#         - type: custom:long-term-card
+#           name: 'Energy Cost / Year'
+#           display_mode: 'abs'
+#           line_width: 1
+#           formater: '-yyyy-mm-dd'
+#           maxDays: 365
+#           data_delimiter: ','
+#           unit: 'eur'
+#           entities:
+#            - sensor.long_term_energy_cost
          - type: custom:long-term-card
            name: 'Solar / Year'
            display_mode: 'abs'
@@ -1921,15 +2002,15 @@ views:
             template: signal_template
             variables:
               - dev: dev15
-          - type: custom:decluttering-card
-            template: signal_template
-            variables:
-              - dev: dev16
 
       - type: entities
         title: Update
         show_header_toggle: false
         entities:
+          - type: custom:decluttering-card
+            template: signal_template
+            variables:
+              - dev: dev16
           - type: custom:decluttering-card
             template: signal_template
             variables:
@@ -2333,17 +2414,21 @@ views:
           - entity: binary_sensor.mymotiondetectorrule_cell_motion_detection_3
             name: Cellar cam
           - type: divider
+          - type: divider
           - binary_sensor.dev57_motion
           - entity: binary_sensor.0x00158d00045d7a47_occupancy
             name: "Stairs U"
           - entity: binary_sensor.0x00158d0002f0bc08_occupancy
             name: "Hallway U"
           - type: divider
+          - type: divider
 #          - binary_sensor.dev14_motion
           - entity: binary_sensor.dev54_motion_1
             name: "Foyer ceiling motion"
           - binary_sensor.dev15_motion
           - binary_sensor.dev9_gpio_4
+          - binary_sensor.dev16_motion
+          - type: divider
           - type: divider
           - binary_sensor.dev17_motion
           - entity: binary_sensor.dev54_motion_2

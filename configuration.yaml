@@ -35,6 +35,8 @@ mobile_app:
 lovelace:
   mode: yaml
   resources:
+    - url: /local/apexcharts-card.js?v=1.8.2
+      type: module
     - url: /local/monster-card.js
       type: js
     - url: /local/group-card.js

@@ -10,9 +10,11 @@ custom_components/hacs/
 *.save
 auth
 auth_provider.homeassistant
+.storage
 .storage/hacs
 .storage/core.config_entries
 androidtv_adbkey
+www/ytube_proxy.mp4
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

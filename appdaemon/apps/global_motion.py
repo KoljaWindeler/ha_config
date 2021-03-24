@@ -24,6 +24,7 @@ class GmotionWorld(hass.Hass):
 		self.sensor.append(["Stairs upstairs Zigbee","0x00158d00045d7a47_occupancy",1]) # zigbee an der treppe oben
 
 		self.sensor.append(["World map","dev15_motion",0]) # weltkarte
+		self.sensor.append(["Kitchen island","dev16_motion",0]) # kuechen tresen
 		self.sensor.append(["Entrance","dev54_motion_1",0]) # foyer decke
 #		self.sensor.append(["Entrance","dev9_gpio_4",0]) # schiebeschrank richtung foyer ...NICHT ZUVERLAESSIG
 #		self.sensor.append(["Entrance","dev9_gpio_5",0]) # schiebeschrank innen
@@ -138,8 +139,10 @@ class GmotionWorld(hass.Hass):
 		try:
 			if(int(self.get_state("sensor.bed_occupancy"))==2):
 				if(self.get_state("binary_sensor.g_motion_cellar")=="on"  or self.get_state("binary_sensor.g_motion_basement")=="on"):
-					self.log("night alert")
-					self.call_service("notify/pb", title="Nightly motion alert", message="Well there is motion at night in the cellar or the basement .. you might want to have a look")
+					m="Well there is motion at night in the cellar or the basement .. you might want to have a look, "
+					m+=str(self.get_state('sensor.dev45_hx711'))
+					self.log(m)
+					self.call_service("notify/pb", title="Nightly motion alert", message=m)
 					for i in range(0,6):
 						if(i%2==0):
 							self.turn_on("light.dev32")

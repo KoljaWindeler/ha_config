@@ -17,6 +17,7 @@ class warm_waterWorld(hass.Hass):
         self.run_daily(self.on, datetime.time(6, 45, 0))
         self.run_daily(self.on, datetime.time(6, 15, 0))
         self.run_daily(self.on, datetime.time(5, 45, 0))
+        self.run_daily(self.on, datetime.time(18, 55, 0))
         self.listen_state(self.fuse, "sensor.dev29_temperature")
         self.listen_state(self.heater, "binary_sensor.dev29_gpio_5")
         self.listen_state(self.heating, "sensor.dev29_temperature_der")

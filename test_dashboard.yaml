@@ -13,6 +13,19 @@ views:
 #         - type: custom:mini-graph-card
 #           points_per_hour: 12
 #           smoothing: false
+         - type: custom:apexcharts-card
+           graph_span: 7d
+           span:
+             start: hour
+           series:
+             - entities: sensor.long_term_power
+               data_generator: |
+                 return entity.attributs.data.map(
+                 (item) => {
+                   return [new Data(item.datatime).getTime(), item.value];
+                 });
+
+
          - type: gauge
            entity: sensor.dev45_hx711
            min: 0
