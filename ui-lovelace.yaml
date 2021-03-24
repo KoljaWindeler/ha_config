@@ -1902,17 +1902,26 @@ views:
            data_delimiter: ','
            unit: 'kWh'
            entities:
-            - sensor.long_term_power
-#         - type: custom:long-term-card
-#           name: 'Energy Cost / Year'
-#           display_mode: 'abs'
-#           line_width: 1
-#           formater: '-yyyy-mm-dd'
-#           maxDays: 365
-#           data_delimiter: ','
-#           unit: 'eur'
-#           entities:
-#            - sensor.long_term_energy_cost
+             - sensor.long_term_power
+           tap_action: 
+             action: fire-dom-event
+             browser_mod:
+               command: popup
+               title: 'Solar/Year'
+               large: true
+               hide_header: true
+               card:
+                 type: custom:long-term-card
+                 name: 'Grid Year'
+                 display_mode: 'diff'
+                 formater: '-yyyy-mm-dd'
+                 line_width: 1
+                 maxDays: 365
+                 data_delimiter: ','
+                 unit: 'kWh'
+                 entities:
+                   - sensor.long_term_power
+
          - type: custom:long-term-card
            name: 'Solar / Year'
            display_mode: 'abs'
@@ -1923,7 +1932,27 @@ views:
            unit: 'kWh'
            lower_bound: 0
            entities:
-            - sensor.long_term_solar
+             - sensor.long_term_solar
+           tap_action: 
+             action: fire-dom-event
+             browser_mod:
+               command: popup
+               title: 'Solar/Year'
+               large: true
+               hide_header: true
+               card:
+                 type: custom:long-term-card
+                 name: 'Solar / Year'
+                 display_mode: 'abs'
+                 formater: '-yyyy-mm-dd'
+                 line_width: 1
+                 maxDays: 365
+                 data_delimiter: ','
+                 unit: 'kWh'
+                 lower_bound: 0
+                 entities:
+                   - sensor.long_term_solar
+
      ########## graph ########  
 
 
