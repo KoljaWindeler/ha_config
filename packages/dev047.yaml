@@ -1,0 +1,19 @@
+### ball living room
+# SL, DS18B20
+# -----------------------------------------------
+
+homeassistant:
+  customize:
+    switch.dev47_gpio_15:
+      friendly_name: "47 tripple light"
+    switch.dev47_gpio_4:
+      friendly_name: "47 stringlights"
+# -----------------------------------------------
+
+sensor:
+  - platform: mqtt_jkw
+    name: "dev47"
+    fname: "47 Terrace"
+
+# -----------------------------------------------
+

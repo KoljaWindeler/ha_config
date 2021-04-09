@@ -1,0 +1,23 @@
+### ball living room
+# SL, DS18B20
+# -----------------------------------------------
+
+homeassistant:
+  customize:
+    binary_sensor.dev46_gpio_13:
+      friendly_name: "46 Terrace 1"
+    binary_sensor.dev46_gpio_5:
+      friendly_name: "46 Terrace 2"
+    switch.dev46_gpio_15:
+      friendly_name: "Monitor Touchscreen"
+    switch.dev46_gpio_4:
+      friendly_name: "RPI Touchscreen"
+# -----------------------------------------------
+
+sensor:
+  - platform: mqtt_jkw
+    name: "dev46"
+    fname: "46 Touchscreen"
+
+# -----------------------------------------------
+
