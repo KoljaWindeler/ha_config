@@ -10,8 +10,8 @@ class GmotionWorld(hass.Hass):
 		self.log("Starting gmotion Service")
 		self.set_state("sensor.error",state=" ")
 
-		self.listen_state(self.home, "device_tracker.illuminum_caro", new = "home", duration = 10*60, arg1="Caro home")  # everyone is home for 10 min
-		self.listen_state(self.home, "device_tracker.illuminum_kolja", new = "home", duration = 10*60, arg1="Kolja home")  # everyone is home for 10 min
+		self.listen_state(self.home, "person.caro_2", new = "home", duration = 10*60, arg1="Caro home")  # everyone is home for 10 min
+		self.listen_state(self.home, "person.kolja_2", new = "home", duration = 10*60, arg1="Kolja home")  # everyone is home for 10 min
 
 		self.listen_state(self.system_state, "binary_sensor.someone_is_home")
 		self.listen_state(self.system_state, "input_boolean.alarm_system")
@@ -83,7 +83,7 @@ class GmotionWorld(hass.Hass):
 
 
 	def home(self, entity, attribute, old, new, kwargs):
-		if(self.get_state("device_tracker.illuminum_caro") != "home" and self.get_state("device_tracker.illuminum_kolja") != "home"):
+		if(self.get_state("person.caro_2") != "home" and self.get_state("person.kolja_2") != "home"):
 			self.sensor_trigger_count = []
 			self.sensor_trigger_count_reported = []
 			for i in range(0,len(self.sensor)):
@@ -172,7 +172,7 @@ class GmotionWorld(hass.Hass):
 		## 2.2. the vacuum status
 		## 2.3. the distance of us towards home
 		# 1.
-		if(self.get_state("device_tracker.illuminum_caro") != "home" and self.get_state("device_tracker.illuminum_kolja") != "home"):
+		if(self.get_state("person.caro_2") != "home" and self.get_state("person.kolja_2") != "home"):
 			# 2.
 			vac = self.get_state("vacuum.xiaomi_vacuum_cleaner")
 			vac2 = self.get_state("vacuum.xiaomi_vacuum_cleaner_2")
@@ -191,8 +191,8 @@ class GmotionWorld(hass.Hass):
 						if(self.sensor_trigger_count[i] - self.sensor_trigger_count_reported[i]>0):
 							msg +=self.sensor[i][0]+" ("+str(self.sensor_trigger_count[i] - self.sensor_trigger_count_reported[i])+"x) "
 					msg += ". Distances: "
-					msg +="Kolja ("+str(self.distance("device_tracker.illuminum_kolja"))+") "
-					msg +="Caro ("+str(self.distance("device_tracker.illuminum_caro"))+") "
+					msg +="Kolja ("+str(self.distance("device_tracker.google_maps_110518043042355478237"))+") "
+					msg +="Caro ("+str(self.distance("device_tracker.google_maps_114864588644392991844"))+") "
 					msg +="Vacuum status: "+self.get_state("vacuum.xiaomi_vacuum_cleaner")
 					msg +=" / Vacuum 2 status: "+self.get_state("vacuum.xiaomi_vacuum_cleaner_2")
 
@@ -217,9 +217,9 @@ class GmotionWorld(hass.Hass):
 				self.msg_nr = 0
 
 				msg = "Issue solved, "
-				if(self.get_state("device_tracker.illuminum_caro") == "home"):
+				if(self.get_state("person.caro_2") == "home"):
 					msg = "Caro "
-				elif(self.get_state("device_tracker.illuminum_kolja") == "home"):
+				elif(self.get_state("person.kolja_2") == "home"):
 					msg = "Kolja "
 				msg += "is home now"
 				self.log(msg)

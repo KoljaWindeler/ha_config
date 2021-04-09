@@ -1,7 +1,3 @@
-#  - platform: owntracks
-    
-#  - platform: fritz
-#    host: 192.168.2.1
   - platform: google_maps
     username: kkoolljjaa@gmail.com
   - platform: ping
@@ -9,3 +5,4 @@
     hosts:
       ping_kolja: 192.168.2.211
       ping_caro: 192.168.2.212
+      ping_carlo: 192.168.2.206

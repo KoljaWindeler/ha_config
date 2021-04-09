@@ -8,7 +8,7 @@ class EntranceWorld2(hass.Hass):
     def initialize(self):
         self.log("Starting Entrance Service 2")
         wait.wait_available(self,["binary_sensor.dev54_button","binary_sensor.dev17_motion","person.kolja_2","person.caro_2","proximity.caro_home","proximity.kolja_home"],False)
-        
+
         try:
           os.makedirs('/tmp/cams')
         except:
@@ -37,7 +37,7 @@ class EntranceWorld2(hass.Hass):
         self.listen_state(self.rec_garden, "binary_sensor.mymotiondetectorrule_cell_motion_detection_2")
 
     ######################################################
-    
+
     def six(self, entity="", attribute="", old="", new="", kwargs=""):
         self.outside_on("6am")
     def twentytwo(self, entity="", attribute="", old="", new="", kwargs=""):
@@ -103,6 +103,15 @@ class EntranceWorld2(hass.Hass):
         # send link to video
         self.run_in(self.notify_vid,20,arg={"t":"Frontdoor video","m":"http://192.168.2.84:8081/"+fn.replace("/tmp/","")+".mp4","d":{"file":""}}) # send link to video
         self.run_in(self.outside,5*60) # turn off after 5 min
+
+        # open stream on screen
+        self.set_state("binary_sensor.dev16_motion", state = "on")
+        self.call_service("browser_mod/more_info", entity_id="camera.cam_dome1_profile_000",deviceID="33f1c020-593396b4", large=True)
+        self.run_in(self.close_info,20)
+
+    def close_info(self,arg):
+        self.set_state("binary_sensor.dev16_motion", state = "off")
+        self.call_service("browser_mod/close_popup",deviceID="33f1c020-593396b4")
 
     def backdoor(self, entity="", attribute="", old="", new="",kwargs=""):
         self.log("========= backdoor ========================") # log output

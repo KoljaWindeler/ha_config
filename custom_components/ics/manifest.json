@@ -14,5 +14,6 @@
   "dependencies": [],
   "codeowners": [
     "@KoljaWindeler"
-  ]
+  ],
+  "version": "0.20210325.01"
 }

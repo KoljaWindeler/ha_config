@@ -24,14 +24,15 @@ class motionLight(hass.Hass):
 				if(self.dbg):
 					self.log(str(self.id)+" actually turning off "+i)
 				self.turn_off(i)
-		try:
-			self.cancel_timer(self.handle)
-			if(self.dbg):
-				self.log(str(self.id)+" cancel timer worked")
-		except:
-			if(self.dbg):
-				self.log(str(self.id)+" cancel timer failed")
-			pass
+#		try:
+#			if(self.handle!=None):
+#				self.cancel_timer(self.handle)
+#			if(self.dbg):
+#				self.log(str(self.id)+" cancel timer worked")
+#		except:
+#			if(self.dbg):
+#				self.log(str(self.id)+" cancel timer failed")
+#			pass
 		self.handle = None
 
 	def turn_light_on(self, entity="", attribute="", old="", new="",kwargs=""):
@@ -47,7 +48,8 @@ class motionLight(hass.Hass):
 		# start with cleanup,
 		# either motion is on, so light should be on as well
 		try:
-			self.cancel_timer(self.handle)
+			if(self.handle!=None):
+				self.cancel_timer(self.handle)
 			if(self.dbg):
 				self.log(str(self.id)+" cancel timer worked")
 		except:

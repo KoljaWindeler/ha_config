@@ -4,6 +4,7 @@ seq_harmony:
     entity_id: remote.tvhub_2
     data:
       activity: '28402150'
+
 seq_tv_off:
   sequence:
   - service: media_player.media_stop
@@ -12,16 +13,7 @@ seq_tv_off:
     entity_id: remote.tvhub
     data:
       activity: '-1'
-update_location:
-  sequence:
-  - service: mqtt.publish
-    data:
-      topic: owntracks/illuminum/kolja/cmd
-      payload: '{"_type":"cmd","action":"reportLocation"}'
-  - service: mqtt.publish
-    data:
-      topic: owntracks/illuminum/caro/cmd
-      payload: '{"_type":"cmd","action":"reportLocation"}'
+
 the_buzz:
   sequence:
   - service: media_player.play_media
@@ -33,6 +25,7 @@ the_buzz:
     entity_id: remote.tvhub
     data:
       activity: '32486021'
+
 the_dog:
   sequence:
   - service: media_player.play_media

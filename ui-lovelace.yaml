@@ -24,6 +24,11 @@ custom_header:
       config:
         voice_hide: true 
         chevrons: false
+    - conditions:
+        device_id: "33f1c020-593396b4"
+      config:
+        header_text: " "
+    
 
 
 #################################################
@@ -45,13 +50,15 @@ decluttering_templates:
         - entity: sensor.[[dev]]_bssid
           name: BSSID
           styles:
-            width: 40px
+            width: 30px
         - entity: sensor.[[dev]]_rssi
           name: Signal
           styles:
             width: 60px
         - entity: sensor.[[dev]]_info
           name: Info
+          styles:
+            width: 60px
 #################################################
 
 
@@ -482,20 +489,18 @@ views:
                    cards:
                      - type: picture-entity
                        entity: person.kolja_2
-#                       entity: device_tracker.illuminum_kolja
                        state_image:
                            "home": /local/kolja.jpg
                        image: /local/kolja_sw.jpg
                        show_name: false
                      - type: picture-entity
-                       entity: device_tracker.illuminum_carlo
+                       entity: person.carlo
                        state_image:
                           "home": /local/carlo.jpg
                        image: /local/carlo_sw.jpg
                        show_name: false
                      - type: picture-entity
                        entity: person.caro_2
-#                       entity: device_tracker.illuminum_caro
                        state_image:
                           "home": /local/caro.jpg
                        image: /local/caro_sw.jpg
@@ -1230,6 +1235,16 @@ views:
                         tap_action:
                           action: toggle
                         name: Door
+                      - entity: switch.dev47_gpio_15
+                        name: Tripple Terrace
+                        icon: mdi:alarm-light-outline
+                        tap_action:
+                          action: toggle
+                      - entity: switch.dev47_gpio_4
+                        name: String Terrace
+                        icon: mdi:string-lights
+                        tap_action:
+                          action: toggle
                       - entity: light.dev18
                         tap_action:
                           action: toggle
@@ -1722,6 +1737,7 @@ views:
                    - entity_id: light.joiner*
                    - entity_id: switch.dev57*
                    - entity_id: switch.dev44*
+                   - entity_id: switch.dev46*
                    - entity_id: light.night
                    - attributes: 
                        type: browser_mod
@@ -1739,7 +1755,7 @@ views:
                 styles:
                   width: 75px
                   text-align: right
-                  padding-right: 16px
+#                  padding-right: 16px
                 entities:
                   - name: "24h max"
                     unit: "W"
@@ -1812,6 +1828,27 @@ views:
                     styles:
                       width: 75px
                       text-align: right
+              - entity: sensor.money_today
+                icon: mdi:currency-eur
+                name: Today cost
+                type: "custom:multiple-entity-row"
+                unit: "€"
+                styles:
+                  width: 75px
+                  text-align: right
+                entities:
+                  - name: "Made"
+                    entity: sensor.money_in
+                    styles:
+                      width: 75px
+                      text-align: right
+                    unit: "€"
+                  - name: "Spend"
+                    entity: sensor.money_out
+                    styles:
+                      width: 75px
+                      text-align: right
+                    unit: "€"
          - type: entities
            entities:
               - entity: sensor.house_power_rem
@@ -2161,13 +2198,21 @@ views:
           - type: custom:decluttering-card
             template: signal_template
             variables:
-              - dev: dev54
+              - dev: dev46
 
 
       - type: entities
         title: Update
         show_header_toggle: false
         entities:
+          - type: custom:decluttering-card
+            template: signal_template
+            variables:
+              - dev: dev47
+          - type: custom:decluttering-card
+            template: signal_template
+            variables:
+              - dev: dev54
           - type: custom:decluttering-card
             template: signal_template
             variables:
@@ -2384,19 +2429,23 @@ views:
             icon: mdi:lock
             name: System status
             state_color: true
+            entities:
+              - entity: input_boolean.alarm_system
+                toggle: true
+                name: "Enable"
+              - entity: input_boolean.presents_simulation
+                toggle: true
+                name: "Simulation"
+            show_state: false
+            column: true
           - type: divider
-          - input_boolean.alarm_system
-          - input_boolean.presents_simulation
-          - type: divider
-          - binary_sensor.someone_is_home
-          - binary_sensor.everyone_is_home
-
-          - entity: person.kolja_2
+          - entity: binary_sensor.everyone_is_home
             type: "custom:multiple-entity-row"
-            icon: mdi:security
-          - entity: person.caro_2
-            type: "custom:multiple-entity-row"
-            icon: mdi:security
+            entities:
+              - entity: person.kolja_2
+                name: Kolja
+              - entity: person.caro_2
+                name: Caro
         title: Alarm Status
    
       - type: entities
@@ -2409,6 +2458,16 @@ views:
              name: false
            icon: mdi:security
            name: Global motion
+           entities:
+             - entity: binary_sensor.mymotiondetectorrule_cell_motion_detection
+               name: Door Cam
+             - entity: binary_sensor.mymotiondetectorrule_cell_motion_detection_2
+               name: Garden Cam
+             - entity: binary_sensor.mymotiondetectorrule_cell_motion_detection_3
+               name: Cellar cam
+           column: true
+           state_color: true
+           show_state: false
          - type: divider
          - entity: binary_sensor.g_motion_upstairs
            type: "custom:multiple-entity-row"
@@ -2417,6 +2476,16 @@ views:
              name: false
            icon: mdi:home-floor-1
            name: Upstairs
+           entities:
+             - entity: binary_sensor.0x00158d00045d7a47_occupancy
+               name: "Stairs Zigbee"
+             - entity: binary_sensor.dev57_motion
+               name: "Floor LEDs"
+             - entity: binary_sensor.0x00158d0002f0bc08_occupancy
+               name: "Floor Zigbee"
+           column: true
+           state_color: true
+           show_state: false
          - entity: binary_sensor.g_motion_basement
            type: "custom:multiple-entity-row"
            secondary_info:
@@ -2424,6 +2493,18 @@ views:
              name: false
            icon: mdi:home-floor-0
            name: Ground floor
+           entities:
+             - entity: binary_sensor.dev9_gpio_4
+               name: "Foyer mud-rack"
+             - entity: binary_sensor.dev54_motion_1
+               name: "Foyer ceiling"
+             - entity: binary_sensor.dev15_motion
+               name: "Worldmap"
+             - entity: binary_sensor.dev16_motion
+               name: "Kitchen Island"
+           column: true
+           state_color: true
+           show_state: false
          - entity: binary_sensor.g_motion_cellar
            type: "custom:multiple-entity-row"
            secondary_info: 
@@ -2431,52 +2512,22 @@ views:
              name: false
            icon: mdi:home-floor-negative-1
            name: Basement
-
-      - type: entities
-        show_header_toggle: false
-        state_color: true
-        entities:
-          - entity: binary_sensor.mymotiondetectorrule_cell_motion_detection
-            name: Door Cam
-          - entity: binary_sensor.mymotiondetectorrule_cell_motion_detection_2
-            name: Garden Cam
-          - entity: binary_sensor.mymotiondetectorrule_cell_motion_detection_3
-            name: Cellar cam
-          - type: divider
-          - type: divider
-          - binary_sensor.dev57_motion
-          - entity: binary_sensor.0x00158d00045d7a47_occupancy
-            name: "Stairs U"
-          - entity: binary_sensor.0x00158d0002f0bc08_occupancy
-            name: "Hallway U"
-          - type: divider
-          - type: divider
-#          - binary_sensor.dev14_motion
-          - entity: binary_sensor.dev54_motion_1
-            name: "Foyer ceiling motion"
-          - binary_sensor.dev15_motion
-          - binary_sensor.dev9_gpio_4
-          - binary_sensor.dev16_motion
-          - type: divider
-          - type: divider
-          - binary_sensor.dev17_motion
-          - entity: binary_sensor.dev54_motion_2
-            name: "Cellar stair motion"
-          - entity: binary_sensor.0x00158d0005a9e90e_occupancy
-            name: Cellar foyer Z
-          - binary_sensor.dev59_motion_13
-          - binary_sensor.dev59_motion_16
-          - binary_sensor.0x00158d0003f85cf0_occupancy
-          - type: divider
-          - binary_sensor.dev8_motion
-#          - binary_sensor.dev10_motion
-#      - type: map
-#        entities:
-#          - entity: device_tracker.illuminum_kolja
-#          - entity: device_tracker.illuminum_caro
-#          - zone.home
-#        aspect_ratio: 90%
-
+           entities:
+             - entity: binary_sensor.dev54_motion_2
+               name: "Stairway upper end"
+             - entity: binary_sensor.dev59_motion_13
+               name: "Foyer door 1/2"
+             - entity: binary_sensor.dev59_motion_16
+               name: "Foyer door 2/2"
+             - entity: binary_sensor.0x00158d0005a9e90e_occupancy
+               name: "Foyer Zigbee"
+             - entity: binary_sensor.0x00158d0003f85cf0_occupancy
+               name: "Heater Zigbee"
+             - entity: binary_sensor.dev17_motion
+               name: "Office entry door"
+           column: true
+           state_color: true
+           show_state: false
     icon: mdi:security
     title: T
 #######################################
@@ -2955,3 +3006,498 @@ views:
     icon: 'mdi:cast-connected'
     title: Media
 #######################################
+
+  - theme: dark-mode
+    type: custom:vertical-layout
+    layout:
+      width: 640
+      max_cols: 10
+    cards:
+       ### 1st line
+      - type: markdown
+        content: >
+          ### {{ states.sensor.outside_temperature.state|float|round(1) }}&deg; &nbsp; {{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%H:%M') }}
+        card_mod:
+          style: 
+            ha-markdown$: |
+              h3 {
+               padding-top: 20px;
+               font-size: 64px;
+               color:#eeeeee;
+               text-shadow: 1px 1px 4px #000000;
+              }
+            .: |
+              ha-card {
+                text-align: center;
+                background-color: #00000000; 
+              }
+      - type: 'custom:text-divider-row'
+        style: |
+           secondary-text-color: '#2980b9'
+        text: Favourites
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            tap_action:
+              action: call-service
+              service: homeassistant.turn_on
+              service_data:
+                entity_id: input_boolean.on_with_music
+            hold_action:
+              action: call-service
+              service: homeassistant.turn_on
+              service_data:
+                entity_id: input_boolean.sleep
+            entity: input_boolean.on_with_music
+            name: All on with music / All off
+            icon: 'mdi:power'
+          - type: entity-button
+            tap_action:
+              action: toggle
+            entity: light.joiner_livingroom
+            icon: 'mdi:account-group'
+          - type: entity-button
+            tap_action:
+              action: toggle
+            entity: light.joiner_kitchen
+            state_color: true
+            icon: 'mdi:pot-mix'
+          - type: entity-button
+            tap_action:
+              action: toggle
+            entity: switch.dev4_gpio_12
+            state_color: true
+            name: Pump
+### 2nd line
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            tap_action:
+              action: toggle
+            entity: light.dev44_2
+            state_color: true
+          - type: entity-button
+            tap_action:
+              action: toggle
+            entity: light.dev44
+            name: Table
+            state_color: true               
+          - type: entity-button
+            tap_action:
+              action: toggle
+            icon: mdi:floor-lamp-dual
+            name: PlayArea
+            entity: light.dev34
+            state_color: true
+          - type: entity-button
+            tap_action:
+              action: toggle
+            entity: light.dev2
+            icon: mdi:floor-lamp
+            state_color: true
+#### 4th line
+#      - type: horizontal-stack
+#        cards:
+#          - type: entity-button
+#            tap_action:
+#              action: toggle
+#            entity: light.dev59
+#            icon: mdi:home-floor-negative-1
+#            name: Cellar
+#            state_color: true
+####### 2nd column  ##########
+      - type: 'custom:text-divider-row'
+        style: |
+           secondary-text-color: '#2980b9'
+        text: Media
+      - type: horizontal-stack
+        cards:
+          - icon: 'mdi:power'
+            name: ' '
+            service: script.turn_on
+            state_color: true
+            type: entity-button
+            tap_action:
+              service: script.tvoff
+              action: call-service
+            entity: binary_sensor.always_on
+
+          - icon: 'mdi:volume-minus'
+            name: ' '
+            service: script.turn_on
+            state_color: true
+            type: entity-button
+            tap_action:
+              service: script.yamaha_vol_down
+              action: call-service
+            entity: binary_sensor.harmony
+            
+          - icon: 'mdi:volume-plus'
+            name: ' '
+            service: script.turn_on
+            state_color: true
+            type: entity-button
+            tap_action:
+              service: script.yamaha_vol_up
+              action: call-service
+            entity: binary_sensor.harmony
+
+          - type: "custom:button-card"
+            entity: binary_sensor.harmony
+            show_name: false
+            label: >
+              [[[ 
+                if(states['media_player.yamaha_receiver'].attributes.volume_level == undefined){
+                    return 'off';
+                }
+                if(states['media_player.yamaha_receiver'].attributes.is_volume_muted){
+                    return 'mute';
+                }
+                return "-"+Math.round(10*(100-states['media_player.yamaha_receiver'].attributes.volume_level * 100))/10 + ' db';
+              ]]]
+            show_icon: false
+            show_label: true
+            styles:
+              card:
+              - height: 82px
+              - font-size: 24px
+
+          - type: 'custom:button-card'
+            state:
+              - operator: template
+                value: >
+                  [[[ return states['media_player.ytube_music_player'].attributes.likeStatus == "LIKE" ]]]
+                icon: 'mdi:thumb-up'
+              - operator: template
+                value: >
+                  [[[ return states['media_player.ytube_music_player'].attributes.likeStatus == "DISLIKE" ]]]
+                icon: 'mdi:thumb-down'
+              - operator: template
+                value: >
+                  [[[ return states['media_player.ytube_music_player'].attributes.likeStatus == "INDIFFERENT" ]]]
+                icon: 'mdi:thumb-up-outline'
+              - operator: default
+                icon: 'mdi:power-off'
+                value: false
+            tap_action:
+              action: call-service
+              service: ytube_music_player.call_method
+              service_data:
+                entity_id: media_player.ytube_music_player
+                command: rate_track
+                parameters: thumb_toggle_up_middle
+            hold_action:
+              action: call-service
+              service: ytube_music_player.call_method
+              service_data:
+                entity_id: media_player.ytube_music_player
+                command: rate_track
+                parameters: thumb_down
+            styles:
+              card:
+              - height: 82px
+
+          - icon: 'mdi:cast-connected'
+            name: ' '
+            service: script.turn_on
+            type: entity-button
+            state_color: true
+            tap_action:
+              service: script.start_chromaudio
+              action: call-service
+            entity: binary_sensor.always_on
+              
+      - type: custom:mini-media-player
+        entity: media_player.ytube_music_player
+        name: YouTube Music
+        scale: 1.2
+        artwork: cover
+        hide:
+          shuffle: false
+          volume: true
+          source: true
+          power_state: false
+          icon_state: false
+          runtime: false
+        shortcuts:
+          columns: 6
+          column_height: 70
+          buttons:
+            - name: Kolja
+              type: channel
+              icon: 'mdi:arm-flex-outline'
+              id: RDTMAK5uy_kset8DisdE7LSD4TNjEVvrKRTmG7a56sY
+            - name: Caro
+              icon: 'mdi:face-woman-outline'
+              type: channel
+              id: PLZvjm51R8SGuFNGfYDdHSYN7ZjeAnKqM7
+            - name: Coffee
+              icon: 'mdi:coffee'
+              type: playlist
+              id: PL6H6TfFpYvpersEdHECeWkocaPueTqieF
+            - name: Easy
+              icon: 'mdi:account-supervisor-circle-outline'
+              type: channel
+              id: PLZvjm51R8SGsVtB9xC7VHXJCcRO8AmcbP
+            - name: Dance
+              type: channel
+              icon: 'mdi:human-female-dance'
+              id: RDCLAK5uy_l6lSnRziP_Qt6EA5-nmhXZ3uQz76JRZw4
+            - name: Acoustics
+              icon: 'mdi:music'
+              type: channel
+              id: RDCLAK5uy_ktt9wgI-BUCEX4hQC_NNzEdRq-rVgyJXI
+
+      - type: 'custom:text-divider-row'
+        style: |
+           secondary-text-color: '#2980b9'
+        text: Security
+      - type: horizontal-stack
+        cards:
+          - type: picture-entity
+            entity: person.kolja_2
+            state_image:
+                "home": /local/kolja.jpg
+            image: /local/kolja_sw.jpg
+            show_name: false
+          - type: picture-entity
+            entity: person.carlo
+            state_image:
+              "home": /local/carlo.jpg
+            image: /local/carlo_sw.jpg
+            show_name: false          
+          - type: picture-entity
+            entity: person.caro_2
+            state_image:
+                "home": /local/caro.jpg
+            image: /local/caro_sw.jpg
+            show_name: false
+  #### safety state
+          - type: entities
+            show_header_toggle: false
+            view_layout:
+              column: 2
+            entities:
+              - entity: binary_sensor.g_motion
+                type: "custom:multiple-entity-row"
+                secondary_info: 
+                  entity: sensor.g_motion_t
+                  name: false
+                icon: mdi:security
+                name: Global motion
+              - type: divider
+              - entity: binary_sensor.g_motion_upstairs
+                type: "custom:multiple-entity-row"
+                secondary_info: 
+                  entity: sensor.g_motion_upstairs_t
+                  name: false
+                icon: mdi:home-floor-1
+                name: Upstairs
+              - entity: binary_sensor.g_motion_basement
+                type: "custom:multiple-entity-row"
+                secondary_info:
+                  entity: sensor.g_motion_basement_t
+                  name: false
+                icon: mdi:home-floor-0
+                name: Ground floor
+              - entity: binary_sensor.g_motion_cellar
+                type: "custom:multiple-entity-row"
+                secondary_info: 
+                  entity: sensor.g_motion_cellar_t
+                  name: false
+                icon: mdi:home-floor-negative-1
+                name: Basement
+
+                        
+      - type: 'custom:text-divider-row'
+        style: |
+           secondary-text-color: '#2980b9'
+        text: Solar
+      - type: horizontal-stack
+  #            columns: 2
+  #           square: false
+        cards:
+          - type: custom:power-wheel-card                
+            style: | 
+              ha-card {
+                    padding: 6px !important;                 
+              }
+              .header {
+                    padding: 0px !important;
+                    min-height: 0px;
+              }
+            title: "."
+            consuming_color: "#bdbdbd"
+            producing_color: "#bdbdbd"
+            solar_power_entity: sensor.pv_power_int
+            grid_power_entity: sensor.dev37_em_cur_fast
+            production_is_positive: false
+            solar_energy_entity: sensor.total_yield
+            grid_energy_consumption_entity: sensor.dev37_em_tot_grid
+            grid_energy_production_entity: sensor.dev37_em_tot_solar
+            energy_consumption_rate: 0.2534
+            energy_production_rate: 0.0816
+
+          - type: entities
+            entities:
+              - entity: sensor.pv_power_int
+                name: Solar
+                icon: mdi:weather-sunny
+                type: "custom:multiple-entity-row"
+                styles:
+                  width: 60px
+                  text-align: right
+                entities:
+                  - name: "24h max"
+                    unit: "W"
+                    entity: sensor.pv_power_stat
+                    attribute: max_value
+                    styles:
+                      width: 70px
+                      text-align: right
+                  - name: "Total today"
+                    entity: sensor.pv_daily_int
+                    styles:
+                      width: 75px
+                      text-align: right
+              - entity: sensor.house_power
+                type: "custom:multiple-entity-row"
+                name: House
+                icon: mdi:home-outline
+                styles:
+                  width: 60px
+                  text-align: right
+                entities:
+                  - name: "Total today"
+                    unit: "kWh"
+                    entity: sensor.energy_calc
+                    attribute: Home_total_consumed_[kWh]
+                    styles:
+                      width: 70px
+                      text-align: right
+                  - name: "From solar"
+                    unit: "kWh"
+                    entity: sensor.energy_calc_solar_to_home_kwh
+                    styles:
+                      width: 75px
+                      text-align: right
+              - name: Autarkie
+                unit: "%"
+                entity: sensor.energy_calc
+                attribute: Home_from_Solar_[%]
+                type: "custom:multiple-entity-row"
+                icon: mdi:brightness-percent
+                styles:
+                  width: 60px
+                  text-align: right
+                entities:
+                  - name: "Solar to home"
+                    entity: sensor.energy_calc
+                    styles:
+                      width: 70px
+                      text-align: right
+                  - entity: sensor.burn_energy
+                    name: Burned kWh
+                    styles:
+                      width: 75px
+                      text-align: right
+              - entity: sensor.dev37_em_cur
+                icon: mdi:transmission-tower
+                name: Grid
+                type: "custom:multiple-entity-row"
+                styles:
+                  width: 60px
+                  text-align: right
+                entities:
+                  - name: "To net today"
+                    entity: sensor.energy_calc_solar_to_grid_kwh
+                    styles:
+                      width: 70px
+                      text-align: right
+                  - name: "From net today"
+                    entity: sensor.energy_calc_grid_to_home_kwh
+                    styles:
+                      width: 75px
+                      text-align: right
+              - entity: sensor.money_today
+                icon: mdi:currency-eur
+                name: Today cost
+                type: "custom:multiple-entity-row"
+                unit: "€"
+                styles:
+                  width: 60px
+                  text-align: right
+                entities:
+                  - name: "Made"
+                    entity: sensor.money_in
+                    styles:
+                      width: 70px
+                      text-align: right
+                    unit: "€"
+                  - name: "Spend"
+                    entity: sensor.money_out
+                    styles:
+                      width: 75px
+                      text-align: right
+                    unit: "€"
+
+      - type: 'custom:text-divider-row'
+        style: |
+           secondary-text-color: '#2980b9'
+        text: Cams
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+         - type: picture-entity
+           entity: camera.cam_dome1_profile_000
+           camera_view: auto
+           name: Door
+           aspect_ratio: 16x9
+           show_name: False
+           show_state: False
+           tap_action: 
+              action: fire-dom-event   
+              browser_mod:
+               title: Door
+               command: popup
+               hide_header: true
+               large: true 
+               card:
+                 type: picture-entity
+                 camera_view: live
+                 name: Door
+                 show_name: False
+                 show_state: False
+                 entity: camera.cam_dome1_profile_000
+                 tap_action: 
+                   action: call-service
+                   service: browser_mod.close_popup
+
+         - type: picture-entity
+           entity: camera.cam_xia2
+           camera_view: auto
+           name: Garden
+           show_name: False
+           show_state: False
+           tap_action: 
+             action: fire-dom-event       
+             browser_mod:
+               title: Louisa
+               command: popup
+               hide_header: true
+               large: true 
+               card:
+                 type: picture-entity
+                 camera_view: live
+                 name: Louisa
+                 show_name: False
+                 show_state: False
+                 entity: camera.cam_xia2
+                 tap_action: 
+                   action: call-service
+                   service: browser_mod.close_popup
+
+
+    icon: 'mdi:tablet-android'
+    title: Tablet

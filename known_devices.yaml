@@ -26,3 +26,17 @@ ping_kolja:
   picture:
   track: true
 
+
+google_maps_110518043042355478237:
+  name: google_maps_110518043042355478237
+  mac:
+  icon:
+  picture: https://lh3.googleusercontent.com/a-/AOh14GhjOPCUbnjDFd7mm4bZ65-cngyhBTKBna5IrZN-8w
+  track: true
+
+ping_carlo:
+  name: ping_carlo
+  mac:
+  icon:
+  picture:
+  track: true

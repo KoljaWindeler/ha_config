@@ -27,7 +27,6 @@ default_config:
 logger: 
   default: warning
   logs: 
-    homeassistant.components.owntracks: fatal
     custom_components.ytube_music_player: debug
 
 
@@ -35,7 +34,7 @@ mobile_app:
 lovelace:
   mode: yaml
   resources:
-    - url: /local/apexcharts-card.js?v=1.8.2
+    - url: /hacsfiles/lovelace-layout-card/layout-card.js
       type: module
     - url: /local/monster-card.js
       type: js
@@ -168,7 +167,8 @@ recorder:
       - sensor.szn_uptime
       - sensor.szn_time_since_state_change
       - sensor.szw_uptime
-      - sensor.szw_time_since_state_change
+      - sensor.szw_time_since_state_change 
+      - binary_sensor.dev15_motion
       
 logbook:
 sun:

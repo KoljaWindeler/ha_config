@@ -1,7 +1,4 @@
 ---
-owntracks:
-  module: owntracks
-  class: OwntracksWorld
 cube:
   module: cube
   class: cubeWorld
@@ -160,6 +157,17 @@ mL_Heater:
    - light.dev35
    - switch.dev4_gpio_4
 
+mL_rpiTouch:
+  module: motionLight
+  class: motionLight
+  delay: 15
+  sensors:
+   - binary_sensor.dev15_motion
+   - binary_sensor.dev16_motion
+  lights:
+   - light.rpi_screen
+
+
 mL_Worldmap:
   module: motionLight
   class: motionLight
@@ -176,6 +184,10 @@ nfc:
   module:  nfc
   class:  NfcWorld
 
+
+stuff:
+  module:  stuff
+  class:  StuffWorld
 
 test:
   module:  test

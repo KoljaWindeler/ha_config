@@ -18,6 +18,8 @@ class NfcWorld(hass.Hass):
 
 	def pp(self, entity, attribute, old, new,kwargs):
 		self.log("carlo 2s")
+		self.turn_off("light.dev23")
+		self.turn_on("light.dev33")
 		if(self.get_state("input_boolean.carlo_switch_lock")=="off"):
 			self.tag(' ',{'tag_id':'e2976d7b-d508-4a31-b308-20d6ea4432ca'})
 		else:

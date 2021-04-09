@@ -2,13 +2,13 @@ proximity:
   kolja_home:
     zone: home
     devices:
-      device_tracker.illuminum_kolja
+      person.kolja_2
     tolerance: 50
     unit_of_measurement: km
   caro_home:
     zone: home
     devices:
-      device_tracker.illuminum_caro
+      person.caro_2
     tolerance: 50
     unit_of_measurement: km
 
@@ -25,7 +25,7 @@ automation:
         - condition: template
           value_template: '{{ states.proximity.caro_home.attributes.dir_of_travel == "towards"}}'
         - condition: state
-          entity_id: 'device_tracker.illuminum_kolja'
+          entity_id: 'person.kolja_2'
           state: 'home'
     action:
      service: notify.pb

@@ -11,5 +11,6 @@
   ],
   "codeowners": [
     "@home-assistant/core"
-  ]
+  ],
+  "version": "0.20210325.01"
 }

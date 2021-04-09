@@ -1,4 +1,4 @@
-import math
+import math 
 import appdaemon.plugins.hass.hassapi as hass
 import datetime, time
 from threading import Timer
@@ -24,11 +24,14 @@ class LastUpdatedWorld(hass.Hass):
 						self.listen_state(self.update, parent)
 						#self.log("parent "+parent+" found")
 
-		self.timing_handle = self.timer()
+		self.timing_handle = None
+		self.timer()
 
 
 	def parse(self,input):
 		#self.log(input)
+		if(self.get_state(input)=="On"):
+			return "now"
 		ts = self.convert_utc(self.get_state(input,attribute="all")["last_changed"]).timestamp()
 		ts = math.floor((datetime.datetime.now().timestamp() - ts)/60)
 		if(ts==0):
@@ -41,10 +44,11 @@ class LastUpdatedWorld(hass.Hass):
 			return str(math.floor(ts/1440))+" d"
 
 	def timer(self, entity="", attribute="", old="", new="", kwargs=""):
-		try:
-			self.cancel_timer(self.timing_handle)
-		except:
-			pass
+#		try:
+#			if(self.timing_handle != None):
+#				self.cancel_timer(self.timing_handle)
+#		except:
+#			pass
 		self.timing_handle = self.run_in(self.timer,delay=60)
 		self.update(kwargs="timer")
 

@@ -6,9 +6,15 @@ class TestWorld2(hass.Hass):
 
 	def initialize(self):
 		self.log("Starting Test Service2")
-#		for i in range(9,17):
-#			self.run_daily(self.pump_on, datetime.time(int(i), 0, 0))
-#			self.run_daily(self.pump_off, datetime.time(int(i), 10, 0))
+#		self.call_service("browser_mod/toast", message= "al" )
+#		self.call_service("browser_mod/navigate", navigation_path="testa",deviceID="1f8bb2c3-ef8bbfff")
+
+#		self.call_service("browser_mod/more_info", entity_id="camera.cam_dome1_profile_000",deviceID="1f8bb2c3-ef8bbfff", large=True)
+#		self.run_in(self.cl,10)
+
+	def cl(self,arg):
+		self.call_service("browser_mod/close_popup",deviceID="1f8bb2c3-ef8bbfff")
+
 
     ######################################################
 

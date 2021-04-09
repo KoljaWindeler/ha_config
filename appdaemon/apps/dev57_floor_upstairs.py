@@ -19,11 +19,11 @@ class motionLight(hass.Hass):
 #		self.log("turning off")
 		self.turn_off("light.dev57")
 		self.turn_off("light.dev27")
-		try:
+#		try:
 #			self.log("stopping timer after turn off")
-			self.cancel_timer(self.handle)
-		except:
-			pass
+#			self.cancel_timer(self.handle)
+#		except:
+#			pass
 
 	def turn_light_on(self, entity="", attribute="", old="", new="",kwargs=""):
 		ele = float(self.get_state("sun.sun", attribute="elevation"))

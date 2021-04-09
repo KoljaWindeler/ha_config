@@ -18,9 +18,9 @@ class gmusicWorld(hass.Hass):
            self.log("Light seams to be on, turning off")
            self.turn_all_lights_off()
            self.turn_music_off()
-           if(now > time(6,0,0) and now < time(8,0,0)):
-              self.log("Between 6 and 8, opening garage")
-              self.open_garage()
+#           if(now > time(6,0,0) and now < time(8,0,0)):
+ #             self.log("Between 6 and 8, opening garage")
+  #            self.open_garage()
         else:
            self.log("Light seams to be off, turning on")
            self.turn_all_lights_on()
@@ -53,12 +53,14 @@ class gmusicWorld(hass.Hass):
     ###############    ###############    ###############
 
     def play(self, entity="", attribute="", old="", new="", kwargs=""):
-        self.handle = self.run_in(self.set_vol, delay=5)
+        self.log("play")
+        self.handle = self.run_in(self.set_vol, delay=7)
         self.turn_off("media_player.ytube_music_player")
 #        self.set_state("input_select.gmusic_player_source",state="Station")
 #        self.set_state("input_select.gmusic_player_station",state="I'm Feeling Lucky")
 
     def set_vol(self, entity="", attribute="", old="", new="", kwargs=""):
+        self.log("play2")
         self.call_service("media_player/volume_set", entity_id="media_player.yamaha_receiver", volume_level="0.4")
-        self.turn_on("media_player.ytube_music_player")
-
+        #self.turn_on("media_player.ytube_music_player")
+        self.call_service("media_player/play_media", entity_id="media_player.ytube_music_player", media_content_id="RDTMAK5uy_kset8DisdE7LSD4TNjEVvrKRTmG7a56sY", media_content_type="channel")
